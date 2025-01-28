@@ -62,10 +62,13 @@
                             <div li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'" class="_1footer_payment-svg">{{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}</div>
                             
                         </li>
-{% endfor %}</ul></div></div><div class="footer_bottom-wrapper"><div class="footer_credit-text">
+{% endfor %}</ul></div></div><div class="footer_bottom-wrapper"><div class="flex-h is-gap-medium text-style-muted"><div class="footer_credit-text">
 {{ section.settings.text_legal_disclaimer }}
 </div>
-<div li-for:inside="policy in shop.policies" class="w-layout-grid footer_legal-list">
+<div class="footer_credit-text">
+{{ section.settings.text_legal_disclaimer }}
+</div>
+</div><div li-for:inside="policy in shop.policies" class="w-layout-grid footer_legal-list">
         {% for policy in shop.policies %}                            
                             <a li-object="policy.title" li-object:href="policy.url" href="{{ policy.url }}" class="footer_legal-link">{{ policy.title }}</a>
                             

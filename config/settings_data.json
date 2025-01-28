@@ -1,1 +1,46 @@
-{}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "checkbox_display_announcement": true,
+          "text_announcement": "This is an announcement title",
+          "url_announcement_link": "",
+          "text_announcement_link_label": "Learn more",
+          "image_logo": "shopify://shop_images/logo.svg"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "image_logo": "shopify://shop_images/logo.svg",
+          "text_newsletter_title": "Join our newsletter",
+          "textarea_newsletter_paragraph": "Join our newsletter to stay up to date on features and releases.",
+          "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+          "checkbox_display_social_media": true,
+          "text_social_media_title": "Follow us",
+          "text_legal_disclaimer": "© 2024 Makebo. All rights reserved."
+        }
+      },
+      "gift_card": {
+        "type": "gift_card",
+        "settings": {
+          "text_disabled_description": "Contact us for more information.",
+          "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+          "giftcard-color": "#385bb1"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

@@ -1,0 +1,104 @@
+{
+    "sections": {
+        "hero_slider": {
+            "type": "hero_slider"
+        },
+        "logos_list": {
+            "type": "logos_list"
+        },
+        "logos_list_grid": {
+            "type": "logos_list_grid"
+        },
+        "testimonial_large": {
+            "type": "testimonial_large"
+        },
+        "testimonial_list": {
+            "type": "testimonial_list"
+        },
+        "testimonial_grid": {
+            "type": "testimonial_grid"
+        },
+        "hero_image": {
+            "type": "hero_image"
+        },
+        "hero_standard": {
+            "type": "hero_standard"
+        },
+        "4_products": {
+            "type": "4_products"
+        },
+        "one_product": {
+            "type": "one_product"
+        },
+        "bar_info_items": {
+            "type": "bar_info_items"
+        },
+        "collections_list_4": {
+            "type": "collections_list_4"
+        },
+        "product_slider": {
+            "type": "product_slider"
+        },
+        "products_list": {
+            "type": "products_list"
+        },
+        "products_list_tabs": {
+            "type": "products_list_tabs"
+        },
+        "cta_image_small": {
+            "type": "cta_image_small"
+        },
+        "feature_cards_two": {
+            "type": "feature_cards_two"
+        },
+        "faq_horizontal": {
+            "type": "faq_horizontal"
+        },
+        "faq_centered": {
+            "type": "faq_centered"
+        },
+        "feature_info_callout": {
+            "type": "feature_info_callout"
+        },
+        "cta_image_large": {
+            "type": "cta_image_large"
+        },
+        "feature_center_logos": {
+            "type": "feature_center_logos"
+        },
+        "feature_right": {
+            "type": "feature_right"
+        },
+        "feature_left": {
+            "type": "feature_left"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "hero_slider",
+        "logos_list",
+        "logos_list_grid",
+        "testimonial_large",
+        "testimonial_list",
+        "testimonial_grid",
+        "hero_image",
+        "hero_standard",
+        "4_products",
+        "one_product",
+        "bar_info_items",
+        "collections_list_4",
+        "product_slider",
+        "products_list",
+        "products_list_tabs",
+        "cta_image_small",
+        "feature_cards_two",
+        "faq_horizontal",
+        "faq_centered",
+        "feature_info_callout",
+        "cta_image_large",
+        "feature_center_logos",
+        "feature_right",
+        "feature_left"
+    ]
+}

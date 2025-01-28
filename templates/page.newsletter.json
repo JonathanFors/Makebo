@@ -1,0 +1,20 @@
+{
+    "sections": {
+        "newsletter_horizontal": {
+            "type": "newsletter_horizontal"
+        },
+        "newsletter_vertical": {
+            "type": "newsletter_vertical"
+        },
+        "collections_list_4": {
+            "type": "collections_list_4"
+        }
+    },
+    "layout": "page.newsletter",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "newsletter_horizontal",
+        "newsletter_vertical",
+        "collections_list_4"
+    ]
+}

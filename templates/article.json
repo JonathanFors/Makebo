@@ -1,0 +1,20 @@
+{
+    "sections": {
+        "blog_header": {
+            "type": "blog_header"
+        },
+        "blog_content": {
+            "type": "blog_content"
+        },
+        "blogs_list_3": {
+            "type": "blogs_list_3"
+        }
+    },
+    "layout": "article",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "blog_header",
+        "blog_content",
+        "blogs_list_3"
+    ]
+}

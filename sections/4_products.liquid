@@ -1,0 +1,16 @@
+<div li-content-for-blocks="" class="two-products_component">
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when '@app' %}
+            {% render block %}
+    {% when 'product' %}
+            <div li-block="Product" class="li-block">
+                    <div class="li-product">{% assign product = all_products[block.settings.product_product] %} <a li-object:href="product.url" href="{{ product.url }}" class="two-products_item w-inline-block"><div class="two-products_image-wrapper"><img src="{{ product.featured_image | image_url: width: 1000 }}" loading="lazy" li-object:src="product.featured_image | image_url: width: 1000" li-object:alt="product.title" alt="{{ product.title }}" class="two-products_image">
+</div><div class="two-products_content"><div class="margin-bottom margin-xxsmall"><div class="product_meta-wrapper"><div li-object="product.type" class="text-style-capitalize text-size-small text-style-muted">{{ product.type }}</div><div class="text-style-capitalize text-size-small text-style-muted">–</div><div li-object="product.selected_or_first_available_variant.title" class="text-style-capitalize text-size-small text-style-muted">{{ product.selected_or_first_available_variant.title }}</div></div></div><h2 li-object="product.title" class="text-weight-semibold heading-style-h3">{{ product.title }}</h2><div class="button is-underscored-link is-alternate"><div>View product details</div></div></div><div class="two-products_overlay"></div></a></div>
+                </div>
+        {% endcase %}
+{% endfor %}
+
+</div>
+
+ {% schema %} {"tag":"section","name":"4-products","class":"section-wrapper","blocks":[{"type":"@app"},{"name":"Product","type":"product","settings":[{"id":"product_product","type":"product","label":"Product"}]}],"presets":[{"name":"4-products","category":"Liquify"}]} {% endschema %}

@@ -1,0 +1,20 @@
+{
+    "sections": {
+        "product_v2": {
+            "type": "product_v2"
+        },
+        "product_v1": {
+            "type": "product_v1"
+        },
+        "recommended_products": {
+            "type": "recommended_products"
+        }
+    },
+    "layout": "product",
+    "wrapper": "main#top.main-wrapper",
+    "order": [
+        "product_v2",
+        "product_v1",
+        "recommended_products"
+    ]
+}

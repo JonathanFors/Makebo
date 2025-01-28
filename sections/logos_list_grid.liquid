@@ -1,0 +1,17 @@
+<div style="background-color: {{section.settings.background-color}}" class="background-color"><div class="padding-global"><div class="container-large"><div class="padding-section-medium"><div class="logos-grid_component"><div class="logos-grid_content"><div class="margin-bottom margin-large"><div class="text-align-center"><div class="max-width-large align-center"><h2 class="heading-style-h4">Used by the world's leading companies</h2></div></div></div><div li-content-for-blocks="" class="w-layout-grid logos-grid_list">
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when '@app' %}
+            {% render block %}
+    {% when 'logo' %}
+            <div li-block="Logo" id="w-node-_29374e6e-69a0-9cc6-33b7-a48576136234-76136227" class="logos-grid_wrapper">
+                    <img loading="lazy" alt="{{ block.settings.image_logo.alt }}" src="{{ block.settings.image_logo | img_url: 'master' }}" class="logos-grid_logo"}>
+
+                </div>
+        {% endcase %}
+{% endfor %}
+
+</div>
+
+</div></div></div></div></div></div><div class="hide w-embed"></div>
+ {% schema %} {"tag":"section","name":"logos-list-grid","class":"section_logos-grid","blocks":[{"type":"@app"},{"name":"Logo","type":"logo","settings":[{"id":"image_logo","type":"image_picker","label":"Logo"}]}],"settings":[{"type":"color","id":"background-color","label":"Background Color","default":"#EDEDE9"}],"presets":[{"name":"logos-list-grid","category":"Liquify"}]} {% endschema %}

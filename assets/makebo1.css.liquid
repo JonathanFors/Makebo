@@ -923,7 +923,7 @@ figcaption {
   border-color: var(--colors--off-white100);
   background-color: var(--colors--white10);
   color: var(--colors--black10);
-  transition: border-color .2s, background-color .2s;
+  transition: color .2s, border-color .2s, background-color .2s;
 }
 
 .button.is-alternate:hover {
@@ -3142,9 +3142,9 @@ figcaption {
 }
 
 .footer_link.is-title {
-  border-bottom: .1rem solid var(--colors--black10);
   font-size: var(--text--regular);
   padding-bottom: .05rem;
+  font-weight: 600;
 }
 
 .footer_social-link {
@@ -3393,8 +3393,17 @@ figcaption {
   transition: color .2s;
 }
 
+.language_toggle:where(.w-variant-1681427f-92c5-ef31-116a-de9c86f88827) {
+  border-radius: var(--round);
+  transition: background-color .2s, color .2s;
+}
+
 .language_toggle:hover {
   color: var(--colors--primary500);
+}
+
+.language_toggle:hover:where(.w-variant-1681427f-92c5-ef31-116a-de9c86f88827) {
+  background-color: var(--colors--gray300);
 }
 
 .language_dropdown-list:where(.w-variant-1681427f-92c5-ef31-116a-de9c86f88827) {
@@ -3402,26 +3411,34 @@ figcaption {
 }
 
 .language_dropdown-list.w--open {
+  border: .1rem solid var(--colors--gray300);
+  border-radius: var(--border-radius--medium);
   background-color: var(--colors--white10);
-  border-radius: .5rem;
-  padding: .5rem;
+  box-shadow: 0 5px 20px 0 var(--black10-15);
+  padding: .25rem;
 }
 
 .language_dropdown-item {
   grid-column-gap: 4rem;
   grid-row-gap: 4rem;
+  border: .1rem solid var(--colors--gray300);
+  border-radius: var(--border-radius--regular);
   background-color: var(--colors--white10);
-  border-radius: .25rem;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: .5rem 1rem;
-  transition: background-color .2s;
+  transition: border-color .2s, background-color .2s;
   display: flex;
 }
 
 .language_dropdown-item:hover {
   background-color: var(--colors--off-white100);
+  color: var(--colors--primary100);
+}
+
+.language_dropdown-item.w--current {
+  border-color: var(--colors--primary100);
 }
 
 .language_dropdown-content {
@@ -3431,7 +3448,6 @@ figcaption {
   border-radius: .25rem;
   flex-flow: column;
   max-height: 50svh;
-  padding: .5rem;
   display: flex;
   overflow: auto;
 }
@@ -5191,9 +5207,9 @@ figcaption {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
   font-family: var(--fonts--headings);
-  border-bottom: .1rem solid #000;
   justify-content: flex-start;
   align-items: center;
+  font-weight: 500;
   transition: color .2s;
   display: flex;
 }

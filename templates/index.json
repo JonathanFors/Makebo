@@ -17,13 +17,13 @@
       "type": "logos_list",
       "settings": {
         "text_title": "Used by the world's leading companies",
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "logos_list_grid": {
       "type": "logos_list_grid",
       "settings": {
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "testimonial_large": {
@@ -40,7 +40,7 @@
       "settings": {
         "text_heading": "Customer testimonials",
         "text_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "testimonial_grid": {
@@ -74,7 +74,7 @@
         "text_primary_button_label": "Shop now",
         "url_secondary_button_link": "",
         "text_secondary_button_label": "view collections",
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "4_products": {
@@ -84,11 +84,11 @@
     "one_product": {
       "type": "one_product",
       "settings": {
-        "product_product": "",
+        "product_product": "blue-soft-touch-case-copy",
         "checkbox_display_payment_methods": true,
         "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
         "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "bar_info_items": {
@@ -106,7 +106,7 @@
         "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "url_button_link": "",
         "text_button_label": "View all",
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "products_list": {
@@ -119,7 +119,7 @@
         "text_primary_button_label": "Shop now",
         "collection_collection": "",
         "collection_collection_limit": 6,
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "products_list_tabs": {
@@ -216,7 +216,7 @@
         "text_primary_button_label": "Shop now",
         "url_secondary_button_link": "",
         "text_secondary_button_label": "view collections",
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "feature_right": {

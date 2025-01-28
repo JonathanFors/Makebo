@@ -920,27 +920,34 @@ figcaption {
 }
 
 .button.is-alternate {
-  border-color: var(--colors--white10);
-  background-color: var(--colors--off-white100);
-  color: var(--colors--black10);
-  transition: border-color .2s, background-color .2s;
-}
-
-.button.is-alternate:hover {
   border-color: var(--colors--off-white100);
-  background-color: var(--colors--gray200);
-}
-
-.button.is-search {
-  border-color: var(--colors--gray200);
   background-color: var(--colors--white10);
   color: var(--colors--black10);
   transition: border-color .2s, background-color .2s;
 }
 
-.button.is-search:hover {
-  border-color: var(--colors--off-white100);
+.button.is-alternate:hover {
+  border-color: var(--colors--primary100);
   background-color: var(--colors--off-white100);
+  color: var(--colors--primary100);
+}
+
+.button.is-search {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  border-color: var(--colors--gray200);
+  background-color: var(--colors--white10);
+  color: var(--colors--black10);
+  justify-content: center;
+  align-items: center;
+  transition: border-color .2s, background-color .2s;
+  display: flex;
+}
+
+.button.is-search:hover {
+  border-color: var(--colors--primary100);
+  background-color: var(--colors--gray300);
+  color: var(--colors--primary50);
 }
 
 .button.is-checkout {
@@ -2709,6 +2716,11 @@ figcaption {
   color: var(--colors--black10);
 }
 
+.products_label.is-low-stock {
+  border-color: var(--colors--red100);
+  background-color: var(--colors--red100);
+}
+
 .product-gallery_component {
   position: relative;
 }
@@ -3067,9 +3079,11 @@ figcaption {
   width: 100%;
   max-width: 10rem;
   padding-left: 0;
+  transition: opacity .2s;
 }
 
 .footer_logo-link:hover {
+  opacity: .6;
   color: var(--colors--primary50);
 }
 
@@ -3836,7 +3850,6 @@ figcaption {
 
 .section_product-header1 {
   border-radius: var(--border-radius--large);
-  background-color: var(--colors--off-white100);
 }
 
 .product-header_wrapper {
@@ -3916,8 +3929,8 @@ figcaption {
 }
 
 .product-header_accordion-wrapper {
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
   flex-flow: column;
   display: flex;
 }
@@ -7877,6 +7890,11 @@ figcaption {
     align-items: center;
   }
 
+  .button.is-search {
+    grid-column-gap: .25rem;
+    grid-row-gap: .25rem;
+  }
+
   .button.is-search:hover {
     border-bottom-color: var(--colors--primary50);
     background-color: var(--colors--white10);
@@ -8669,6 +8687,10 @@ figcaption {
   .testimonial13_divider {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .products_tabs-menu {
+    flex-flow: column;
   }
 }
 

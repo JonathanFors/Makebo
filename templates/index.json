@@ -1,104 +1,273 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "hero_slider": {
-            "type": "hero_slider"
-        },
-        "logos_list": {
-            "type": "logos_list"
-        },
-        "logos_list_grid": {
-            "type": "logos_list_grid"
-        },
-        "testimonial_large": {
-            "type": "testimonial_large"
-        },
-        "testimonial_list": {
-            "type": "testimonial_list"
-        },
-        "testimonial_grid": {
-            "type": "testimonial_grid"
-        },
-        "hero_image": {
-            "type": "hero_image"
-        },
-        "hero_standard": {
-            "type": "hero_standard"
-        },
-        "4_products": {
-            "type": "4_products"
-        },
-        "one_product": {
-            "type": "one_product"
-        },
-        "bar_info_items": {
-            "type": "bar_info_items"
-        },
-        "collections_list_4": {
-            "type": "collections_list_4"
-        },
-        "product_slider": {
-            "type": "product_slider"
-        },
-        "products_list": {
-            "type": "products_list"
-        },
-        "products_list_tabs": {
-            "type": "products_list_tabs"
-        },
-        "cta_image_small": {
-            "type": "cta_image_small"
-        },
-        "feature_cards_two": {
-            "type": "feature_cards_two"
-        },
-        "faq_horizontal": {
-            "type": "faq_horizontal"
-        },
-        "faq_centered": {
-            "type": "faq_centered"
-        },
-        "feature_info_callout": {
-            "type": "feature_info_callout"
-        },
-        "cta_image_large": {
-            "type": "cta_image_large"
-        },
-        "feature_center_logos": {
-            "type": "feature_center_logos"
-        },
-        "feature_right": {
-            "type": "feature_right"
-        },
-        "feature_left": {
-            "type": "feature_left"
-        }
+  "sections": {
+    "hero_slider": {
+      "type": "hero_slider",
+      "settings": {}
     },
-    "layout": "theme",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "hero_slider",
-        "logos_list",
-        "logos_list_grid",
-        "testimonial_large",
-        "testimonial_list",
-        "testimonial_grid",
-        "hero_image",
-        "hero_standard",
-        "4_products",
-        "one_product",
-        "bar_info_items",
-        "collections_list_4",
-        "product_slider",
-        "products_list",
-        "products_list_tabs",
-        "cta_image_small",
-        "feature_cards_two",
-        "faq_horizontal",
-        "faq_centered",
-        "feature_info_callout",
-        "cta_image_large",
-        "feature_center_logos",
-        "feature_right",
-        "feature_left"
-    ]
+    "logos_list": {
+      "type": "logos_list",
+      "settings": {
+        "text_title": "Used by the world's leading companies",
+        "background-color": "#EDEDE9"
+      }
+    },
+    "logos_list_grid": {
+      "type": "logos_list_grid",
+      "settings": {
+        "background-color": "#EDEDE9"
+      }
+    },
+    "testimonial_large": {
+      "type": "testimonial_large",
+      "settings": {
+        "textarea_testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\"",
+        "text_full_name": "Name Surname",
+        "text_byline": "Position, Company name",
+        "background-color": "#ffffff"
+      }
+    },
+    "testimonial_list": {
+      "type": "testimonial_list",
+      "settings": {
+        "text_heading": "Customer testimonials",
+        "text_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "background-color": "#EDEDE9"
+      }
+    },
+    "testimonial_grid": {
+      "type": "testimonial_grid",
+      "settings": {
+        "textarea_row_1_testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\"",
+        "text_row_1_full_name": "Name Surname",
+        "text_row_1_byline": "Position, Company name",
+        "text_row_2_testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\"",
+        "text_row_2_full_name": "Name Surname",
+        "text_row_2_byline": "Position, Company name",
+        "background-color": "#ffffff"
+      }
+    },
+    "hero_image": {
+      "type": "hero_image",
+      "settings": {
+        "text_title": "Heading",
+        "text_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "overlay-color": "#ffffff"
+      }
+    },
+    "hero_standard": {
+      "type": "hero_standard",
+      "settings": {
+        "text_title": "Medium length hero heading goes here",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "url_secondary_button_link": "",
+        "text_secondary_button_label": "view collections",
+        "background-color": "#EDEDE9"
+      }
+    },
+    "4_products": {
+      "type": "4_products",
+      "settings": {}
+    },
+    "one_product": {
+      "type": "one_product",
+      "settings": {
+        "product_product": "",
+        "checkbox_display_payment_methods": true,
+        "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
+        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "background-color": "#EDEDE9"
+      }
+    },
+    "bar_info_items": {
+      "type": "bar_info_items",
+      "settings": {}
+    },
+    "collections_list_4": {
+      "type": "collections_list_4",
+      "settings": {}
+    },
+    "product_slider": {
+      "type": "product_slider",
+      "settings": {
+        "text_heading": "Popular picks",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "url_button_link": "",
+        "text_button_label": "View all",
+        "background-color": "#EDEDE9"
+      }
+    },
+    "products_list": {
+      "type": "products_list",
+      "settings": {
+        "checkbox_display_title_paragraph": true,
+        "text_heading": "Collection name here",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "collection_collection": "",
+        "collection_collection_limit": 6,
+        "background-color": "#EDEDE9"
+      }
+    },
+    "products_list_tabs": {
+      "type": "products_list_tabs",
+      "settings": {
+        "checkbox_title_description": true,
+        "text_title": "Short heading goes here",
+        "text_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "text_tab_1_title": "Collection 1",
+        "text_tab_2_title": "Collection 2",
+        "text_tab_3_title": "Collection 3",
+        "collection_tab_1_collection": "",
+        "collection_tab_1_collection_limit": 6,
+        "collection_tab_2_collection": "",
+        "collection_tab_2_collection_limit": 6,
+        "collection_tab_3_collection": "",
+        "collection_tab_3_collection_limit": 6,
+        "background-color": "#f9f9f9"
+      }
+    },
+    "cta_image_small": {
+      "type": "cta_image_small",
+      "settings": {
+        "text_heading": "Heading",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "overlay-color": "#ffffff"
+      }
+    },
+    "feature_cards_two": {
+      "type": "feature_cards_two",
+      "settings": {
+        "url_card_1_button_link": "",
+        "text_card_1_heading": "Heading",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "text_card_1_button_label": "Shop Collection",
+        "url_card_2_button_link": "",
+        "text_card_2_heading": "Heading",
+        "text_card_2_button_label": "Shop Collection"
+      }
+    },
+    "faq_horizontal": {
+      "type": "faq_horizontal",
+      "settings": {
+        "text_title": "Title here",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "checkbox_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "background-color": "#f9f9f9"
+      }
+    },
+    "faq_centered": {
+      "type": "faq_centered",
+      "settings": {
+        "text_title": "Title here",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "checkbox_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "background-color": "#f9f9f9"
+      }
+    },
+    "feature_info_callout": {
+      "type": "feature_info_callout",
+      "settings": {
+        "text_title": "Medium length section heading goes here",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "text_subheading_1": "Subheading one",
+        "text_sub_paragraph_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "text_subheading_2": "Subheading two",
+        "text_sub_paragraph_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "background-color": "#f9f9f9"
+      }
+    },
+    "cta_image_large": {
+      "type": "cta_image_large",
+      "settings": {
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "overlay-color": "#ffffff"
+      }
+    },
+    "feature_center_logos": {
+      "type": "feature_center_logos",
+      "settings": {
+        "text_tagline": "Tagline",
+        "text_title": "Medium length section heading goes here",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "url_secondary_button_link": "",
+        "text_secondary_button_label": "view collections",
+        "background-color": "#EDEDE9"
+      }
+    },
+    "feature_right": {
+      "type": "feature_right",
+      "settings": {
+        "text_title": "Medium length section heading goes here",
+        "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "checkbox_display_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "background-color": "#f9f9f9"
+      }
+    },
+    "feature_left": {
+      "type": "feature_left",
+      "settings": {
+        "text_title": "Medium length section heading goes here",
+        "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "checkbox_display_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "background-color": "#f9f9f9"
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "hero_slider",
+    "logos_list",
+    "logos_list_grid",
+    "testimonial_large",
+    "testimonial_list",
+    "testimonial_grid",
+    "hero_image",
+    "hero_standard",
+    "4_products",
+    "one_product",
+    "bar_info_items",
+    "collections_list_4",
+    "product_slider",
+    "products_list",
+    "products_list_tabs",
+    "cta_image_small",
+    "feature_cards_two",
+    "faq_horizontal",
+    "faq_centered",
+    "feature_info_callout",
+    "cta_image_large",
+    "feature_center_logos",
+    "feature_right",
+    "feature_left"
+  ]
 }

@@ -2555,6 +2555,7 @@ figcaption {
 .categories_image-wrapper {
   border-radius: var(--border-radius--medium);
   width: 100%;
+  margin-bottom: 1.5rem;
   overflow: hidden;
 }
 
@@ -2564,8 +2565,8 @@ figcaption {
 }
 
 .categories_content {
-  flex-flow: column;
-  justify-content: flex-start;
+  flex-flow: row;
+  justify-content: space-between;
   align-items: center;
   display: flex;
 }
@@ -2719,8 +2720,11 @@ figcaption {
 }
 
 .products_label.is-low-stock {
-  border-color: var(--colors--red100);
-  background-color: var(--colors--red100);
+  background-color: var(--colors--transparent);
+  color: var(--colors--red100);
+  text-transform: none;
+  border-style: none;
+  padding: 0;
 }
 
 .product-gallery_component {
@@ -3890,8 +3894,13 @@ figcaption {
 
 .product-header_content.is-one-product {
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: flex-start;
   padding: 3rem 3rem 3rem 2rem;
+}
+
+.product-header_content.is-one-product.is-sticky {
+  position: sticky;
+  top: 8.5rem;
 }
 
 .product-header_option-group {
@@ -5036,6 +5045,10 @@ figcaption {
   overflow: hidden;
 }
 
+.section-wrapper.is-no-radius {
+  border-radius: 0;
+}
+
 .navbar-slot {
   width: 100%;
 }
@@ -5847,7 +5860,11 @@ figcaption {
   grid-template-columns: 1.25fr 1fr;
 }
 
-.section_one-product, .section_image-hero {
+.section_one-product {
+  border-radius: var(--border-radius--xlarge);
+}
+
+.section_image-hero {
   border-radius: var(--border-radius--xlarge);
   overflow: hidden;
 }
@@ -7411,6 +7428,14 @@ figcaption {
     display: grid;
   }
 
+  .categories_item {
+    padding-bottom: .5rem;
+  }
+
+  .categories_image-wrapper {
+    margin-bottom: .75rem;
+  }
+
   .product6_heading-wrapper {
     grid-row-gap: 2rem;
     flex-direction: column;
@@ -7723,6 +7748,7 @@ figcaption {
 
   .categories_item-title {
     font-size: var(--text--medium);
+    font-weight: 600;
   }
 
   .product-tabs_component {
@@ -8159,11 +8185,12 @@ figcaption {
 
   .categories_item {
     border-radius: var(--border-radius--regular);
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
   }
 
   .categories_image-wrapper {
     border-radius: var(--border-radius--small);
+    margin-bottom: .5rem;
   }
 
   .flex-h.is-space-between {
@@ -8201,6 +8228,7 @@ figcaption {
 
   .products_label {
     font-size: var(--text--tiny);
+    padding: .1rem .5rem;
   }
 
   .swiper_bullet {

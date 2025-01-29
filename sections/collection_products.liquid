@@ -143,52 +143,50 @@
                     <p li-object="collection.description" class="text-size-medium">{{ collection.description }}</p>
                   </div>
                 {% endif -%}
-                {%- if collection.metafield.theme.related_collections.size > 0 %}
-                  <div li-if="collection.metafield.theme.related_collections.value" class="flex-v">
-                    <div class="flex-h is-gap-small text-style-muted">
-                      <div>Related collections</div>
-                      <div class="icon-embed-xxsmall w-embed">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20">
-                          <title>chevron-expand-x</title><g fill="currentcolor"><polyline points="13 13 16 10 13 7" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline><polyline points="7 13 4 10 7 7" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline></g>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="position-relative">
-                      <div class="category-card_list">
-                        {% for collection in collection.metafields.theme.related_collections.value %}
-                          <div
-                            li-for="collection in collection.metafields.theme.related_collections.value"
-                            class="li-for"
-                          >
-                            <a
-                              li-object:href="collection.url"
-                              data-w-id="e4c4d513-19f9-b0a8-4f55-19beb5bbc6d9"
-                              href="{{ collection.url }}"
-                              class="category-card_item w-inline-block"
-                            >
-                              <div class="category-card_image-wrapper">
-                                <img
-                                  src="{{ collection.image | image_url: width: 400 }}"
-                                  loading="lazy"
-                                  li-object:src="collection.image | image_url: width: 400"
-                                  li-object:alt="collection.title"
-                                  alt="{{ collection.title }}"
-                                  class="category-card_image"
-                                >
-                              </div>
-                              <div class="category-card_content">
-                                <div li-object="collection.title" class="text-weight-semibold">
-                                  {{ collection.title }}
-                                </div>
-                              </div>
-                              <div class="category-card_overlay"></div>
-                            </a>
-                          </div>
-                        {% endfor %}
-                      </div>
+                <div li-if="collection.metafield.theme.related_collections.value" class="flex-v">
+                  <div class="flex-h is-gap-small text-style-muted">
+                    <div>Related collections</div>
+                    <div class="icon-embed-xxsmall w-embed">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20">
+                        <title>chevron-expand-x</title><g fill="currentcolor"><polyline points="13 13 16 10 13 7" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline><polyline points="7 13 4 10 7 7" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline></g>
+                      </svg>
                     </div>
                   </div>
-                {% endif %}
+                  <div class="position-relative">
+                    <div class="category-card_list">
+                      {% for collection in collection.metafields.theme.related_collections.value %}
+                        <div
+                          li-for="collection in collection.metafields.theme.related_collections.value"
+                          class="li-for"
+                        >
+                          <a
+                            li-object:href="collection.url"
+                            data-w-id="e4c4d513-19f9-b0a8-4f55-19beb5bbc6d9"
+                            href="{{ collection.url }}"
+                            class="category-card_item w-inline-block"
+                          >
+                            <div class="category-card_image-wrapper">
+                              <img
+                                src="{{ collection.image | image_url: width: 400 }}"
+                                loading="lazy"
+                                li-object:src="collection.image | image_url: width: 400"
+                                li-object:alt="collection.title"
+                                alt="{{ collection.title }}"
+                                class="category-card_image"
+                              >
+                            </div>
+                            <div class="category-card_content">
+                              <div li-object="collection.title" class="text-weight-semibold">
+                                {{ collection.title }}
+                              </div>
+                            </div>
+                            <div class="category-card_overlay"></div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="margin-bottom margin-small">

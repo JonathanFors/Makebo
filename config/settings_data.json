@@ -9,6 +9,8 @@
  */
 {
   "current": {
+    "favicon": "shopify://shop_images/apple-touch-icon.png",
+    "apple_touch_icon": "shopify://shop_images/favicon-makebo.png",
     "sections": {
       "header": {
         "type": "header",
@@ -24,6 +26,7 @@
         "type": "footer",
         "settings": {
           "image_logo": "shopify://shop_images/logo.svg",
+          "text_brand_description": "Eu sint dolore commodo non pariatur qui eu adipisicing occaecat duis ut deserunt.",
           "text_newsletter_title": "Join our newsletter",
           "textarea_newsletter_paragraph": "Join our newsletter to stay up to date on features and releases.",
           "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",

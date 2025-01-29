@@ -1061,6 +1061,13 @@ figcaption {
   color: var(--colors--primary500);
 }
 
+.button.is-underscored-link.is-out-of-stock {
+  border-bottom-color: var(--colors--red100);
+  color: var(--colors--red100);
+  font-size: var(--text--small);
+  cursor: not-allowed;
+}
+
 .button.is-disabled {
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
@@ -3870,11 +3877,11 @@ figcaption {
   min-width: 1rem;
   height: 1rem;
   min-height: 1rem;
-  transition: background-color .2s;
+  transition: border-color .2s, background-color .2s;
 }
 
 .filters_checkbox:hover {
-  background-color: var(--colors--primary400);
+  border-color: var(--colors--primary100);
 }
 
 .filters_checkbox.is-checked {

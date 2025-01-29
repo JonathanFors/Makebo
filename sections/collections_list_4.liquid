@@ -1,8 +1,8 @@
 <div class="categories_list">
   <div li-for:inside="collection in collections limit: 4" class="categories_list-item">
     {% for collection in collections limit: 4 %}
-      {% if collection.metafields.theme.featured.boolean.value %}
-        <div li-if="collection.metafields.theme.featured.value == 'true'" class="li-if">
+      {% if collection.metafields.theme.featured.value == true %}
+        <div li-if="collection.metafields.theme.featured.value == true" class="li-if">
           <a
             li-object:href="collection.url"
             id="w-node-d436f5ce-581a-f0bb-1e2e-6ba8c2588f16-c2588f16"

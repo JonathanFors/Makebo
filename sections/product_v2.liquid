@@ -76,8 +76,8 @@
                   <div>Sale</div>
                 </div>
               </template>
-              {% if selected_or_first_available_variant.available
-                and selected_or_first_available_variant.inventory_quantity < 10
+              {% if product.selected_or_first_available_variant.available
+                and product.selected_or_first_available_variant.inventory_quantity < 10
               %}
                 <div
                   li-if="selected_or_first_available_variant.available and selected_or_first_available_variant.inventory_quantity <= 10"

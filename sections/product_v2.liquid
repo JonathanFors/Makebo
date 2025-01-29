@@ -78,7 +78,7 @@
               </template>
               <template x-if="selected_or_first_available_variant.available">
                 <div li-js-if="selected_or_first_available_variant.available" class="li-if">
-                  <template x-if="selected_or_first_available_variant.inventory_quantity <= 10">
+                  <template x-if="selected_or_first_available_variant.inventory_quantity < 10">
                     <div
                       li-js-if="selected_or_first_available_variant.inventory_quantity < 10"
                       class="products_label is-bottom-margin is-low-stock"

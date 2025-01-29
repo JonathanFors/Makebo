@@ -143,7 +143,7 @@
                     <p li-object="collection.description" class="text-size-medium">{{ collection.description }}</p>
                   </div>
                 {% endif -%}
-                {%- if collection.metafield.theme.related_collections != null %}
+                {%- if collection.metafield.theme.related_collections.value != null %}
                   <div li-if="collection.metafield.theme.related_collections.value" class="flex-v">
                     <div class="flex-h is-gap-small text-style-muted">
                       <div>Related collections</div>

@@ -1,5 +1,5 @@
 <div class="categories_list">
-  {% assign featured_collections = collections | where: 'collection.metafields.theme.collection_featured', true %}
+  {% assign featured_collections = collections | where: 'collection.metafields.theme.featured', 'true' %}
   {% for collection in featured_collections %}
     <div li-for="collection in featured_collections" class="categories_list-item">
       <a

@@ -1,4 +1,4 @@
-<div class="categories_list">{% assign featured_collections = collections | where: 'featured' %}
+<div class="categories_list">{% assign featured_collections = collections | where: 'theme.collection_featured' %}
 {% for collection in featured_collections %}    <div li-for="collection in featured_collections" class="categories_list-item">
                                     
                             <a li-object:href="collection.url" id="w-node-d436f5ce-581a-f0bb-1e2e-6ba8c2588f16-c2588f16" href="{{ collection.url }}" class="categories_item w-inline-block"><div class="categories_image-wrapper"><img src="{{ collection.image | image_url: width: 600 }}" loading="lazy" li-object:src="collection.image | image_url: width: 600" li-object:alt="collection.title" alt="{{ collection.title }}" class="categories_image">

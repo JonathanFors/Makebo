@@ -84,7 +84,7 @@
     "one_product": {
       "type": "one_product",
       "settings": {
-        "product_product": "blue-soft-touch-case-copy",
+        "product_product": "classic-wrist-watch",
         "checkbox_display_payment_methods": true,
         "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
         "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",

@@ -22,16 +22,6 @@
         "label": "Apple touch icon image",
         "info": "Will be scaled down to 120x120px"
       },
-      {
-        "type": "range",
-        "id": "text-font_size",
-        "min": 12,
-        "max": 24,
-        "step": 1,
-        "unit": "px",
-        "label": "Font size",
-        "default": 16
-      }
     ]
   },
   {

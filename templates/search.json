@@ -1,16 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "search_products": {
-            "type": "search_products"
-        },
-        "categories_list": {
-            "type": "categories_list"
-        }
+  "sections": {
+    "search_products": {
+      "type": "search_products",
+      "settings": {
+        "background-color": "#f2f2f2"
+      }
     },
-    "layout": "search",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "search_products",
-        "categories_list"
-    ]
+    "categories_list": {
+      "type": "categories_list",
+      "settings": {}
+    }
+  },
+  "layout": "search",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "search_products",
+    "categories_list"
+  ]
 }

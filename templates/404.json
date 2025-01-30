@@ -1,16 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "404": {
-            "type": "404"
-        },
-        "categories_list": {
-            "type": "categories_list"
-        }
+  "sections": {
+    "404": {
+      "type": "404",
+      "settings": {
+        "text_heading": "Oops, we got lost.",
+        "text_description": "We couldn't find the page you were looking for.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "back to home",
+        "background-color": "#EDEDE9"
+      }
     },
-    "layout": "404",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "404",
-        "categories_list"
-    ]
+    "collections_list_4_HiUDcd": {
+      "type": "collections_list_4",
+      "settings": {}
+    }
+  },
+  "layout": "404",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "404",
+    "collections_list_4_HiUDcd"
+  ]
 }

@@ -1,12 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "contact": {
-            "type": "contact"
-        }
-    },
-    "layout": "page.contact",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "contact"
-    ]
+  "sections": {
+    "contact_v2_FF9Jpk": {
+      "type": "contact_v2",
+      "settings": {
+        "text_heading": "Contact us",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "image_image": "shopify://shop_images/Clothes_Model_Unsplash.jpg",
+        "background-color": "#f0f0f0"
+      }
+    }
+  },
+  "layout": "page.contact",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "contact_v2_FF9Jpk"
+  ]
 }

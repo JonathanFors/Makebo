@@ -9,6 +9,12 @@
  */
 {
   "sections": {
+    "blog_header_v2_ehbxRd": {
+      "type": "blog_header_v2",
+      "settings": {
+        "background-color": "#f7f7f7"
+      }
+    },
     "blog_content": {
       "type": "blog_content",
       "settings": {
@@ -29,12 +35,6 @@
         "url_primary_button_link": "",
         "text_primary_button_label": "view all blogs",
         "background-color": "#edede9"
-      }
-    },
-    "blog_header_v2_ehbxRd": {
-      "type": "blog_header_v2",
-      "settings": {
-        "background-color": "#EDEDE9"
       }
     }
   },

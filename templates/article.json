@@ -1,20 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "blog_header": {
-            "type": "blog_header"
-        },
-        "blog_content": {
-            "type": "blog_content"
-        },
-        "blogs_list_3": {
-            "type": "blogs_list_3"
-        }
+  "sections": {
+    "blog_content": {
+      "type": "blog_content",
+      "settings": {
+        "checkbox_enable_table_of_contents": true,
+        "checkbox_enable_sidebar_cta": true,
+        "url_sidebar_link": "",
+        "text_sidebar_title": "This is a medium length heading",
+        "textarea_sidebar_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "checkbox_social_share": true,
+        "text_comment_form_heading": "Leave a comment",
+        "text_comment_form_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+      }
     },
-    "layout": "article",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "blog_header",
-        "blog_content",
-        "blogs_list_3"
-    ]
+    "blogs_list_3": {
+      "type": "blogs_list_3",
+      "settings": {
+        "url_primary_button_link": "",
+        "text_primary_button_label": "view all blogs",
+        "background-color": "#EDEDE9"
+      }
+    }
+  },
+  "layout": "article",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "blog_content",
+    "blogs_list_3"
+  ]
 }

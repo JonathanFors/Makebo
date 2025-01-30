@@ -39,12 +39,12 @@
 {% endfor %}
                             
                         </div>
-{% endfor %}</div></div></div><select li-for:inside="option in collection.sort_options" id="sort-by" title="Sort order" class="filters_dropdown-toggle">
+{% endfor %}</div></div></div><div class="flex-v is-gap-tiny"><div class="text-size-small text-style-muted">Sort order:</div><select li-for:inside="option in collection.sort_options" id="sort-by" title="Sort order" class="filters_dropdown-toggle">
         {% for option in collection.sort_options %}                            
                             <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% elsif option.value == collection.default_sort_by %}selected{% endif %}>{{ option.name }}</option>
                             
                     {% endfor %}    </select>
-</div></div><div id="w-node-e4c4d513-19f9-b0a8-4f55-19beb5bbc6e6-b5bbc68b" class="products_list is-3-col">{% for product in collection.products %}    <div li-for="product in collection.products" id="w-node-e4c4d513-19f9-b0a8-4f55-19beb5bbc6e7-b5bbc68b">
+</div></div></div><div id="w-node-e4c4d513-19f9-b0a8-4f55-19beb5bbc6e6-b5bbc68b" class="products_list is-3-col">{% for product in collection.products %}    <div li-for="product in collection.products" id="w-node-e4c4d513-19f9-b0a8-4f55-19beb5bbc6e7-b5bbc68b">
                                     
                             <div class="products_item"><script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
 <div li-element="product-variant-container" class="products_variant-wrapper is-vertical" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" data-productid="{{ product.id }}" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)"><div class="products_image-wrapper"><img li-object:src="product.featured_image | image_url: width: 500" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | image_url: width: 500 }}" loading="lazy" class="products_image is-vertical">

@@ -1,84 +1,92 @@
 [
-    {
-        "name": "theme_info",
-        "theme_name": "Makebo | Moonshot",
-        "theme_author": "JF Studio",
-        "theme_version": "1.0.0",
-        "theme_documentation_url": "https:\/\/www.jf.studio/shopify",
-        "theme_support_email": "shopify@jf.studio"
-    },
-    {
-        "name": "General Settings",
-        "settings": [
-            {
-                "type": "image_picker",
-                "id": "favicon",
-                "label": "Favicon Image",
-                "info": "Will be scaled down to 32x32px"
-            },
-            {
-                "type": "image_picker",
-                "id": "apple_touch_icon",
-                "label": "Apple touch icon image",
-                "info": "Will be scaled down to 120x120px"
-            }
-        ]
-      
-    },
-    {
-        "name": "Global styles",
-        "settings": [
-            {
-                "type": "color",
-                "id": "color-primary50",
-                "label": "Primary Color 0",
-                "default": "#3524a8"
-            },
-            {
-                "type": "color",
-                "id": "color-primary100",
-                "label": "Primary Color 1",
-                "default": "#3b27b9"
-            },
-            {
-                "type": "color",
-                "id": "color-primary200",
-                "label": "Primary Color 2",
-                "default": "#402bca"
-            },
-            {
-                "type": "color",
-                "id": "color-primary300",
-                "label": "Primary Color 3",
-                "default": "#4a35d4"
-            },
-            {
-                "type": "color",
-                "id": "color-primary400",
-                "label": "Primary Color 4",
-                "default": "#5946d8"
-            },
-            {
-                "type": "color",
-                "id": "color-primary500",
-                "label": "Primary Color 5",
-                "default": "#6857db"
-            },
-            {
-                "type": "color",
-                "id": "color-error",
-                "label": "Error",
-                "info": "Used in various places to indicate error messages like out of stock or form submissions.",
-                "default": "#d51d20"
-            },
-            {
-                "type": "color",
-                "id": "color-success",
-                "label": "Success",
-                "info": "Used in various places to indicate success messages in form submissions.",
-                "default": "#19a525"
-            }
-        ]
-      
-    }
+  {
+    "name": "theme_info",
+    "theme_name": "Makebo | Moonshot",
+    "theme_author": "JF Studio",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://www.jf.studio/shopify",
+    "theme_support_email": "shopify@jf.studio"
+  },
+  {
+    "name": "General Settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon Image",
+        "info": "Will be scaled down to 32x32px"
+      },
+      {
+        "type": "image_picker",
+        "id": "apple_touch_icon",
+        "label": "Apple touch icon image",
+        "info": "Will be scaled down to 120x120px"
+      },
+      {
+        "type": "range",
+        "id": "text-font_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 16
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color-primary50",
+        "label": "Primary Color 0",
+        "default": "#3524a8"
+      },
+      {
+        "type": "color",
+        "id": "color-primary100",
+        "label": "Primary Color 1",
+        "default": "#3b27b9"
+      },
+      {
+        "type": "color",
+        "id": "color-primary200",
+        "label": "Primary Color 2",
+        "default": "#402bca"
+      },
+      {
+        "type": "color",
+        "id": "color-primary300",
+        "label": "Primary Color 3",
+        "default": "#4a35d4"
+      },
+      {
+        "type": "color",
+        "id": "color-primary400",
+        "label": "Primary Color 4",
+        "default": "#5946d8"
+      },
+      {
+        "type": "color",
+        "id": "color-primary500",
+        "label": "Primary Color 5",
+        "default": "#6857db"
+      },
+      {
+        "type": "color",
+        "id": "color-error",
+        "label": "Error",
+        "info": "Used in various places to indicate error messages like out of stock or form submissions.",
+        "default": "#d51d20"
+      },
+      {
+        "type": "color",
+        "id": "color-success",
+        "label": "Success",
+        "info": "Used in various places to indicate success messages in form submissions.",
+        "default": "#19a525"
+      }
+    ]
+  }
 ]

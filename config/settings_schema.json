@@ -24,5 +24,17 @@
             }
         ]
       
+    },
+    {
+        "name": "Global styles",
+        "settings": [
+            {
+                "type": "color",
+                "id": "primary100",
+                "label": "Primary Color 1",
+                "default": "#3b27b9"
+            }
+        ]
+      
     }
 ]

@@ -30,10 +30,40 @@
         "settings": [
             {
                 "type": "color",
+                "id": "color-primary50",
+                "label": "Primary Color 0",
+                "default": "#3524a8"
+            },
+            {
+                "type": "color",
                 "id": "color-primary100",
                 "label": "Primary Color 1",
                 "default": "#3b27b9"
-            }
+            },
+            {
+                "type": "color",
+                "id": "color-primary200",
+                "label": "Primary Color 2",
+                "default": "#402bca"
+            },
+            {
+                "type": "color",
+                "id": "color-primary300",
+                "label": "Primary Color 3",
+                "default": "#4a35d4"
+            },
+            {
+                "type": "color",
+                "id": "color-primary400",
+                "label": "Primary Color 4",
+                "default": "#5946d8"
+            },
+            {
+                "type": "color",
+                "id": "color-primary500",
+                "label": "Primary Color 5",
+                "default": "#6857db"
+            },
         ]
       
     }

@@ -3,7 +3,7 @@
 {% if section.settings.checkbox_enable_sidebar_cta == true %}
 <div><a data-w-id="2dd64bba-c409-45cd-a794-a622c0bbac08" href="{{ section.settings.url_sidebar_link }}" class="sidebar_cta w-inline-block"> <div class="sidebar_image-wrapper"><img src="{{ section.settings.image_sidebar_image | img_url: 'master' }}" loading="lazy" alt="{{ section.settings.image_sidebar_image.alt }}" class="sidebar_image"}></div><div class="sidebar_cta-content"><div class="margin-bottom margin-xsmall"><div class="text-size-medium text-weight-semibold">{{ section.settings.text_sidebar_title }}</div></div><p> {{ section.settings.textarea_sidebar_description }} </p></div> </a>
 </div>{% endif %}
-</div><div class="max-width-large"><div><div fs-toc-element="contents" li-object:text="article.content" class="text-rich-text is-blog w-richtext">
+</div><div class="max-width-large"><div><div fs-toc-offsettop="8.5rem" li-object:text="article.content" fs-toc-element="contents" class="text-rich-text is-blog w-richtext">
 {{ article.content }}
 </div></div></div></div><div class="max-width-large align-center">{% if article.comments_enabled? %}    <div li-if="article.comments_enabled?" class="li-if">
     <div class="blog-content_form-wrapper"><div class="margin-bottom margin-large">{% if section.settings.checkbox_social_share == true %}

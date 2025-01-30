@@ -64,6 +64,20 @@
                 "label": "Primary Color 5",
                 "default": "#6857db"
             },
+            {
+                "type": "color",
+                "id": "color-error",
+                "label": "Error",
+                "info": "Used in various places to indicate error messages like out of stock or form submissions.",
+                "default": "#d51d20"
+            },
+            {
+                "type": "color",
+                "id": "color-success",
+                "label": "Success",
+                "info": "Used in various places to indicate success messages in form submissions.",
+                "default": "#19a525"
+            }
         ]
       
     }

@@ -1690,7 +1690,6 @@ figcaption {
 }
 
 .swiper.is-upsell {
-  border-radius: var(--border-radius--medium);
   overflow: hidden;
 }
 
@@ -2464,13 +2463,13 @@ figcaption {
 .hero-swiper_button {
   z-index: 10;
   border: .1rem solid var(--colors--white10);
-  border-radius: var(--border-radius--regular);
+  border-radius: var(--round);
   background-color: var(--colors--white10);
   color: var(--colors--black10);
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  padding: .2rem .5rem;
+  padding: .5rem;
   transition: background-color .2s, border-color .2s, color .2s;
   display: flex;
 }
@@ -2951,13 +2950,11 @@ figcaption {
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
-  display: flex;
+  display: grid;
 }
 
 .feature-cards_item {
   border-radius: var(--border-radius--xlarge);
-  background-color: var(--colors--gray300);
-  padding: .5rem;
   position: relative;
   overflow: hidden;
 }
@@ -6775,6 +6772,15 @@ figcaption {
   grid-row-gap: .5rem;
   justify-content: space-between;
   align-items: center;
+  display: flex;
+}
+
+.feature-cards_overlay-content {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 34rem;
   display: flex;
 }
 

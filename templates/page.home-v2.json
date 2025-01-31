@@ -9,48 +9,130 @@
  */
 {
   "sections": {
-    "feature_center_logos_GGRGhg": {
-      "type": "feature_center_logos",
+    "hero_slider_pwrFdK": {
+      "type": "hero_slider",
       "blocks": {
-        "logo_nEtNq9": {
-          "type": "logo",
+        "slide_BtP7kV": {
+          "type": "slide",
           "settings": {
-            "image_image": "shopify://shop_images/Ecommerce_Sale_Amazon_Logo_Icon_ca43d411-7473-4d59-9066-7b33fb1f0879.png"
+            "image_background_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
+            "text_heading": "SHORT HEADING GOES HERE",
+            "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+            "url_primary_button_link": "",
+            "text_primary_button_label": "Shop now",
+            "url_secondary_button_link": "",
+            "text_secondary_button_label": "view collections",
+            "overlay-color": "#ffffff"
           }
         },
-        "logo_rHGyUt": {
-          "type": "logo",
+        "slide_Ltyx8g": {
+          "type": "slide",
           "settings": {
-            "image_image": "shopify://shop_images/Windows_Logo_Icon_0bbd435c-1dbc-4138-ab53-c9a2e2191443.png"
-          }
-        },
-        "logo_gCKFAB": {
-          "type": "logo",
-          "settings": {
-            "image_image": "shopify://shop_images/GitHub_Logo_Icon_c2be97cd-34c6-4a34-8422-b5ec574e0f99.png"
+            "image_background_image": "shopify://shop_images/Smiling_Woman_Hoodie.jpg",
+            "text_heading": "SHORT HEADING GOES HERE",
+            "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+            "url_primary_button_link": "",
+            "text_primary_button_label": "Shop now",
+            "url_secondary_button_link": "",
+            "text_secondary_button_label": "view collections",
+            "overlay-color": "#ffffff"
           }
         }
       },
       "block_order": [
-        "logo_nEtNq9",
-        "logo_rHGyUt",
-        "logo_gCKFAB"
+        "slide_BtP7kV",
+        "slide_Ltyx8g"
       ],
+      "settings": {}
+    },
+    "bar_info_items_xYdzdd": {
+      "type": "bar_info_items",
+      "blocks": {
+        "info_item_gntUeR": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_MnfTKr": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_PhxqYE": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        }
+      },
+      "block_order": [
+        "info_item_gntUeR",
+        "info_item_MnfTKr",
+        "info_item_PhxqYE"
+      ],
+      "settings": {}
+    },
+    "products_list_nHcUqX": {
+      "type": "products_list",
+      "disabled": true,
       "settings": {
-        "text_tagline": "Tagline",
-        "text_title": "Medium length section heading goes here",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "checkbox_display_title_paragraph": true,
+        "text_heading": "Latest arrivals",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
         "url_primary_button_link": "",
         "text_primary_button_label": "Shop now",
-        "url_secondary_button_link": "",
-        "text_secondary_button_label": "view collections",
+        "collection_collection": "phone-case-template",
+        "collection_collection_limit": 6,
         "background-color": "#EDEDE9"
+      }
+    },
+    "products_list_tabs_NaNynf": {
+      "type": "products_list_tabs",
+      "settings": {
+        "checkbox_title_description": true,
+        "text_title": "Short heading goes here",
+        "text_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "text_tab_1_title": "Last chance",
+        "text_tab_2_title": "50% off",
+        "text_tab_3_title": "New collection",
+        "collection_tab_1_collection": "phone-case-template",
+        "collection_tab_1_collection_limit": 6,
+        "collection_tab_2_collection": "fashion-template",
+        "collection_tab_2_collection_limit": 6,
+        "collection_tab_3_collection": "all-products",
+        "collection_tab_3_collection_limit": 6,
+        "background-color": "#f9f9f9"
+      }
+    },
+    "collections_list_4_ARB8MN": {
+      "type": "collections_list_4",
+      "disabled": true,
+      "settings": {}
+    },
+    "product_slider_XbN7j4": {
+      "type": "product_slider",
+      "settings": {
+        "text_heading": "Popular picks",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "url_button_link": "",
+        "text_button_label": "View all",
+        "background-color": "#f4f4f4"
       }
     }
   },
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "feature_center_logos_GGRGhg"
+    "hero_slider_pwrFdK",
+    "bar_info_items_xYdzdd",
+    "products_list_nHcUqX",
+    "products_list_tabs_NaNynf",
+    "collections_list_4_ARB8MN",
+    "product_slider_XbN7j4"
   ]
 }

@@ -77,6 +77,32 @@
       ],
       "settings": {}
     },
+    "one_product_wbXCKb": {
+      "type": "one_product",
+      "settings": {
+        "product_product": "blue-soft-touch-case-copy",
+        "text_price_byline": "incl. taxes",
+        "text_low_stock_notice": "Low stock! Checkout before we run out.",
+        "checkbox_display_payment_methods": true,
+        "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
+        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "background-color": "#f0f0f2"
+      }
+    },
+    "feature_cards_two_9kLqpU": {
+      "type": "feature_cards_two",
+      "settings": {
+        "url_card_1_button_link": "",
+        "text_card_1_heading": "Heading",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "text_card_1_button_label": "Shop Collection",
+        "image_card_1_background_image": "shopify://shop_images/i-m-zion-fHFGxhB7kiA-unsplash.jpg",
+        "url_card_2_button_link": "",
+        "text_card_2_heading": "Heading",
+        "text_card_2_button_label": "Shop Collection",
+        "image_card_2_background_image": "shopify://shop_images/Smiling_Woman_Hoodie.jpg"
+      }
+    },
     "products_list_tabs_NaNynf": {
       "type": "products_list_tabs",
       "settings": {
@@ -95,36 +121,20 @@
         "background-color": "#f9f9f9"
       }
     },
-    "collections_list_4_ARB8MN": {
+    "cta_image_small_XbFMbC": {
+      "type": "cta_image_small",
+      "settings": {
+        "text_heading": "Heading",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "image_background_image": "shopify://shop_images/Smiling_Woman_in_Gray_Hoodie_1.jpg",
+        "overlay-color": "#ffffff"
+      }
+    },
+    "collections_list_4_bAgNAi": {
       "type": "collections_list_4",
-      "disabled": true,
       "settings": {}
-    },
-    "feature_cards_two_9kLqpU": {
-      "type": "feature_cards_two",
-      "settings": {
-        "url_card_1_button_link": "",
-        "text_card_1_heading": "Heading",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
-        "text_card_1_button_label": "Shop Collection",
-        "image_card_1_background_image": "shopify://shop_images/i-m-zion-fHFGxhB7kiA-unsplash.jpg",
-        "url_card_2_button_link": "",
-        "text_card_2_heading": "Heading",
-        "text_card_2_button_label": "Shop Collection",
-        "image_card_2_background_image": "shopify://shop_images/Smiling_Woman_Hoodie.jpg"
-      }
-    },
-    "one_product_wbXCKb": {
-      "type": "one_product",
-      "settings": {
-        "product_product": "set-of-6-hard-cases-copy",
-        "text_price_byline": "incl. taxes",
-        "text_low_stock_notice": "Low stock! Checkout before we run out.",
-        "checkbox_display_payment_methods": true,
-        "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
-        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "background-color": "#ffffff"
-      }
     },
     "products_list_nHcUqX": {
       "type": "products_list",
@@ -136,7 +146,16 @@
         "text_primary_button_label": "Shop now",
         "collection_collection": "phone-case-template",
         "collection_collection_limit": 6,
-        "background-color": "#edede9"
+        "background-color": "#f2f2f2"
+      }
+    },
+    "cta_image_large_CQyyT3": {
+      "type": "cta_image_large",
+      "settings": {
+        "image_image": "shopify://shop_images/i-m-zion-fHFGxhB7kiA-unsplash.jpg",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "overlay-color": "#ffffff"
       }
     }
   },
@@ -145,10 +164,12 @@
   "order": [
     "hero_slider_pwrFdK",
     "bar_info_items_xYdzdd",
-    "products_list_tabs_NaNynf",
-    "collections_list_4_ARB8MN",
-    "feature_cards_two_9kLqpU",
     "one_product_wbXCKb",
-    "products_list_nHcUqX"
+    "feature_cards_two_9kLqpU",
+    "products_list_tabs_NaNynf",
+    "cta_image_small_XbFMbC",
+    "collections_list_4_bAgNAi",
+    "products_list_nHcUqX",
+    "cta_image_large_CQyyT3"
   ]
 }

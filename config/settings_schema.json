@@ -21,6 +21,12 @@
         "id": "apple_touch_icon",
         "label": "Apple touch icon image",
         "info": "Will be scaled down to 120x120px"
+      },
+      {
+        "type": "html",
+        "id": "code--analytics",
+        "label": "Third-party code",
+        "info": "Use with caution, faulty code may break theme functions."
       }
     ]
   },

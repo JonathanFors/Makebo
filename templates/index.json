@@ -20,19 +20,6 @@
         "overlay-color": "#ffffff"
       }
     },
-    "before_after_slider_ny34LU": {
-      "type": "before_after_slider",
-      "settings": {
-        "checkbox_display_heading_description": true,
-        "text_heading": "This is a medium length heading",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "url_primary_button_link": "",
-        "text_primary_button_label": "Shop now",
-        "image_before_image": "shopify://shop_images/daniel-romero--ze3rUAaAZ0-unsplash.jpg",
-        "image_after_image": "shopify://shop_images/daniel-romero-xpKhFTbkmTM-unsplash.jpg",
-        "background-color": "#edede9"
-      }
-    },
     "feature_cards_two_6DgxHU": {
       "type": "feature_cards_two",
       "settings": {
@@ -145,7 +132,6 @@
   "wrapper": "main.main-wrapper",
   "order": [
     "hero_image_KdQ3kL",
-    "before_after_slider_ny34LU",
     "feature_cards_two_6DgxHU",
     "4_products_P9gpqn",
     "products_list_tabs_7KNRtW",

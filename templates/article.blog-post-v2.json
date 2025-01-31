@@ -9,8 +9,8 @@
  */
 {
   "sections": {
-    "blog_header_v2_ehbxRd": {
-      "type": "blog_header_v2",
+    "blog_header_v1_rVdNEz": {
+      "type": "blog_header_v1",
       "settings": {
         "background-color": "#f7f7f7"
       }
@@ -21,6 +21,7 @@
         "checkbox_enable_table_of_contents": true,
         "checkbox_enable_sidebar_cta": true,
         "url_sidebar_link": "",
+        "image_sidebar_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
         "text_sidebar_title": "This is a medium length heading",
         "textarea_sidebar_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "checkbox_social_share": true,
@@ -34,14 +35,14 @@
       "settings": {
         "url_primary_button_link": "",
         "text_primary_button_label": "view all blogs",
-        "background-color": "#edede9"
+        "background-color": "#f7f7f7"
       }
     }
   },
   "layout": "article",
   "wrapper": "main.main-wrapper",
   "order": [
-    "blog_header_v2_ehbxRd",
+    "blog_header_v1_rVdNEz",
     "blog_content",
     "blogs_list_3"
   ]

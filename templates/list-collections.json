@@ -1,20 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "hero_small": {
-            "type": "hero_small"
-        },
-        "collections_list_all": {
-            "type": "collections_list_all"
-        },
-        "product_slider": {
-            "type": "product_slider"
-        }
+  "sections": {
+    "hero_small": {
+      "type": "hero_small",
+      "settings": {
+        "text_heading": "Heading here",
+        "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "background-color": "#f9f9f9"
+      }
     },
-    "layout": "list-collections",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "hero_small",
-        "collections_list_all",
-        "product_slider"
-    ]
+    "collections_list_all": {
+      "type": "collections_list_all",
+      "settings": {
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "layout": "list-collections",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "hero_small",
+    "collections_list_all"
+  ]
 }

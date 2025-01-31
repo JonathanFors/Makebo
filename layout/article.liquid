@@ -251,6 +251,69 @@
 </div></div><a href="#" class="button w-inline-block"><div>Checkout</div></a><a li-object:href="routes.account_login_url" href="{{ routes.account_login_url }}" class="text-style-link is-aligned-center w-inline-block"><div>Log in or create account here.</div></a></div></div><div li-element="mini-cart-empty" class="quick-cart_empty" :style="total.items && { display: 'none' }"><div class="quick-cart_title-wrapper"><div class="flex-h is-gap-medium"><div class="text-font-headings text-weight-semibold text-size-medium">Your cart</div><div class="flex-h is-gap-tiny"><div li-element="mini-cart-item-count" class="text-style-muted text-size-small" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">0</div><div class="text-style-muted text-size-small">items</div></div></div><button title="Close cart" li-element="dropdown-toggle" class="quick-cart_close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"><div title="Close cart" class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></button></div><div class="cart_empty"><div class="icon-embed-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 48 48"><title>basket-shopping-2</title><g fill="currentcolor" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.5 0.5)"><path d="M18 3L10 16H11" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M30 3L38 16H37" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M41 27L39.5475 38.6202C39.2347 41.1223 37.1077 43 34.5861 43H13.4139C10.8923 43 8.76529 41.1223 8.45252 38.6202L7 27" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M45 16H3V22H45V16Z" stroke="currentcolor" stroke-width="3" fill="none"></path></g></svg></div><div class="text-weight-semibold">No items added to cart yet.</div><a href="/search" class="button is-link is-underscored w-inline-block"><div>Start shopping</div></a></div></div></div><div li-element="dropdown-toggle" class="quick-cart_overlay" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"></div></div></nav></div>{% section 'header' %}
  {{ content_for_layout }} {% section 'footer' %}
 </div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6735b6f6bd2fccc307bb8fc1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="{{ 'makebo1.js' | asset_url }}" type="text/javascript"></script>{% render 'search_javascript' %}
-<!--   [Attributes by Finsweet] Social Share   --><script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => {
+    const wraps = document.querySelectorAll('[jf-ba-instance]');
+    wraps.forEach(wrap => {
+        const before = wrap.querySelector('[jf-ba-before]');
+        const after = wrap.querySelector('[jf-ba-after]');
+        // Create slider element
+        const slider = document.createElement('div');
+        slider.setAttribute('jf-ba-slider', wrap.getAttribute('jf-ba-instancep'));
+        wrap.appendChild(slider);
+        let isDown = false;
+        // Ensure proper positioning
+        wrap.style.position = 'relative';
+        wrap.style.overflow = 'hidden';
+        before.style.width = '100%';
+        before.style.display = 'block';
+        after.style.position = 'absolute';
+        after.style.top = '0';
+        after.style.left = '0';
+        after.style.width = '100%';
+        after.style.height = '100%';
+        slider.style.position = 'absolute';
+        slider.style.top = '0';
+        slider.style.bottom = '0';
+        slider.style.width = '4px';
+        slider.style.background = 'white';
+        slider.style.cursor = 'ew-resize';
+        slider.style.zIndex = '3';
+        const setPosition = (position) => {
+            const clampedPosition = Math.max(0, Math.min(1, position));
+            slider.style.left = `${clampedPosition * 100}%`;
+            after.style.clipPath = `inset(0 0 0 ${clampedPosition * 100}%)`;
+        };
+        const move = (e) => {
+            if (!isDown && e.type !== 'mousemove') return;
+            e.preventDefault();
+            const x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            const rect = wrap.getBoundingClientRect();
+            const position = (x - rect.left) / rect.width;
+            setPosition(position);
+        };
+        const easeBack = () => {
+            setPosition(0.5); // Move back to center
+        };
+        wrap.addEventListener('mousedown', () => isDown = true);
+        wrap.addEventListener('mouseup', () => isDown = false);
+        wrap.addEventListener('mouseleave', () => {
+            isDown = false;
+            easeBack();
+        });
+        wrap.addEventListener('mousemove', move);
+        wrap.addEventListener('touchstart', (e) => {
+            isDown = true;
+            move(e);
+        });
+        wrap.addEventListener('touchmove', move);
+        wrap.addEventListener('touchend', () => {
+            isDown = false;
+            easeBack();
+        });
+        // Initialize position
+        setPosition(0.5);
+    });
+});
+</script><!--   [Attributes by Finsweet] Social Share   --><script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js"></script>
 </body>
 </html>

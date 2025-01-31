@@ -9,44 +9,38 @@
  */
 {
   "sections": {
-    "feature_images_2": {
-      "type": "feature_images_2",
-      "settings": {}
+    "hero_standard_3DzjPB": {
+      "type": "hero_standard",
+      "settings": {
+        "text_title": "Medium length hero heading goes here",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "url_secondary_button_link": "",
+        "text_secondary_button_label": "view collections",
+        "image_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
+        "background-color": "#EDEDE9"
+      }
     },
-    "bar_info_items": {
-      "type": "bar_info_items",
-      "settings": {}
-    },
-    "feature_right": {
-      "type": "feature_right",
-      "settings": {}
-    },
-    "feature_left": {
-      "type": "feature_left",
-      "settings": {}
-    },
-    "product_slider": {
-      "type": "product_slider",
-      "settings": {}
-    },
-    "cta_image_small": {
-      "type": "cta_image_small",
-      "settings": {}
-    },
-    "collections_list_4": {
-      "type": "collections_list_4",
-      "settings": {}
+    "testimonial_grid_DdmxQG": {
+      "type": "testimonial_grid",
+      "settings": {
+        "image_row_1_image": "shopify://shop_images/Woman_near_Yellow_Wall.jpg",
+        "textarea_row_1_testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\"",
+        "text_row_1_full_name": "Name Surname",
+        "text_row_1_byline": "Position, Company name",
+        "text_row_2_testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\"",
+        "text_row_2_full_name": "Name Surname",
+        "text_row_2_byline": "Position, Company name",
+        "image_row_2_image": "shopify://shop_images/Smiling_Woman_Gray_Hoodie.jpg",
+        "background-color": "#fefefe"
+      }
     }
   },
   "layout": "page.about",
   "wrapper": "main.main-wrapper",
   "order": [
-    "feature_images_2",
-    "bar_info_items",
-    "feature_right",
-    "feature_left",
-    "product_slider",
-    "cta_image_small",
-    "collections_list_4"
+    "hero_standard_3DzjPB",
+    "testimonial_grid_DdmxQG"
   ]
 }

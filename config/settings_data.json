@@ -44,7 +44,7 @@
         "settings": {
           "text_disabled_description": "Contact us for more information.",
           "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
-          "giftcard-color": "#385bb1"
+          "giftcard-color": "#2e2e2e"
         }
       }
     },

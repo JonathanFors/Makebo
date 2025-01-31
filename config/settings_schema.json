@@ -35,9 +35,15 @@
     "settings": [
       {
         "type": "font_picker",
-        "id": "heading_font",
+        "id": "fonts--heading_font",
         "label": "Heading font",
-        "default": "helvetica_n4"
+        "default": "poppins_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "fonts--body_font",
+        "label": "Body font",
+        "default": "open_sans_n4"
       }
     ]
   },

@@ -14,15 +14,21 @@
       "blocks": {
         "logo_nEtNq9": {
           "type": "logo",
-          "settings": {}
+          "settings": {
+            "image_image": "shopify://shop_images/Ecommerce_Sale_Amazon_Logo_Icon_ca43d411-7473-4d59-9066-7b33fb1f0879.png"
+          }
         },
         "logo_rHGyUt": {
           "type": "logo",
-          "settings": {}
+          "settings": {
+            "image_image": "shopify://shop_images/Windows_Logo_Icon_0bbd435c-1dbc-4138-ab53-c9a2e2191443.png"
+          }
         },
         "logo_gCKFAB": {
           "type": "logo",
-          "settings": {}
+          "settings": {
+            "image_image": "shopify://shop_images/GitHub_Logo_Icon_c2be97cd-34c6-4a34-8422-b5ec574e0f99.png"
+          }
         }
       },
       "block_order": [

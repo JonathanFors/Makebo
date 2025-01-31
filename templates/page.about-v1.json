@@ -19,7 +19,7 @@
         "url_secondary_button_link": "",
         "text_secondary_button_label": "view collections",
         "image_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "testimonial_grid_DdmxQG": {
@@ -35,12 +35,48 @@
         "image_row_2_image": "shopify://shop_images/Smiling_Woman_Gray_Hoodie.jpg",
         "background-color": "#fefefe"
       }
+    },
+    "feature_left_nUcE34": {
+      "type": "feature_left",
+      "settings": {
+        "text_title": "Medium length section heading goes here",
+        "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "checkbox_display_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "image_image": "shopify://shop_images/Smiling_Woman_in_Gray_Hoodie_1.jpg",
+        "background-color": "#f9f9f9"
+      }
+    },
+    "feature_right_iYax4M": {
+      "type": "feature_right",
+      "settings": {
+        "text_title": "Medium length section heading goes here",
+        "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "checkbox_display_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "image_image": "shopify://shop_images/Smiling_Woman_Hoodie.jpg",
+        "background-color": "#f9f9f9"
+      }
+    },
+    "contact_v3_RJL6rq": {
+      "type": "contact_v3",
+      "settings": {
+        "text_heading": "Contact us",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "background-color": "#f6f6f6"
+      }
     }
   },
   "layout": "page.about",
   "wrapper": "main.main-wrapper",
   "order": [
     "hero_standard_3DzjPB",
-    "testimonial_grid_DdmxQG"
+    "testimonial_grid_DdmxQG",
+    "feature_left_nUcE34",
+    "feature_right_iYax4M",
+    "contact_v3_RJL6rq"
   ]
 }

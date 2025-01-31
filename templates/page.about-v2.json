@@ -9,41 +9,16 @@
  */
 {
   "sections": {
-    "feature_center_logos_GGRGhg": {
-      "type": "feature_center_logos",
-      "blocks": {
-        "logo_nEtNq9": {
-          "type": "logo",
-          "settings": {
-            "image_image": "shopify://shop_images/Ecommerce_Sale_Amazon_Logo_Icon_ca43d411-7473-4d59-9066-7b33fb1f0879.png"
-          }
-        },
-        "logo_rHGyUt": {
-          "type": "logo",
-          "settings": {
-            "image_image": "shopify://shop_images/Windows_Logo_Icon_0bbd435c-1dbc-4138-ab53-c9a2e2191443.png"
-          }
-        },
-        "logo_gCKFAB": {
-          "type": "logo",
-          "settings": {
-            "image_image": "shopify://shop_images/GitHub_Logo_Icon_c2be97cd-34c6-4a34-8422-b5ec574e0f99.png"
-          }
-        }
-      },
-      "block_order": [
-        "logo_nEtNq9",
-        "logo_rHGyUt",
-        "logo_gCKFAB"
-      ],
+    "before_after_slider_3kBdc7": {
+      "type": "before_after_slider",
       "settings": {
-        "text_tagline": "Tagline",
-        "text_title": "Medium length section heading goes here",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "checkbox_display_heading_description": true,
+        "text_heading": "This is a medium length heading",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "url_primary_button_link": "",
         "text_primary_button_label": "Shop now",
-        "url_secondary_button_link": "",
-        "text_secondary_button_label": "view collections",
+        "image_before_image": "shopify://shop_images/daniel-romero--ze3rUAaAZ0-unsplash.jpg",
+        "image_after_image": "shopify://shop_images/daniel-romero-xpKhFTbkmTM-unsplash.jpg",
         "background-color": "#EDEDE9"
       }
     }
@@ -51,6 +26,6 @@
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "feature_center_logos_GGRGhg"
+    "before_after_slider_3kBdc7"
   ]
 }

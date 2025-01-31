@@ -34,7 +34,7 @@
           "text_newsletter_title": "Join our newsletter",
           "textarea_newsletter_paragraph": "Join our newsletter to stay up to date on features and releases.",
           "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-          "checkbox_display_social_media": true,
+          "checkbox_display_social_media": false,
           "text_social_media_title": "Follow us",
           "text_legal_disclaimer": "© 2024 Makebo. All rights reserved."
         }

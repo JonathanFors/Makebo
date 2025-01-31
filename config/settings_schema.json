@@ -101,6 +101,30 @@
         "label": "Success",
         "info": "Used for success states.",
         "default": "#19a525"
+      },
+      {
+        "type": "color",
+        "id": "color-gray100",
+        "label": "Secondary Color 1",
+        "default": "#adadad"
+      },
+      {
+        "type": "color",
+        "id": "color-gray200",
+        "label": "Secondary Color 2",
+        "default": "#d6d6d6"
+      },
+      {
+        "type": "color",
+        "id": "color-gray300",
+        "label": "Secondary Color 3",
+        "default": "#f9f9f9"
+      },
+      {
+        "type": "color",
+        "id": "color-offwhite100",
+        "label": "Off-white",
+        "default": "#f0f0f2"
       }
     ]
   }

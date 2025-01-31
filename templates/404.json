@@ -16,18 +16,28 @@
         "text_description": "We couldn't find the page you were looking for.",
         "url_primary_button_link": "",
         "text_primary_button_label": "back to home",
-        "background-color": "#EDEDE9"
+        "background-color": "#f2f2f2"
       }
     },
-    "collections_list_4_HiUDcd": {
-      "type": "collections_list_4",
-      "settings": {}
+    "feature_cards_two_hUancE": {
+      "type": "feature_cards_two",
+      "settings": {
+        "url_card_1_button_link": "",
+        "text_card_1_heading": "Heading",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "text_card_1_button_label": "Shop Collection",
+        "image_card_1_background_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
+        "url_card_2_button_link": "",
+        "text_card_2_heading": "Heading",
+        "text_card_2_button_label": "Shop Collection",
+        "image_card_2_background_image": "shopify://shop_images/Smiling_Woman_Hoodie.jpg"
+      }
     }
   },
   "layout": "404",
   "wrapper": "main.main-wrapper",
   "order": [
     "404",
-    "collections_list_4_HiUDcd"
+    "feature_cards_two_hUancE"
   ]
 }

@@ -9,16 +9,61 @@
  */
 {
   "sections": {
+    "bar_info_items_G3k8DJ": {
+      "type": "bar_info_items",
+      "blocks": {
+        "info_item_D6ea7e": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_WgwXBk": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_p3F7WT": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        }
+      },
+      "block_order": [
+        "info_item_D6ea7e",
+        "info_item_WgwXBk",
+        "info_item_p3F7WT"
+      ],
+      "settings": {}
+    },
     "collection_products": {
       "type": "collection_products",
       "settings": {
         "background-color": "#f5f5f5"
+      }
+    },
+    "cta_image_small_UqU4yU": {
+      "type": "cta_image_small",
+      "settings": {
+        "text_heading": "Heading",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "image_background_image": "shopify://shop_images/Smiling_Woman_Hoodie.jpg",
+        "overlay-color": "#ffffff"
       }
     }
   },
   "layout": "collection",
   "wrapper": "main.main-wrapper",
   "order": [
-    "collection_products"
+    "bar_info_items_G3k8DJ",
+    "collection_products",
+    "cta_image_small_UqU4yU"
   ]
 }

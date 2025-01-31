@@ -2,7 +2,7 @@
   --fonts--regular: {{ settings.fonts--body_font }}, Arial, sans-serif;
   --colors--black10: #0a0a0a;
   --text--regular: 1rem;
-  --fonts--headings: "{{ settings.fonts--heading_font }}", Arial, sans-serif;
+  --fonts--headings: {{ settings.fonts--heading_font }}, Arial, sans-serif;
   --headings--h1: 5rem;
   --headings--h2: 3.5rem;
   --headings--h3: 3rem;
@@ -142,7 +142,6 @@ h1 {
   font-size: var(--headings--h1);
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 700;
   line-height: 1.1;
 }
 

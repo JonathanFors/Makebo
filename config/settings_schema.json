@@ -21,7 +21,7 @@
         "id": "apple_touch_icon",
         "label": "Apple touch icon image",
         "info": "Will be scaled down to 120x120px"
-      },
+      }
     ]
   },
   {
@@ -76,6 +76,18 @@
         "label": "Success",
         "info": "Used in various places to indicate success messages in form submissions.",
         "default": "#19a525"
+      },
+      {
+        "type": "font_picker",
+        "id": "font-heading_font",
+        "label": "Heading font",
+        "default": "poppins_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "font-body_font",
+        "label": "Body font",
+        "default": "open_sans_n4"
       }
     ]
   }

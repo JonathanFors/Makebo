@@ -12,12 +12,45 @@
     "product_v2": {
       "type": "product_v2",
       "settings": {
+        "text_price_byline": "incl. taxes",
         "text_low_stock_notice": "Low stock! Checkout before we run out.",
         "checkbox_display_payment_methods": true,
         "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
         "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "background-color": "#f2f2f2"
       }
+    },
+    "bar_info_items_FWnBn3": {
+      "type": "bar_info_items",
+      "blocks": {
+        "info_item_pT4xhR": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_YzNzdG": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_CmHNgK": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        }
+      },
+      "block_order": [
+        "info_item_pT4xhR",
+        "info_item_YzNzdG",
+        "info_item_CmHNgK"
+      ],
+      "settings": {}
     },
     "recommended_products": {
       "type": "recommended_products",
@@ -33,6 +66,7 @@
   "wrapper": "main#top.main-wrapper",
   "order": [
     "product_v2",
+    "bar_info_items_FWnBn3",
     "recommended_products"
   ]
 }

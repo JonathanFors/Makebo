@@ -1,12 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "default": {
-            "type": "default"
+  "sections": {
+    "feature_center_logos_GGRGhg": {
+      "type": "feature_center_logos",
+      "blocks": {
+        "logo_nEtNq9": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_rHGyUt": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_gCKFAB": {
+          "type": "logo",
+          "settings": {}
         }
-    },
-    "layout": "page",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "default"
-    ]
+      },
+      "block_order": [
+        "logo_nEtNq9",
+        "logo_rHGyUt",
+        "logo_gCKFAB"
+      ],
+      "settings": {
+        "text_tagline": "Tagline",
+        "text_title": "Medium length section heading goes here",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "url_secondary_button_link": "",
+        "text_secondary_button_label": "view collections",
+        "background-color": "#EDEDE9"
+      }
+    }
+  },
+  "layout": "page",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "feature_center_logos_GGRGhg"
+  ]
 }

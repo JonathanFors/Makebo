@@ -20,6 +20,38 @@
         "background-color": "#f2f2f2"
       }
     },
+    "bar_info_items_hgkwrL": {
+      "type": "bar_info_items",
+      "blocks": {
+        "info_item_jwyKTm": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_F3bfkH": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_98RkUz": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        }
+      },
+      "block_order": [
+        "info_item_jwyKTm",
+        "info_item_F3bfkH",
+        "info_item_98RkUz"
+      ],
+      "settings": {}
+    },
     "recommended_products": {
       "type": "recommended_products",
       "settings": {
@@ -73,6 +105,7 @@
   "wrapper": "main#top.main-wrapper",
   "order": [
     "product_v1_3apQiD",
+    "bar_info_items_hgkwrL",
     "recommended_products",
     "faq_horizontal_NRnQXF"
   ]

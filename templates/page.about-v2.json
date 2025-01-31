@@ -21,11 +21,83 @@
         "image_after_image": "shopify://shop_images/daniel-romero-xpKhFTbkmTM-unsplash.jpg",
         "background-color": "#EDEDE9"
       }
+    },
+    "feature_left_Y9Kr88": {
+      "type": "feature_left",
+      "settings": {
+        "text_title": "Medium length section heading goes here",
+        "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "checkbox_display_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "image_image": "shopify://shop_images/Woman_near_Yellow_Wall.jpg",
+        "background-color": "#f9f9f9"
+      }
+    },
+    "testimonial_list_dLnwYi": {
+      "type": "testimonial_list",
+      "blocks": {
+        "testimonial_J6PhBM": {
+          "type": "testimonial",
+          "settings": {
+            "textarea_testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\"",
+            "text_full_name": "Name Surname",
+            "text_byline": "Position, Company name"
+          }
+        },
+        "testimonial_tLndVB": {
+          "type": "testimonial",
+          "settings": {
+            "textarea_testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\"",
+            "text_full_name": "Name Surname",
+            "text_byline": "Position, Company name"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_J6PhBM",
+        "testimonial_tLndVB"
+      ],
+      "settings": {
+        "text_heading": "Customer testimonials",
+        "text_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "background-color": "#ffffff"
+      }
+    },
+    "feature_right_aEaVVh": {
+      "type": "feature_right",
+      "settings": {
+        "text_title": "Medium length section heading goes here",
+        "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "checkbox_display_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "image_image": "shopify://shop_images/Smiling_Woman_Gray_Hoodie.jpg",
+        "background-color": "#f9f9f9"
+      }
+    },
+    "cta_image_large_tiwL8L": {
+      "type": "cta_image_large",
+      "settings": {
+        "image_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "overlay-color": "#ffffff"
+      }
+    },
+    "collections_list_4_7GecVn": {
+      "type": "collections_list_4",
+      "settings": {}
     }
   },
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "before_after_slider_3kBdc7"
+    "before_after_slider_3kBdc7",
+    "feature_left_Y9Kr88",
+    "testimonial_list_dLnwYi",
+    "feature_right_aEaVVh",
+    "cta_image_large_tiwL8L",
+    "collections_list_4_7GecVn"
   ]
 }

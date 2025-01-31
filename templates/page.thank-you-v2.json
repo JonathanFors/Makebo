@@ -44,13 +44,23 @@
         "text_primary_button_label": "Shop now",
         "url_secondary_button_link": "",
         "text_secondary_button_label": "view collections",
-        "background-color": "#EDEDE9"
+        "background-color": "#f6f6f6"
+      }
+    },
+    "cta_image_large_AAtc7P": {
+      "type": "cta_image_large",
+      "settings": {
+        "image_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "overlay-color": "#ffffff"
       }
     }
   },
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "feature_center_logos_GGRGhg"
+    "feature_center_logos_GGRGhg",
+    "cta_image_large_AAtc7P"
   ]
 }

@@ -37,13 +37,15 @@
         "type": "font_picker",
         "id": "fonts--heading_font",
         "label": "Heading font",
-        "default": "poppins_n4"
+        "default": "poppins_n4",
+        "info": "Note certain element are not affected by the chosen font weight here. This is to ensure theme functions."
       },
       {
         "type": "font_picker",
         "id": "fonts--body_font",
         "label": "Body font",
-        "default": "open_sans_n4"
+        "default": "open_sans_n4",
+        "info": "Note certain element are not affected by the chosen weight here. This is to ensure theme functions."
       }
     ]
   },

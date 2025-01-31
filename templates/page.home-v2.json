@@ -88,7 +88,7 @@
         "text_primary_button_label": "Shop now",
         "collection_collection": "phone-case-template",
         "collection_collection_limit": 6,
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "products_list_tabs_NaNynf": {
@@ -114,6 +114,30 @@
       "disabled": true,
       "settings": {}
     },
+    "feature_cards_two_9kLqpU": {
+      "type": "feature_cards_two",
+      "settings": {
+        "url_card_1_button_link": "",
+        "text_card_1_heading": "Heading",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "text_card_1_button_label": "Shop Collection",
+        "url_card_2_button_link": "",
+        "text_card_2_heading": "Heading",
+        "text_card_2_button_label": "Shop Collection"
+      }
+    },
+    "one_product_wbXCKb": {
+      "type": "one_product",
+      "settings": {
+        "product_product": "set-of-6-hard-cases-copy",
+        "text_price_byline": "incl. taxes",
+        "text_low_stock_notice": "Low stock! Checkout before we run out.",
+        "checkbox_display_payment_methods": true,
+        "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
+        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "background-color": "#f8f8f8"
+      }
+    },
     "product_slider_XbN7j4": {
       "type": "product_slider",
       "settings": {
@@ -133,6 +157,8 @@
     "products_list_nHcUqX",
     "products_list_tabs_NaNynf",
     "collections_list_4_ARB8MN",
+    "feature_cards_two_9kLqpU",
+    "one_product_wbXCKb",
     "product_slider_XbN7j4"
   ]
 }

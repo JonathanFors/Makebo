@@ -1,0 +1,38 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_v2": {
+      "type": "product_v2",
+      "settings": {
+        "text_low_stock_notice": "Low stock! Checkout before we run out.",
+        "checkbox_display_payment_methods": true,
+        "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
+        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "background-color": "#f2f2f2"
+      }
+    },
+    "recommended_products": {
+      "type": "recommended_products",
+      "settings": {
+        "checkbox_display_title_paragraph": true,
+        "text_heading": "Recommended products",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "background-color": "#edede9"
+      }
+    }
+  },
+  "layout": "product",
+  "wrapper": "main#top.main-wrapper",
+  "order": [
+    "product_v2",
+    "recommended_products"
+  ]
+}

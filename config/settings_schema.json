@@ -76,18 +76,6 @@
         "label": "Success",
         "info": "Used for success states.",
         "default": "#19a525"
-      },
-      {
-        "type": "font_picker",
-        "id": "font-heading_font",
-        "label": "Heading font",
-        "default": "poppins_n4"
-      },
-      {
-        "type": "font_picker",
-        "id": "font-body_font",
-        "label": "Body font",
-        "default": "open_sans_n4"
       }
     ]
   }

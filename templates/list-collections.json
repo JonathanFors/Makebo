@@ -9,12 +9,42 @@
  */
 {
   "sections": {
-    "hero_small": {
-      "type": "hero_small",
+    "feature_center_logos_g3xeXR": {
+      "type": "feature_center_logos",
+      "blocks": {
+        "logo_jRwG3K": {
+          "type": "logo",
+          "settings": {
+            "image_image": "shopify://shop_images/GitHub_Logo_Icon_c2be97cd-34c6-4a34-8422-b5ec574e0f99.png"
+          }
+        },
+        "logo_tAYGcC": {
+          "type": "logo",
+          "settings": {
+            "image_image": "shopify://shop_images/Ecommerce_Sale_Amazon_Logo_Icon_ca43d411-7473-4d59-9066-7b33fb1f0879.png"
+          }
+        },
+        "logo_7aQQ4r": {
+          "type": "logo",
+          "settings": {
+            "image_image": "shopify://shop_images/Windows_Logo_Icon_0bbd435c-1dbc-4138-ab53-c9a2e2191443.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_jRwG3K",
+        "logo_tAYGcC",
+        "logo_7aQQ4r"
+      ],
       "settings": {
-        "text_heading": "Heading here",
-        "textarea_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
-        "background-color": "#f9f9f9"
+        "text_tagline": "Tagline",
+        "text_title": "Medium length section heading goes here",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "url_secondary_button_link": "",
+        "text_secondary_button_label": "view collections",
+        "background-color": "#f2f2f2"
       }
     },
     "collections_list_all": {
@@ -27,7 +57,7 @@
   "layout": "list-collections",
   "wrapper": "main.main-wrapper",
   "order": [
-    "hero_small",
+    "feature_center_logos_g3xeXR",
     "collections_list_all"
   ]
 }

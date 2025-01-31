@@ -1,12 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "cart": {
-            "type": "cart"
-        }
+  "sections": {
+    "cart": {
+      "type": "cart",
+      "settings": {
+        "text_heading": "Cart",
+        "text_comment_title": "Comment",
+        "text_empty_cart_title": "No Products yet.",
+        "textarea_empty_cart_description": "Click shop now to discover some of our latest arrivals, popular releases, and more."
+      }
     },
-    "layout": "cart",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "cart"
-    ]
+    "collections_list_4_kimaCL": {
+      "type": "collections_list_4",
+      "settings": {}
+    }
+  },
+  "layout": "cart",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "cart",
+    "collections_list_4_kimaCL"
+  ]
 }

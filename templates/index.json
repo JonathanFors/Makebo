@@ -37,36 +37,36 @@
     "4_products_P9gpqn": {
       "type": "4_products",
       "blocks": {
-        "product_ybkfNd": {
+        "product_JebynP": {
+          "type": "product",
+          "settings": {
+            "product_product": "comic-book-inspired-set-copy"
+          }
+        },
+        "product_dxWqkD": {
           "type": "product",
           "settings": {
             "product_product": "blue-soft-touch-case-copy"
           }
         },
-        "product_y73VmQ": {
+        "product_bEddVV": {
           "type": "product",
           "settings": {
-            "product_product": "glittery-cd-case-copy"
+            "product_product": "set-of-6-hard-cases-copy"
           }
         },
-        "product_QDp9jR": {
+        "product_9MKBqC": {
           "type": "product",
           "settings": {
-            "product_product": "turqouise-sleeve-case-copy"
-          }
-        },
-        "product_TWFX9p": {
-          "type": "product",
-          "settings": {
-            "product_product": "silicon-sleeve-phone-case-copy"
+            "product_product": "refurbished-matte-black-case-copy"
           }
         }
       },
       "block_order": [
-        "product_ybkfNd",
-        "product_y73VmQ",
-        "product_QDp9jR",
-        "product_TWFX9p"
+        "product_JebynP",
+        "product_dxWqkD",
+        "product_bEddVV",
+        "product_9MKBqC"
       ],
       "settings": {}
     },

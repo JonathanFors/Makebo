@@ -8,7 +8,7 @@
             {% render block %}
     {% when 'logo' %}
             <div li-block="Logo" id="w-node-_699834cd-d553-c74c-f3b1-67b5ad0ada5a-ad0ada4f" class="logos_wrapper">
-                    <img loading="lazy" alt="{{ block.settings.image_logo.alt }}" src="{{ block.settings.image_logo | img_url: 'master' }}" class="logos_logo"}>
+                    <img loading="lazy" alt="{{ block.settings.image_logo.alt }}" src="{{ block.settings.image_logo | img_url: 'master' }}" class="logos_logo">
 
                 </div>
         {% endcase %}
@@ -17,4 +17,4 @@
 </div>
 
 </div></div></div></div></div></div><div class="hide w-embed"></div>
- {% schema %} {"tag":"section","name":"logos-list","class":"section_logo","blocks":[{"type":"@app"},{"name":"Logo","type":"logo","settings":[{"id":"image_logo","type":"image_picker","label":"Logo"}]}],"settings":[{"id":"text_title","type":"text","label":"Title","default":"Used by the world's leading companies"},{"type":"color","id":"background-color","label":"Background Color","default":"#EDEDE9"}],"presets":[{"name":"logos-list","category":"Liquify"}]} {% endschema %}
+ {% schema %} {"tag":"section","name":"logos-list","class":"section_logo","blocks":[{"name":"Logo","type":"logo","settings":[{"id":"image_logo","type":"image_picker","label":"Logo"}]}],"settings":[{"id":"text_title","type":"text","label":"Title","default":"Used by the world's leading companies"},{"type":"color","id":"background-color","label":"Background Color","default":"#EDEDE9"}],"presets":[{"name":"logos-list","category":"Liquify","blocks":[{"type":"logo"}]}]} {% endschema %}

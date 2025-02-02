@@ -34,39 +34,18 @@
         "image_card_2_background_image": "shopify://shop_images/cristina-ong-77uO4Tvf1aM-unsplash.jpg"
       }
     },
-    "4_products_P9gpqn": {
+    "4_products_LbFfCt": {
       "type": "4_products",
       "blocks": {
-        "product_JebynP": {
-          "type": "product",
-          "settings": {
-            "product_product": "comic-book-inspired-set-copy"
-          }
-        },
-        "product_dxWqkD": {
+        "product_wmikUV": {
           "type": "product",
           "settings": {
             "product_product": "blue-soft-touch-case-copy"
           }
-        },
-        "product_bEddVV": {
-          "type": "product",
-          "settings": {
-            "product_product": "set-of-6-hard-cases-copy"
-          }
-        },
-        "product_9MKBqC": {
-          "type": "product",
-          "settings": {
-            "product_product": "refurbished-matte-black-case-copy"
-          }
         }
       },
       "block_order": [
-        "product_JebynP",
-        "product_dxWqkD",
-        "product_bEddVV",
-        "product_9MKBqC"
+        "product_wmikUV"
       ],
       "settings": {}
     },
@@ -150,7 +129,7 @@
   "order": [
     "hero_image_KdQ3kL",
     "feature_cards_two_6DgxHU",
-    "4_products_P9gpqn",
+    "4_products_LbFfCt",
     "products_list_tabs_7KNRtW",
     "one_product_zXAKKC",
     "cta_image_large_qrU9y8",

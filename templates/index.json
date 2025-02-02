@@ -42,10 +42,31 @@
           "settings": {
             "product_product": "blue-soft-touch-case-copy"
           }
+        },
+        "product_qRfT7r": {
+          "type": "product",
+          "settings": {
+            "product_product": "comic-book-inspired-set-copy"
+          }
+        },
+        "product_wUUgLt": {
+          "type": "product",
+          "settings": {
+            "product_product": "set-of-6-hard-cases-copy"
+          }
+        },
+        "product_fqrPeb": {
+          "type": "product",
+          "settings": {
+            "product_product": "turqouise-sleeve-case-copy"
+          }
         }
       },
       "block_order": [
-        "product_wmikUV"
+        "product_wmikUV",
+        "product_qRfT7r",
+        "product_wUUgLt",
+        "product_fqrPeb"
       ],
       "settings": {}
     },

@@ -126,6 +126,23 @@
     "collections_list_4_eVVteN": {
       "type": "collections_list_4",
       "settings": {}
+    },
+    "bar_info_items_HF8jHQ": {
+      "type": "bar_info_items",
+      "blocks": {
+        "info_item_Br4DPE": {
+          "type": "info-item",
+          "settings": {
+            "text_label": "free 5-day shipping"
+          }
+        }
+      },
+      "block_order": [
+        "info_item_Br4DPE"
+      ],
+      "settings": {
+        "background-color": "#b4b4b4"
+      }
     }
   },
   "layout": "theme",
@@ -138,6 +155,7 @@
     "one_product_zXAKKC",
     "cta_image_large_qrU9y8",
     "feature_cards_two_YtyJ8B",
-    "collections_list_4_eVVteN"
+    "collections_list_4_eVVteN",
+    "bar_info_items_HF8jHQ"
   ]
 }

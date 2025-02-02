@@ -1,20 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "contact_v1": {
-            "type": "contact_v1"
-        },
-        "contact_v2": {
-            "type": "contact_v2"
-        },
-        "contact_v3": {
-            "type": "contact_v3"
-        }
+  "sections": {
+    "contact_v1": {
+      "type": "contact_v1",
+      "settings": {}
     },
-    "layout": "page.contact",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "contact_v1",
-        "contact_v2",
-        "contact_v3"
-    ]
+    "contact_v2": {
+      "type": "contact_v2",
+      "settings": {}
+    },
+    "contact_v3": {
+      "type": "contact_v3",
+      "settings": {}
+    }
+  },
+  "layout": "page.contact",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "contact_v1",
+    "contact_v2",
+    "contact_v3"
+  ]
 }

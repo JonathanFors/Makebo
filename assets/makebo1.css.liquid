@@ -2582,6 +2582,10 @@ figcaption {
   overflow: hidden;
 }
 
+.section_info {
+  overflow: hidden;
+}
+
 .info_list {
   grid-column-gap: 3rem;
   grid-row-gap: 3rem;
@@ -3709,10 +3713,9 @@ figcaption {
 }
 
 .quick-cart_image-wrapper {
-  aspect-ratio: 1;
   border-radius: .25rem;
-  width: 100%;
-  max-width: 8rem;
+  width: 8rem;
+  height: 8rem;
   position: relative;
   overflow: hidden;
 }
@@ -8303,6 +8306,18 @@ figcaption {
     width: 100%;
   }
 
+  .quick-cart_image-wrapper {
+    aspect-ratio: auto;
+    width: 5rem;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .quick-cart_image {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
   .nav-search_component {
     background-color: var(--colors--off-white100);
   }
@@ -8926,7 +8941,6 @@ figcaption {
     align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
-    overflow: auto;
   }
 
   .info_item {

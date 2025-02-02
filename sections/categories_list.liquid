@@ -1,4 +1,4 @@
-<div li-for:inside="collection in collections limit: 4" class="categories_list">
+<section li-section="collections-list-4" class="section-wrapper is-no-radius"><div li-for:inside="collection in collections limit: 4" class="categories_list">
         {% for collection in collections limit: 4 %}                            
                             {% if collection.metafields.theme.featured.value == true %}    <div li-if="collection.metafields.theme.featured.value == true" class="categories_list-item">
     <a li-object:href="collection.url" id="w-node-d436f5ce-581a-f0bb-1e2e-6ba8c2588f16-c2588f16" href="{{ collection.url }}" class="categories_item w-inline-block"><div class="categories_image-wrapper"><img src="{{ collection.image | image_url: width: 600 }}" loading="lazy" li-object:src="collection.image | image_url: width: 600" li-object:alt="collection.title" alt="{{ collection.title }}" class="categories_image">
@@ -8,4 +8,4 @@
 {% endif %}
                             
                     {% endfor %}    </div>
- {% schema %} {"tag":"section","name":"collections-list-4","class":"section-wrapper is-no-radius","presets":[{"name":"collections-list-4","category":"Liquify","blocks":[]}]} {% endschema %}
+</section> {% schema %} {"tag":"section","name":"categories-list","class":"section_categories","presets":[{"name":"categories-list","category":"Liquify","blocks":[]}]} {% endschema %}

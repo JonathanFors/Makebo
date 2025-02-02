@@ -25,7 +25,9 @@
               <link rel="apple-touch-icon" type="image/png" href="{{ settings.apple_touch_icon | img_url: '32x32' }}">
             {% endif %}
         
-<script src="https://kit.fontawesome.com/ea9fe1fadf.js" crossorigin="anonymous"></script><script defer="" auto="" min="" src="https://cdn.jsdelivr.net/gh/liquify-pro/core@latest/script.js"></script><!--   Alpine Focus Plugin   --><script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script><!--   Alpine JS   --><script defer="" src="{{ 'alpinejs3.js' | asset_url }}"></script><link href="{{ canonical_url }}" rel="canonical">
+<script src="https://kit.fontawesome.com/ea9fe1fadf.js" crossorigin="anonymous"></script><script defer="" auto="" min="" src="https://cdn.jsdelivr.net/gh/liquify-pro/core@latest/script.js"></script><!--  Alpine Focus Plugin  -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script><!--  Alpine JS  -->
+<script defer="" src="{{ 'alpinejs3.js' | asset_url }}"></script><link href="{{ canonical_url }}" rel="canonical">
 <style>[x-cloak] { display: none !important; }
   [li-cloak_disabled] { display: none !important; }
 /* Setup Font and Background Color if Text is selected */
@@ -50,36 +52,23 @@
         init() {
             console.log('handleMinicart init')
         },
-        open: false,
-        note: null,
-        attributes: {},
-        original_total_price: 0,
-        total_price: 0,
-        total_discount: 0,
-        total_weight: 0.0,
-        item_count: 0,
-        products: [],
-        requires_shipping: false,
-        currency: 'EUR',
-        items_subtotal_price: 0,
-        cart_level_discount_applications: [],
-        cartApiResponseDefault : {
-            result : {},
-            show : false,
-            timeout : 5000,
-        },
-        cartApiResponse : {
-            result : {},
-            show : false,
-            timeout : 5000,
-        },
-
-        // deprecated:
-        total: {
-            items: 0,
-            price: 0,
-            weight: 0,
-            discount: 0,
+        cart: {
+            note: null,
+            attributes: {},
+            items: [],
+            currency: window.Shopify.currency.active,
+            cart_level_discount_applications: [],
+            response: {
+                result : {},
+                show : false,
+                timeout : 5000,
+            },
+            item_count: 0,
+            total_price:0,
+            total_weight: 0,
+            total_discount: 0,
+            original_total_price: 0,
+            items_subtotal_price: 0
         },
         _abortController : null,
         initAbortController() {
@@ -105,33 +94,34 @@
         /**
          * Get the cart data.
          */
-        getCart() {
+        async getCart() {
             this.initAbortController()
-            fetch(window.Shopify.routes.root + 'cart.js', {
+            await fetch(window.Shopify.routes.root + 'cart.js', {
                 method: 'GET',
                 signal: this.getAbortControllerSignal(),
                 headers: {'Content-Type': 'application/json'},
             })
-            .then(response => response.json())
-            .then(data => {
-                this.resetAbortController();
+                .then(response => response.json())
+                .then(data => {
+                    this.resetAbortController();
 
-                this.total.items = data.item_count;
+                    this.cart.item_count = data.item_count;
 
-                this.products = data.items.map((item) => {
-                    item.title = this.htmlspecialchars_decode(item.title)
-                    return item
+                    this.cart.items = data.items.map((item) => {
+                        item.title = this.htmlspecialchars_decode(item.title)
+                        return item
+                    })
+
+
+                    this.cart.total_price = data.total_price;
+                    this.cart.total_weight = data.total_weight;
+                    this.cart.total_discount = data.total_discount;
+
+                    this.$dispatch('carttotalitems', data.item_count);
                 })
-
-                this.total.price = data.total_price;
-                this.total.weight = data.total_weight;
-                this.total.discount = data.total_discount;
-
-                this.$dispatch('carttotalitems', data.item_count);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
         },
 
         /**
@@ -159,8 +149,8 @@
         updateCartItemQuantity(key, quantity) {
             this.initAbortController();
             console.log('updateCartItemQuantity(): key, quantity: ', key, quantity);
-            this.products.filter((product)  => {
-                if(parseInt(product.key) === parseInt(key)) {
+            this.cart.items.filter((product)  => {
+                if(product.key === key) {
                     product.quantity = quantity
                 }
             })
@@ -202,26 +192,254 @@
          * @param event
          */
         showCartMessage(event) {
-            console.log("dispatched showCartMessage", event)
+            //console.log("dispatched showCartMessage", event)
             if(event?.detail?.status) {
-                this.cartApiResponse.result = event.detail ?? this.cartApiResponseDefault.result;
-                this.cartApiResponse.show = true
-                setTimeout(() =>  this.cartApiResponse =  this.cartApiResponseDefault, this.cartApiResponse.timeout ?? 5000)
+                this.cart.response.result = event.detail ?? {}
+                this.cart.response.show = true
+                setTimeout(() => {
+                    this.cart.response.result = {};
+                    this.cart.response.show = false
+                }, this.cart.response.timeout ?? 5000)
             }
         },
+
+        async returnCartItems() {
+            await this.getCart();
+
+            this.$dispatch('currentcartitems', this.cart.items);
+        },
+
+        /**
+         * @deprecated
+         */
+        set open(open) { // deprecated use  LiquifyHelper instead
+            //console.warn('Deprecated "set open" in mini_cart')
+        },
+        /**
+         * @deprecated
+         */
+        get open() { // deprecated use  LiquifyHelper instead
+            //console.warn('Deprecated "get open" in mini_cart')
+            return false;
+        },
+        /**
+         * @deprecated
+         */
+        set note(note) { // deprecated
+            //console.warn('Deprecated "set note" in mini_cart')
+            this.cart.note = note;
+        },
+        /**
+         * @deprecated
+         */
+        get note() { // deprecated
+            //console.warn('Deprecated "get note" in mini_cart')
+            return this.cart.note;
+        },
+        /**
+         * @deprecated
+         */
+        set attributes(attributes) { // deprecated
+            //console.warn('Deprecated "set attributes" in mini_cart')
+            this.cart.attributes = attributes;
+        },
+        /**
+         * @deprecated
+         */
+        get attributes() { // deprecated
+            //console.warn('Deprecated "get attributes" in mini_cart')
+            return this.cart.attributes;
+        },
+        /**
+         * @deprecated
+         */
+        set original_total_price(original_total_price) { //deprecated
+            //console.warn('Deprecated "set original_total_price" in mini_cart')
+            this.cart.original_total_price = original_total_price;
+        },
+        /**
+         * @deprecated
+         */
+        get original_total_price() { //deprecated
+            //console.warn('Deprecated "get original_total_price" in mini_cart')
+            return this.cart.original_total_price;
+        },
+        /**
+         * @deprecated
+         */
+        set total_price(total_price) { //deprecated
+            //console.warn('Deprecated "set total_price" in mini_cart')
+            this.cart.total_price = total_price;
+        },
+        /**
+         * @deprecated
+         */
+        get total_price() { //deprecated
+            //console.warn('Deprecated "get total_price" in mini_cart')
+            return this.cart.total_price;
+        },
+        /**
+         * @deprecated
+         */
+        set total_discount(total_discount) { //deprecated
+            //console.warn('Deprecated "set total_discount" in mini_cart')
+            this.cart.total_discount = total_discount;
+        },
+        /**
+         * @deprecated
+         */
+        get total_discount() { //deprecated
+            //console.warn('Deprecated "get total_discount" in mini_cart')
+            return this.cart.total_discount;
+        },
+        /**
+         * @deprecated
+         */
+        set total_weight(total_weight) { //deprecated
+            //console.warn('Deprecated "set total_weight" in mini_cart')
+            this.cart.total_discount = total_weight;
+        },
+        /**
+         * @deprecated
+         */
+        get total_weight() { //deprecated
+            //console.warn('Deprecated "get total_weight" in mini_cart')
+            return this.cart.total_weight;
+        },
+        /**
+         * @deprecated
+         */
+        set item_count(item_count) { //deprecated
+            //console.warn('Deprecated "set item_count" in mini_cart')
+            this.cart.total_discount = item_count;
+        },
+        /**
+         * @deprecated
+         */
+        get item_count() { //deprecated
+            //console.warn('Deprecated "get item_count" in mini_cart')
+            return this.cart.item_count;
+        },
+        /**
+         * @deprecated
+         */
+        set items_subtotal_price(items_subtotal_price) { //deprecated
+            //console.warn('Deprecated "set items_subtotal_price" in mini_cart')
+            this.cart.items_subtotal_price = items_subtotal_price;
+        },
+        /**
+         * @deprecated
+         */
+        get items_subtotal_price() { //deprecated
+            //console.warn('Deprecated "get items_subtotal_price" in mini_cart')
+            return this.cart.items_subtotal_price;
+        },
+        /**
+         * @deprecated
+         */
+        set products(products) {
+            //console.warn('Deprecated "set products" in mini_cart')
+            this.cart.items = products;
+        },
+        /**
+         * @deprecated
+         */
+        get products() {
+            //console.warn('Deprecated "get products" in mini_cart')
+            return this.cart.items;
+        },
+        /**
+         * @deprecated
+         */
+        set requires_shipping(requires_shipping) {
+            //console.warn('Deprecated "set requires_shipping" in mini_cart')
+        },
+        /**
+         * @deprecated
+         */
+        get requires_shipping() {
+            //console.warn('Deprecated "get requires_shipping" in mini_cart')
+            return false;
+        },
+        /**
+         * @deprecated
+         */
+        set currency(currency) { //deprecated
+            //console.warn('Deprecated "set currency" in mini_cart')
+            this.cart.currency = currency;
+        },
+        /**
+         * @deprecated
+         */
+        get currency() { //deprecated
+            //console.warn('Deprecated "get currency" in mini_cart')
+            return this.cart.currency;
+        },
+        /**
+         * @deprecated
+         */
+        set cart_level_discount_applications(cart_level_discount_applications) { //deprecated
+            //console.warn('Deprecated "set cart_level_discount_applications" in mini_cart')
+            this.cart.cart_level_discount_applications = cart_level_discount_applications;
+        },
+        /**
+         * @deprecated
+         */
+        get cart_level_discount_applications() { //deprecated
+            //console.warn('Deprecated "get cart_level_discount_applications" in mini_cart')
+            return this.cart.cart_level_discount_applications;
+        },
+        /**
+         * @deprecated
+         */
+        set cartApiResponse(cartApiResponse) { //deprecated
+            //console.warn('Deprecated "set cartApiResponse" in mini_cart')
+            this.cart.cartApiResponse = cartApiResponse;
+        },
+        /**
+         * @deprecated
+         */
+        get cartApiResponse() { //deprecated
+            //console.warn('Deprecated "get cartApiResponse" in mini_cart')
+            return this.cart.response;
+        },
+        /**
+         * @deprecated
+         */
+        set total(total) { //deprecated
+            //console.warn('Deprecated "set total" in mini_cart')
+            this.cart.item_count = total.items;
+            this.cart.total_price = total.price;
+            this.cart.total_weight = total.weight;
+            this.cart.total_discount = total.discount;
+        },
+        /**
+         * @deprecated
+         */
+        get total() { //deprecated
+            //console.warn('Deprecated "get total" in mini_cart')
+            return {
+                items: this.cart.item_count,
+                price: this.cart.total_price,
+                weight: this.cart.total_weight,
+                discount: this.cart.total_discount,
+            };
+        }
     }))
+
+
 });
 
 </script>
-<div data-hover="false" data-delay="0" li-element="mini-cart" class="navbar_cart-dropdown w-dropdown" x-data="handleMinicart()" x-init="getCart()" @cartupdated.window="getCart()" @setcartitem.window="updateCartItemQuantity($event.detail.product, $event.detail.quantity)" @increasecartitem.window="increaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @decreasecartitem.window="decreaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage"><div li-element="mini-cart-toggle" class="navbar_link is-cart w-dropdown-toggle" @click="$dispatch('cartupdated.window')"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 18 17" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M1 1L2.77872 1.80715C3.13531 1.96896 3.37719 2.28384 3.42127 2.64341L4.29359 9.76896C4.42581 10.8494 5.43211 11.6667 6.62988 11.6667H13.4096C14.4214 11.6667 15.3196 11.079 15.6396 10.208L16.9388 6.67072C17.1924 5.98005 16.6261 5.26677 15.8238 5.26677H3.74236" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.1138 17C6.08747 17 6.87678 16.2837 6.87678 15.4C6.87678 14.5164 6.08747 13.8 5.1138 13.8C4.14014 13.8 3.35083 14.5164 3.35083 15.4C3.35083 16.2837 4.14014 17 5.1138 17Z" fill="currentColor"></path><path d="M14.5154 17C15.4891 17 16.2784 16.2837 16.2784 15.4C16.2784 14.5164 15.4891 13.8 14.5154 13.8C13.5418 13.8 12.7524 14.5164 12.7524 15.4C12.7524 16.2837 13.5418 17 14.5154 17Z" fill="currentColor"></path></svg></div><div class="minicart_count-wrapper"><div li-element="mini-cart-item-count" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">0</div></div></div><nav li-element="mini-cart-container" class="quick-cart_wrapper w-dropdown-list" :class="open || 'mini-cart-closed'"><div class="quick-cart_inner-wrapper"><div class="quick-cart_component"><div li-element="mini-cart-full" class="quick-cart_full" :style="total.items < 1 && { display: 'none' }"><div class="quick-cart_title-wrapper"><div class="flex-h is-gap-medium"><div class="text-font-headings text-weight-semibold text-size-medium">Your cart</div><div class="flex-h is-gap-tiny"><div li-element="mini-cart-item-count" class="text-style-muted text-size-small" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">0</div><div class="text-style-muted text-size-small">items</div></div></div><button title="Close cart" li-element="dropdown-toggle" class="quick-cart_close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"><div title="Close cart" class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></button></div><div class="quick-cart_list"><template x-for="product in products" :key="product.key">
-    <div li-element="mini-cart-item" data-wf--item-quick-cart-product--variant="base" class="quick-cart_item" x-init="getCart()"><div class="quick-cart_product-content"><div class="quick-cart_image-wrapper"><img src="../images/placeholder.svg" loading="lazy" alt="" class="quick-cart_image" x-bind:src="product.image">
-</div><div class="flex-v is-align-left"><div li-js-object="product.title" class="quick-cart_product-title" x-text="product.title">Item name goes here</div><div class="flex-h is-gap-tiny"><div li-js-price="product.price" class="text-size-small text-style-muted" x-text="LiquifyHelper.moneyFormat(product.price, true, '{{ shop.money_with_currency_format }}')">55€</div><div class="text-size-small text-style-muted">per unit</div></div><div class="margin-top margin-small"><div class="quick-cart_counter-wrapper"><div title="Remove 1 more to cart" aria-label="Remoe 1 from cart" li-element="mini-cart-item-decrease" class="quick-cart_counter-button" :productprop="product" @click="$dispatch('decreasecartitem', { product: product.key, quantity: product.quantity, action: 'decrease' })"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 18 18" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>minus</title><g fill="currentColor"><path d="M14.7501 9.75H3.25012C2.83602 9.75 2.50012 9.4141 2.50012 9C2.50012 8.5859 2.83602 8.25 3.25012 8.25H14.7501C15.1642 8.25 15.5001 8.5859 15.5001 9C15.5001 9.4141 15.1642 9.75 14.7501 9.75Z"></path></g></svg></div></div><input li-element="mini-cart-item-quantity" aria-label="Item amount" class="quick-cart_item-quantity" :productprop="product" @input="$dispatch('setcartitem', { product: product.key, quantity: product.quantity })" x-model="product.quantity">
+<div data-hover="false" data-delay="0" li-element="mini-cart" class="navbar_cart-dropdown w-dropdown" x-data="handleMinicart()" x-init="getCart()" @cartupdated.window="getCart()" @setcartitem.window="updateCartItemQuantity($event.detail.product, $event.detail.quantity)" @increasecartitem.window="increaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @decreasecartitem.window="decreaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage" @getcartitems.window="returnCartItems"><div li-element="mini-cart-toggle" class="navbar_link is-cart w-dropdown-toggle" @click="$dispatch('cartupdated.window')"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 18 17" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M1 1L2.77872 1.80715C3.13531 1.96896 3.37719 2.28384 3.42127 2.64341L4.29359 9.76896C4.42581 10.8494 5.43211 11.6667 6.62988 11.6667H13.4096C14.4214 11.6667 15.3196 11.079 15.6396 10.208L16.9388 6.67072C17.1924 5.98005 16.6261 5.26677 15.8238 5.26677H3.74236" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.1138 17C6.08747 17 6.87678 16.2837 6.87678 15.4C6.87678 14.5164 6.08747 13.8 5.1138 13.8C4.14014 13.8 3.35083 14.5164 3.35083 15.4C3.35083 16.2837 4.14014 17 5.1138 17Z" fill="currentColor"></path><path d="M14.5154 17C15.4891 17 16.2784 16.2837 16.2784 15.4C16.2784 14.5164 15.4891 13.8 14.5154 13.8C13.5418 13.8 12.7524 14.5164 12.7524 15.4C12.7524 16.2837 13.5418 17 14.5154 17Z" fill="currentColor"></path></svg></div><div class="minicart_count-wrapper"><div li-element="mini-cart-item-count" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">0</div></div></div><nav li-element="mini-cart-container" class="quick-cart_wrapper w-dropdown-list" :class="open || 'mini-cart-closed'"><div class="quick-cart_inner-wrapper"><div class="quick-cart_component"><div li-element="mini-cart-full" class="quick-cart_full" :style="total.items < 1 && { display: 'none' }"><div class="quick-cart_title-wrapper"><div class="flex-h is-gap-medium"><div class="text-font-headings text-weight-semibold text-size-medium">Your cart</div><div class="flex-h is-gap-tiny"><div li-element="mini-cart-item-count" class="text-style-muted text-size-small" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">0</div><div class="text-style-muted text-size-small">items</div></div></div><button title="Close cart" li-element="dropdown-toggle" class="quick-cart_close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"><div title="Close cart" class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></button></div><div class="quick-cart_list"><template x-for="product in products" :key="product.key">
+    <div li-element="mini-cart-item" data-wf--item-quick-cart-product--variant="base" class="quick-cart_item"><div class="quick-cart_product-content"><div class="quick-cart_image-wrapper"><img src="../images/placeholder.svg" loading="lazy" alt="" class="quick-cart_image" x-bind:src="product.image">
+<a li-object:href="item.url" href="{{ item.url }}" class="upsell_view-button w-inline-block"><div class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>zoom</title><g fill="currentColor"><line x1="10.5" y1="10.5" x2="7.5" y2="7.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></line><circle cx="5" cy="5" r="3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></circle></g></svg></div></a></div><div class="flex-v is-align-left"><div li-js-object="product.title" class="quick-cart_product-title" x-text="product.title">Item name goes here</div><div class="flex-h is-gap-tiny"><div li-js-price="product.price" class="text-size-small text-style-muted" x-text="LiquifyHelper.moneyFormat(product.price, true, '{{ shop.money_with_currency_format }}')">55€</div><div class="text-size-small text-style-muted">per unit</div></div><div class="margin-top margin-small"><div class="quick-cart_counter-wrapper"><div title="Remove 1 more to cart" aria-label="Remoe 1 from cart" li-element="mini-cart-item-decrease" class="quick-cart_counter-button" :productprop="product" @click="$dispatch('decreasecartitem', { product: product.key, quantity: product.quantity, action: 'decrease' })"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 18 18" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>minus</title><g fill="currentColor"><path d="M14.7501 9.75H3.25012C2.83602 9.75 2.50012 9.4141 2.50012 9C2.50012 8.5859 2.83602 8.25 3.25012 8.25H14.7501C15.1642 8.25 15.5001 8.5859 15.5001 9C15.5001 9.4141 15.1642 9.75 14.7501 9.75Z"></path></g></svg></div></div><input li-element="mini-cart-item-quantity" aria-label="Item amount" class="quick-cart_item-quantity" :productprop="product" @input="$dispatch('setcartitem', { product: product.key, quantity: product.quantity })" x-model="product.quantity">
 <button title="Add 1 more to cart" aria-label="Add 1 more to cart" li-element="mini-cart-item-increase" class="quick-cart_counter-button" :productprop="product" @click="$dispatch('increasecartitem', { product: product.key, quantity: product.quantity, action: 'increase' })"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>plus</title><g fill="currentColor"><line x1="10" y1="16.5" x2="10" y2="3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><line x1="3.5" y1="10" x2="16.5" y2="10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line></g></svg></div></button></div></div></div></div><div title="Remove from cart" aria-label="Remove from cart" li-element="mini-cart-item-remove" class="quick-cart_delete-button" :productprop="product" @click="$dispatch('setcartitem', { product: product.key, quantity: 0 })"><div class="icon-embed-tiny w-embed"><svg width="100%" height="100%" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.8125 2.5625H1.1875" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.375 1.1875H4.625V2.5625H7.375V1.1875Z" fill="currentcolor" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.40313 4.625L9.15907 9.50625C9.12263 10.2378 8.51832 10.8125 7.78544 10.8125H4.21388C3.481 10.8125 2.87738 10.2378 2.84025 9.50625L2.59619 4.625" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div></div></template>
 </div><div class="quick-cart_bottom-content"><div class="flex-h is-space-between"><div class="flex-v"><div class="text-font-headings text-style-allcaps">subtotal</div><div class="text-style-muted">Shipping & taxes calculated at checkout</div></div><div class="flex-v is-align-right"><div li-js-price="total.price" class="text-font-headings text-style-allcaps text-size-large text-weight-semibold" x-text="LiquifyHelper.moneyFormat(total.price, true, '{{ shop.money_with_currency_format }}')">165.50 EUR</div><template x-if="total.price < original_total_price">
             <div li-js-if="total.price < original_total_price" class="li-if">
         <div li-js-price="original_total_price" class="text-size-small text-style-strikethrough text-style-muted" x-text="LiquifyHelper.moneyFormat(original_total_price, true, '{{ shop.money_with_currency_format }}')">165.50 EUR</div>        </div>
     </template>
-</div></div><a href="#" class="button w-inline-block"><div>Checkout</div></a><a li-object:href="routes.account_login_url" href="{{ routes.account_login_url }}" class="text-style-link is-aligned-center w-inline-block"><div>Log in or create account here.</div></a></div></div><div li-element="mini-cart-empty" class="quick-cart_empty" :style="total.items && { display: 'none' }"><div class="quick-cart_title-wrapper"><div class="flex-h is-gap-medium"><div class="text-font-headings text-weight-semibold text-size-medium">Your cart</div><div class="flex-h is-gap-tiny"><div li-element="mini-cart-item-count" class="text-style-muted text-size-small" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">0</div><div class="text-style-muted text-size-small">items</div></div></div><button title="Close cart" li-element="dropdown-toggle" class="quick-cart_close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"><div title="Close cart" class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></button></div><div class="cart_empty"><div class="icon-embed-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 48 48"><title>basket-shopping-2</title><g fill="currentcolor" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.5 0.5)"><path d="M18 3L10 16H11" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M30 3L38 16H37" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M41 27L39.5475 38.6202C39.2347 41.1223 37.1077 43 34.5861 43H13.4139C10.8923 43 8.76529 41.1223 8.45252 38.6202L7 27" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M45 16H3V22H45V16Z" stroke="currentcolor" stroke-width="3" fill="none"></path></g></svg></div><div class="text-weight-semibold">No items added to cart yet.</div><a href="/search" class="button is-link is-underscored w-inline-block"><div>Start shopping</div></a></div></div></div><div li-element="dropdown-toggle" class="quick-cart_overlay" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"></div></div></nav></div>{% section 'header' %}
+</div></div><div li-element="mini-cart-api-response" class="li-element hide"><div li-js-object="cartApiResponse?.result?.message" class="text-color-red" x-text="cartApiResponse?.result?.message">API response</div></div><div class="button-group is-full-width is-gap-small"><a x-bind:href="'/checkout'" href="#" class="button is-icon is-centered w-inline-block"><div>Checkout now</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>basket-fast</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 21H17.7099C18.729 21 19.5851 20.2337 19.6977 19.2209L20.5 12H20.49" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M6 17L2 17" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M10 17L9.99 17" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M14 13L5 13" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M2 8H22" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M8.75 1.5L5 8H6" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M15.25 1.5L19 8H18" stroke="currentColor" stroke-width="2" fill="none"></path></g></svg></div></a><a li-object:href="routes.cart_url" href="{{ routes.cart_url }}" class="button is-alternate w-inline-block"><div>View cart</div></a></div><div class="button-group is-centered"><a li-object:href="routes.account_login_url" href="{{ routes.account_login_url }}" class="button is-underscored-link is-alternate is-small w-inline-block"><div>Log in or create account here.</div></a></div></div></div><div li-element="mini-cart-empty" class="quick-cart_empty" :style="total.items && { display: 'none' }"><div class="quick-cart_title-wrapper"><div class="flex-h is-gap-medium"><div class="text-font-headings text-weight-semibold text-size-medium">Your cart</div><div class="flex-h is-gap-tiny"><div li-element="mini-cart-item-count" class="text-style-muted text-size-small" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">0</div><div class="text-style-muted text-size-small">items</div></div></div><button title="Close cart" li-element="dropdown-toggle" class="quick-cart_close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"><div title="Close cart" class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></button></div><div class="cart_empty"><div class="icon-embed-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 48 48"><title>basket-shopping-2</title><g fill="currentcolor" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.5 0.5)"><path d="M18 3L10 16H11" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M30 3L38 16H37" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M41 27L39.5475 38.6202C39.2347 41.1223 37.1077 43 34.5861 43H13.4139C10.8923 43 8.76529 41.1223 8.45252 38.6202L7 27" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M45 16H3V22H45V16Z" stroke="currentcolor" stroke-width="3" fill="none"></path></g></svg></div><div class="text-weight-semibold">No items added to cart yet.</div><a href="/search" class="button is-link is-underscored w-inline-block"><div>Start shopping</div></a></div></div></div><div li-element="dropdown-toggle" class="quick-cart_overlay" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"></div></div></nav></div>{% section 'header' %}
  {{ content_for_layout }} {% section 'footer' %}
 </div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6735b6f6bd2fccc307bb8fc1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="{{ 'makebo1.js' | asset_url }}" type="text/javascript"></script>{% render 'search_javascript' %}
 <script>document.addEventListener('DOMContentLoaded', () => {

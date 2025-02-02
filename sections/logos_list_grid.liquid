@@ -5,7 +5,7 @@
             {% render block %}
     {% when 'logo' %}
             <div li-block="Logo" id="w-node-_29374e6e-69a0-9cc6-33b7-a48576136234-76136227" class="logos-grid_wrapper">
-                    <img loading="lazy" alt="{{ block.settings.image_logo.alt }}" src="{{ block.settings.image_logo | img_url: 'master' }}" class="logos-grid_logo"}>
+                    <img loading="lazy" alt="{{ block.settings.image_logo.alt }}" src="{{ block.settings.image_logo | img_url: 'master' }}" class="logos-grid_logo">
 
                 </div>
         {% endcase %}
@@ -14,4 +14,4 @@
 </div>
 
 </div></div></div></div></div></div><div class="hide w-embed"></div>
- {% schema %} {"tag":"section","name":"logos-list-grid","class":"section_logos-grid","blocks":[{"type":"@app"},{"name":"Logo","type":"logo","settings":[{"id":"image_logo","type":"image_picker","label":"Logo"}]}],"settings":[{"type":"color","id":"background-color","label":"Background Color","default":"#EDEDE9"}],"presets":[{"name":"logos-list-grid","category":"Liquify"}]} {% endschema %}
+ {% schema %} {"tag":"section","name":"logos-list-grid","class":"section_logos-grid","blocks":[{"name":"Logo","type":"logo","settings":[{"id":"image_logo","type":"image_picker","label":"Logo"}]}],"settings":[{"type":"color","id":"background-color","label":"Background Color","default":"#EDEDE9"}],"presets":[{"name":"logos-list-grid","category":"Liquify","blocks":[{"type":"logo"}]}]} {% endschema %}

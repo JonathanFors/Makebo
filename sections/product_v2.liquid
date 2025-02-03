@@ -1,663 +1,89 @@
-<div style="background-color: {{section.settings.background-color}}" class="background-color">
-  <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
-  <div
-    li-element="product-variant-container"
-    class="w-layout-grid one-product_component is-swapped"
-    x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
-    x-init="$nextTick(() => { activateVariants() })"
-    @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)"
-  >
-    <div id="w-node-_0905a8c6-5a54-778a-4c6a-0c68e29ce10b-e29ce10b" class="height-max-height position-relative">
-      <div
-        swiper="instance"
-        id="w-node-_0905a8c6-5a54-778a-4c6a-0c68e29ce10c-e29ce10b"
-        class="swiper is-product-gallery is-full-height"
-      >
-        <div class="swiper_wrapper is-product-gallery is-full-height">
-          {% for image in product.images %}
-            <div li-for="image in product.images" class="swiper_slide is-product-gallery is-full-height">
-              <img
-                src="{{ image.src | product_img_url: 'master' }}"
-                loading="lazy"
-                li-object:src="image.src | product_img_url: 'master'"
-                alt=""
-                class="product-header_slide-image is-full-height"
-              >
-            </div>
-          {% endfor %}
-        </div>
-        {% if product.images.size > 1 %}
-          <div
-            id="data-zoomable"
-            li-if="product.images.size > 1"
-            class="swiper_controls is-product-gallery is-fullheight"
-          >
-            <div swiper="pagination" class="swiper_pagination is-one-product">
-              <div swiper="bullet" class="swiper_bullet"></div>
-            </div>
-            <div class="swiper_button-wrap is-product-gallery is-fullheight">
-              <button swiper="prev" class="hero-swiper_button">
-                <div class="icon-embed-xxsmall w-embed">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="100%"
-                    height="100%"
-                    viewbox="0 0 32 32"
-                    preserveaspectratio="xMidYMid meet"
-                    aria-hidden="true"
-                    role="img"
-                  >
-                    <title>arrow-left</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M29 16L3 16L4 16" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M13 26L3 16L13 6" stroke="currentColor" stroke-width="2" fill="none"></path></g>
-                  </svg>
-                </div></button
-              ><button swiper="next" class="hero-swiper_button">
-                <div class="icon-embed-xxsmall w-embed">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24">
-                    <title>arrow-right</title><g fill="currentcolor"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 13L21 13L21 11L2 11L2 13Z" fill="currentcolor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5857 5.00003L19.5857 12L12.5857 19L13.9999 20.4142L22.4141 12L13.9999 3.58582L12.5857 5.00003Z" fill="currentcolor"></path></g>
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </div>
-        {% endif %}
-      </div>
-    </div>
-    <div
-      id="w-node-_39b0cc14-dde7-eabb-84a1-b18ad0b97f78-d0b97f68"
-      class="product-header_content is-one-product is-sticky"
-    >
-      <div class="max-width-large">
-        <div class="flex-v">
-          <div>
-            <div class="margin-bottom margin-xxsmall">
-              <h1 li-object="product.title" class="heading-style-h3 text-weight-bold">{{ product.title }}</h1>
-            </div>
-            <div class="margin-bottom margin-large">
-              <div class="flex-h is-gap-medium">
-                <div
-                  li-js-price="selected_or_first_available_variant.price"
-                  class="text-size-large text-weight-bold"
-                  x-text="LiquifyHelper.moneyFormat(selected_or_first_available_variant.price, true, '{{ shop.money_with_currency_format }}')"
-                >
-                  $55
-                </div>
-                <template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
-                  <div
-                    li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price"
-                    class="li-if"
-                  >
-                    <div li-object="product.compare_at_price | money" class="product-header_compare-at-price">
-                      {{ product.compare_at_price | money }}
-                    </div>
-                  </div>
-                </template>
-                <div class="text-size-small text-style-muted">
-                  {{ section.settings.text_price_byline }}
-                </div>
-              </div>
-            </div>
-          </div>
-          {% if product.available == true %}
-            <div li-if="product.available == true" class="margin-bottom margin-medium">
-              <div class="add-to-cart_animation-trigger">
-                <div class="flex-v">
-                  <div class="product-header_options-list">
-                    <div class="purchase-form_form-block w-form">
-                      {% form 'product', product, class: 'purchase-form_form' %}
-                        {% if product.has_only_default_variant != true %}
-                          <div li-if="product.has_only_default_variant != true" class="li-if">
-                            <template x-for="(option, optionKey) in product.options" :key="optionKey">
-                              <div
-                                li-element="product-options-loop"
-                                class="product-header_option-group"
-                                data-ProductVariantsLoop="true"
-                              >
-                                <div class="margin-bottom margin-xsmall">
-                                  <div
-                                    li-element="product-options-name"
-                                    class="form_field-label text-weight-semibold"
-                                    x-text="option"
-                                  >
-                                    Size:
-                                  </div>
-                                </div>
-                                <div class="variant-button-row">
-                                  <template
-                                    x-for="(variantName, variantKey) in options_by_name[option].option.values"
-                                    :key="variantName"
-                                  >
-                                    <label li-element="product-option-loop" class="variant-button w-radio">
-                                      <div
-                                        class="w-form-formradioinput w-form-formradioinput--inputType-custom form_radio w-radio-input"
-                                      ></div>
-                                      <input
-                                        type="radio"
-                                        li-element="product-option-input"
-                                        style="opacity:0;position:absolute;z-index:-1"
-                                        x-on:click="setVariant"
-                                        :name="option"
-                                        :data-name="option"
-                                        :value="variantName"
-                                        :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')"
-                                        :checked="selected_or_first_available_variant?.options.includes(variantName)"
-                                        data-selectorType="radio"
-                                        :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'"
-                                      >
-                                      <span
-                                        li-element="product-option-name"
-                                        class="form_radio-label w-form-label"
-                                        for="radio-5"
-                                        x-text="variantName"
-                                        :for="variantName"
-                                        >Radio</span
-                                      ></label
-                                    ></template
-                                  >
-                                </div>
-                              </div>
-                            </template>
-                          </div>
-                        {% endif -%}
-                        <template x-if="selected_or_first_available_variant.available">
-                          <div
-                            li-js-if="selected_or_first_available_variant.available"
-                            class="product-header_button-group"
-                          >
-                            <div class="product-counter_wrapper">
-                              <div>
-                                <input
-                                  placeholder="1"
-                                  name="quantity"
-                                  li-element="add-to-cart-quantity"
-                                  id="quantity"
-                                  type="number"
-                                  class="form_input is-checkout-quantity"
-                                  x-model="quantity"
-                                  required=""
-                                >
-                              </div>
-                              <a
-                                li-element="add-to-cart"
-                                href="#"
-                                class="button is-purchase w-inline-block"
-                                @click="addToCart(event, true)"
-                                :disabled="!addToCartButton"
-                              >
-                                <div>add to cart</div>
-                                <div class="icon-embed-xxsmall w-embed">
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="100%"
-                                    height="100%"
-                                    viewbox="0 0 32 32"
-                                    preserveaspectratio="xMidYMid meet"
-                                    aria-hidden="true"
-                                    role="img"
-                                  >
-                                    <title>bag-check</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 13V6C11 3.239 13.239 1 16 1C18.761 1 21 3.239 21 6V13" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M14.9999 29H6.77109C4.84184 29 3.41411 27.2053 3.84792 25.3254L5.99994 16V9H25.9999V16L26.4615 18" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M18 25L22 29L30 21" stroke="currentColor" stroke-width="2" fill="none"></path></g>
-                                  </svg>
-                                </div>
-                              </a>
-                            </div>
-                            <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
-                            <a
-                              li-element="checkout-add-to-cart"
-                              href="#"
-                              class="button is-purchase is-secondary w-inline-block"
-                              x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
-                              @click="addToCartAndCheckout(event, true)"
-                            >
-                              <div>Checkout now</div>
-                            </a>
-                            {%- if product.selected_or_first_available_variant.available
-                              and product.selected_or_first_available_variant.inventory_quantity < 10
-                            %}
-                              <div
-                                li-if="product.selected_or_first_available_variant.available and product.selected_or_first_available_variant.inventory_quantity < 10"
-                                class="text-align-center"
-                              >
-                                <div class="low-stock-notice">
-                                  <div class="icon-embed-xxsmall w-embed">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="100%"
-                                      height="100%"
-                                      viewbox="0 0 48 48"
-                                    >
-                                      <title>triangle-warning</title><g fill="currentcolor" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.5 0.5)"><path d="M20.1049 7.15552L3.60955 34.5335C1.87754 37.4075 4.04293 41 7.50544 41H40.4946C43.9571 41 46.1225 37.4075 44.3905 34.5335L27.8966 7.15552C26.1646 4.28149 21.8369 4.28149 20.1049 7.15552Z" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M24 15V27" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M24 34C24.5523 34 25 33.5523 25 33C25 32.4477 24.5523 32 24 32C23.4477 32 23 32.4477 23 33C23 33.5523 23.4477 34 24 34Z" fill="currentcolor" stroke="currentcolor" stroke-width="3"></path></g>
-                                    </svg>
-                                  </div>
-                                  <p class="no-margin">
-                                    {{ section.settings.text_low_stock_notice }}
-                                  </p>
-                                </div>
-                              </div>
-                            {% endif %}
-                          </div>
-                        </template>
-                        <template x-if="!selected_or_first_available_variant.available">
-                          <div
-                            li-js-if="!selected_or_first_available_variant.available"
-                            class="margin-top margin-xsmall"
-                          >
-                            <div class="button is-disabled">
-                              <div>Not in stock</div>
-                              <div class="icon-embed-xxsmall w-embed">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24">
-                                  <title>bag-xmark</title><g fill="currentcolor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><path d="M9 9V4C9 2.34315 10.3431 1 12 1V1C13.6569 1 15 2.34315 15 4V9" stroke="currentcolor" stroke-width="2" fill="none"></path><path d="M19 11V6H12H5.00001V12L3.47843 19.6078C3.2309 20.8453 4.17749 22 5.43959 22H10.5" stroke="currentcolor" stroke-width="2" fill="none"></path><path d="M15 22L22 15" stroke="currentcolor" stroke-width="2" fill="none"></path><path d="M15 15L22 22" stroke="currentcolor" stroke-width="2" fill="none"></path></g>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </template>
-                      {% endform %}
-                      <div class="hide w-form-done"><div>Thank you! Your submission has been received!</div></div>
-                      <div class="hide w-form-fail">
-                        <div>Oops! Something went wrong while submitting the form.</div>
-                      </div>
-                    </div>
-                  </div>
-                  {% if section.settings.checkbox_display_payment_methods == true %}
-                    <div class="flex-v">
-                      <div class="text-size-tiny text-style-muted text-align-center">Secure checkout with:</div>
-                      <ul role="list" class="_1footer_payment-list is-centered w-list-unstyled">
-                        {% for type in shop.enabled_payment_types %}
-                          <li li-for="type in shop.enabled_payment_types" class="_1footer_payment-item">
-                            <div
-                              li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'"
-                              class="_1footer_payment-svg"
-                            >
-                              {{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}
-                            </div>
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    </div>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          {% endif -%}
-          {%- if product.available == false %}
-            <div li-if="product.available == false" class="margin-bottom margin-medium">
-              <div class="out-of-stock-state">
-                <div class="icon-embed-xxsmall w-embed">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 18 18">
-                    <title>grid-empty-obj-bottom-right</title><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentcolor"><rect x="2.25" y="2.25" width="5" height="5" rx="1" ry="1"></rect><rect x="2.25" y="10.75" width="5" height="5" rx="1" ry="1"></rect><rect x="10.75" y="2.25" width="5" height="5" rx="1" ry="1"></rect><path d="M10.75,12v-.25c0-.552,.448-1,1-1h.25"></path><path d="M12,15.75h-.25c-.552,0-1-.448-1-1v-.25"></path><path d="M15.75,14.5v.25c0,.552-.448,1-1,1h-.25"></path><path d="M14.5,10.75h.25c.552,0,1,.448,1,1v.25"></path></g>
-                  </svg>
-                </div>
-                <div class="text-weight-semibold">Out of stock</div>
-                <div class="margin-bottom margin-small">
-                  <div class="text-align-center">Get notified when this product is back in stock.</div>
-                </div>
-                <div class="w-form">
-                  {% form 'customer' %}
-                    <div class="signup-form-wrapper is-vertical">
-                      <input
-                        placeholder="Enter your email"
-                        type="email"
-                        maximum-scale="1"
-                        class="form_input"
-                        name="contact[email]"
-                      >
-                      <input type="submit" data-wait="Please wait..." class="button w-button" value="Notify me">
-                    </div>
-                    <div id="w-node-_47b7480b-ac0e-b884-7b46-dfb3365897a1-36589794" class="margin-top margin-small">
-                      <label
-                        id="w-node-_47b7480b-ac0e-b884-7b46-dfb3365897a2-36589794"
-                        class="w-checkbox form_checkbox-wrapper"
-                        name="contact[accepts_marketing]"
-                        ><input
-                          type="checkbox"
-                          name="Accepts-Marketing-2"
-                          id="Accepts-Marketing-2"
-                          data-name="Accepts Marketing 2"
-                          required=""
-                          class="w-checkbox-input form_checkbox-icon"
-                        >
-                        <div class="form_checkbox-label text-size-tiny w-form-label" for="Accepts-Marketing-2">
-                          {{ section.settings.richtext_privacy_disclaimer }}
-                        </div>
-                      </label>
-                    </div>
-                    <div li-object="form.errors | default_errors" class="text-size-small text-align-center">
-                      {{ form.errors | default_errors }}
-                    </div>
-                    {% if form.posted_successfully? %}
-                      <div li-if="form.posted_successfully?" class="form_succes-state">
-                        <div class="flex-h is-gap-small">
-                          <div class="icon-embed-xxsmall w-embed">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="100%"
-                              height="100%"
-                              viewbox="0 0 12 12"
-                              preserveaspectratio="xMidYMid meet"
-                              aria-hidden="true"
-                              role="img"
-                            >
-                              <title>check</title><g fill="currentColor"><path d="M10.293,1.293,4,7.586,1.707,5.293A1,1,0,0,0,.293,6.707l3,3a1,1,0,0,0,1.414,0l7-7a1,1,0,0,0-1.414-1.414Z" fill="currentColor"></path></g>
-                            </svg>
-                          </div>
-                          <div class="text-font-headings text-weight-semibold">Success!</div>
-                        </div>
-                        <p>{{ section.settings.textarea_form_success_message }}</p>
-                      </div>
-                    {% endif %}
-                  {% endform %}
-                  <div class="hide w-form-done"><div>Thank you! Your submission has been received!</div></div>
-                  <div class="hide w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          <div class="margin-bottom margin-medium">
-            <div
-              data-current="Product description"
-              data-easing="ease"
-              data-duration-in="300"
-              data-duration-out="100"
-              class="product_tabs-component w-tabs"
-            >
-              <div class="products_tabs-menu w-tab-menu">
-                <a data-w-tab="Product description" class="product_tabs-link w-inline-block w-tab-link w--current">
-                  <div class="icon-embed-xxsmall w-embed">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="100%"
-                      height="100%"
-                      viewbox="0 0 48 48"
-                      preserveaspectratio="xMidYMid meet"
-                      aria-hidden="true"
-                      role="img"
-                    >
-                      <title>float-right</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.5 0.5)"><path d="M24 18H5" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M43 6H5" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M24 30H5" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M43 42H5" stroke="currentColor" stroke-width="3" fill="none"></path><rect width="12" height="12" rx="2.5" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 31 30)" stroke="currentColor" stroke-width="3" fill="none"></rect></g>
-                    </svg>
-                  </div>
-                  <div>Product description</div></a
-                ><a data-w-tab="More details" class="product_tabs-link w-inline-block w-tab-link">
-                  <div class="icon-embed-xxsmall w-embed">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="100%"
-                      height="100%"
-                      viewbox="0 0 48 48"
-                      preserveaspectratio="xMidYMid meet"
-                      aria-hidden="true"
-                      role="img"
-                    >
-                      <title>circle-info</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.5 0.5)"><path d="M24 45C35.598 45 45 35.598 45 24C45 12.402 35.598 3 24 3C12.402 3 3 12.402 3 24C3 35.598 12.402 45 24 45Z" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M24 35V22.5C24 21.1193 22.8807 20 21.5 20H19" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M24 15C24.5523 15 25 14.5523 25 14C25 13.4477 24.5523 13 24 13C23.4477 13 23 13.4477 23 14C23 14.5523 23.4477 15 24 15Z" fill="currentColor" stroke="currentColor" stroke-width="3"></path></g>
-                    </svg>
-                  </div>
-                  <div>More details</div>
-                </a>
-              </div>
-              <div class="w-tab-content">
-                <div data-w-tab="Product description" class="product_tabs-pane is-padded w-tab-pane w--tab-active">
-                  <div li-object="product.description" class="text-rich-text w-richtext">{{ product.description }}</div>
-                </div>
-                <div data-w-tab="More details" class="product_tabs-pane w-tab-pane">
-                  <div class="product-header_accordion-wrapper">
-                    {% for item in product.metafields.custom.product_highlights.value %}
-                      <div
-                        li-for="item in product.metafields.custom.product_highlights.value"
-                        class="product-header_accordion"
-                      >
-                        <div class="product-header_heading">
-                          <div li-object="item.title" class="text-font-headings text-weight-medium">
-                            {{ item.title }}
-                          </div>
-                          <div class="icon-embed-tiny w-embed">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12">
-                              <title>chevron-expand-y</title><g fill="currentcolor"><path d="m6,11.75c-.192,0-.384-.073-.53-.22l-2.75-2.75c-.293-.293-.293-.768,0-1.061s.768-.293,1.061,0l2.22,2.22,2.22-2.22c.293-.293.768-.293,1.061,0s.293.768,0,1.061l-2.75,2.75c-.146.146-.338.22-.53.22Z" stroke-width="0"></path><path d="m8.75,4.5c-.192,0-.384-.073-.53-.22l-2.22-2.22-2.22,2.22c-.293.293-.768.293-1.061,0s-.293-.768,0-1.061L5.47.47c.293-.293.768-.293,1.061,0l2.75,2.75c.293.293.293.768,0,1.061-.146.146-.338.22-.53.22Z" stroke-width="0"></path></g>
-                            </svg>
-                          </div>
-                        </div>
+<div style="background-color: {{section.settings.background-color}}" class="background-color"><script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+<div li-element="product-variant-container" class="w-layout-grid one-product_component is-swapped" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)"><div id="w-node-_0905a8c6-5a54-778a-4c6a-0c68e29ce10b-e29ce10b" class="height-max-height position-relative"><div swiper="instance" id="w-node-_0905a8c6-5a54-778a-4c6a-0c68e29ce10c-e29ce10b" class="swiper is-product-gallery is-full-height"><div class="swiper_wrapper is-product-gallery is-full-height">{% for image in product.images %}    <div li-for="image in product.images" class="swiper_slide is-product-gallery is-full-height">
+                                    <img src="{{ image.src | product_img_url: 'master' }}" loading="lazy" li-object:src="image.src | product_img_url: 'master'" alt="" class="product-header_slide-image is-full-height">
 
-                        <div class="product-header_details">
-                          <div class="margin-vertical margin-small">
-                            <div li-object="item.description" class="text-rich-text w-richtext">
-                              {{ item.description }}
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                    {% endfor -%}
-                    {%- if shop.shipping_policy.body != blank %}
-                      <div li-if="shop.shipping_policy.body != blank" class="product-header_accordion">
-                        <div class="product-header_heading">
-                          <div class="text-font-headings text-weight-medium">Shipping & Returns</div>
-                          <div class="icon-embed-tiny w-embed">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12">
-                              <title>chevron-expand-y</title><g fill="currentcolor"><path d="m6,11.75c-.192,0-.384-.073-.53-.22l-2.75-2.75c-.293-.293-.293-.768,0-1.061s.768-.293,1.061,0l2.22,2.22,2.22-2.22c.293-.293.768-.293,1.061,0s.293.768,0,1.061l-2.75,2.75c-.146.146-.338.22-.53.22Z" stroke-width="0"></path><path d="m8.75,4.5c-.192,0-.384-.073-.53-.22l-2.22-2.22-2.22,2.22c-.293.293-.768.293-1.061,0s-.293-.768,0-1.061L5.47.47c.293-.293.768-.293,1.061,0l2.75,2.75c.293.293.293.768,0,1.061-.146.146-.338.22-.53.22Z" stroke-width="0"></path></g>
-                            </svg>
-                          </div>
-                        </div>
-                        <div class="product-header_details">
-                          <div class="margin-vertical margin-small">
-                            <div li-object="shop.shipping_policy.body" class="text-rich-text w-richtext">
-                              {{ shop.shipping_policy.body }}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    {% endif -%}
-                    {%- if shop.refund_policy.body != blank %}
-                      <div li-if="shop.refund_policy.body != blank" class="product-header_accordion">
-                        <div class="product-header_heading">
-                          <div class="text-font-headings text-weight-medium">Refund policy</div>
-                          <div class="icon-embed-tiny w-embed">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12">
-                              <title>chevron-expand-y</title><g fill="currentcolor"><path d="m6,11.75c-.192,0-.384-.073-.53-.22l-2.75-2.75c-.293-.293-.293-.768,0-1.061s.768-.293,1.061,0l2.22,2.22,2.22-2.22c.293-.293.768-.293,1.061,0s.293.768,0,1.061l-2.75,2.75c-.146.146-.338.22-.53.22Z" stroke-width="0"></path><path d="m8.75,4.5c-.192,0-.384-.073-.53-.22l-2.22-2.22-2.22,2.22c-.293.293-.768.293-1.061,0s-.293-.768,0-1.061L5.47.47c.293-.293.768-.293,1.061,0l2.75,2.75c.293.293.293.768,0,1.061-.146.146-.338.22-.53.22Z" stroke-width="0"></path></g>
-                            </svg>
-                          </div>
-                        </div>
-                        <div class="product-header_details">
-                          <div class="margin-vertical margin-small">
-                            <div li-object="shop.refund_policy.body" class="text-rich-text w-richtext">
-                              {{ shop.refund_policy.body }}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% if product.metafields.theme.upsell_list.value %}
-            <div li-if="product.metafields.theme.upsell_list.value" class="li-if">
-              <div class="upsell_component">
-                <div class="upsell_title-wrapper">
-                  <div class="text-size-small text-style-muted">Often paired with</div>
-                  <div class="icon-embed-xxsmall text-style-muted w-embed">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="100%"
-                      height="100%"
-                      viewbox="0 0 20 20"
-                      preserveaspectratio="xMidYMid meet"
-                      aria-hidden="true"
-                      role="img"
-                    >
-                      <title>chevron-expand-x</title><g fill="currentColor"><polyline points="13 13 16 10 13 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline><polyline points="7 13 4 10 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline></g>
-                    </svg>
-                  </div>
-                </div>
-                <div swiper="instance" class="swiper is-upsell">
-                  <div class="swiper_wrapper is-upsell">
-                    {% for product in product.metafields.theme.upsell_list.value %}
-                      <div
-                        li-for="product in product.metafields.theme.upsell_list.value"
-                        class="swiper_slide is-upsell"
-                      >
-                        <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
-                        <div
-                          li-element="product-variant-container"
-                          class="li-element"
-                          x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
-                          x-init="$nextTick(() => { activateVariants() })"
-                          @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)"
-                        >
-                          <div class="upsell_item">
-                            <div class="upsell_image-wrapper">
-                              <img
-                                src="{{ product.featured_image | image_url: height: 400 }}"
-                                loading="lazy"
-                                li-object:src="product.featured_image | image_url: height: 400"
-                                li-object:alt="product.featured_image.alt"
-                                alt="{{ product.featured_image.alt }}"
-                                class="upsell_image"
-                              >
-                            </div>
-                            <div class="upsell_content">
-                              <div class="products_title-wrapper">
-                                <div>
-                                  <div class="product6_left">
-                                    <div li-object="product.title" class="product-title is-small">
-                                      {{ product.title }}
-                                    </div>
-                                    <div class="product_meta-wrapper is-small">
-                                      <div
-                                        li-object="product.selected_or_first_available_variant.title"
-                                        class="text-style-capitalize text-style-muted"
-                                      >
-                                        {{ product.selected_or_first_available_variant.title }}
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="flex-h is-gap-tiny">
-                                    <div li-object="product.price | money" class="product-price is-small">
-                                      {{ product.price | money }}
-                                    </div>
-                                    {% if product.compare_at_price_max > product.price %}
-                                      <div li-if="product.compare_at_price_max > product.price" class="li-if">
-                                        <div
-                                          li-object="product.compare_at_price | money"
-                                          class="products_compare-at-price is-small"
-                                        >
-                                          {{ product.compare_at_price | money }}
-                                        </div>
-                                      </div>
-                                    {% endif %}
-                                  </div>
-                                </div>
-                                <div>
-                                  {% if product.selected_or_first_available_variant.available == false %}
-                                    <div
-                                      li-if="product.selected_or_first_available_variant.available == false"
-                                      class="li-if"
-                                    >
-                                      <div class="button is-underscored-link is-out-of-stock">
-                                        <div>Out of stock</div>
-                                        <div class="icon-embed-tiny w-embed">
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="100%"
-                                            height="100%"
-                                            viewbox="0 0 24 24"
-                                            preserveaspectratio="xMidYMid meet"
-                                            aria-hidden="true"
-                                            role="img"
-                                          >
-                                            <title>bag-xmark</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><path d="M9 9V4C9 2.34315 10.3431 1 12 1V1C13.6569 1 15 2.34315 15 4V9" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M19 11V6H12H5.00001V12L3.47843 19.6078C3.2309 20.8453 4.17749 22 5.43959 22H10.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M15 22L22 15" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M15 15L22 22" stroke="currentColor" stroke-width="2" fill="none"></path></g>
-                                          </svg>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  {% endif -%}
-                                  {%- if product.selected_or_first_available_variant.available == true %}
-                                    <div
-                                      li-if="product.selected_or_first_available_variant.available == true"
-                                      class="li-if"
-                                    >
-                                      <script
-                                        src="{{ 'liquify_custom.js' | asset_url }}"
-                                        type="text/javascript"
-                                      ></script>
-                                      <a
-                                        li-element="direct-add-to-cart"
-                                        href="#"
-                                        class="button is-underscored-link is-alternate is-small w-inline-block"
-                                        x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
-                                        @click="addToCart(event, true)"
-                                      >
-                                        <div>Add to cart</div>
-                                        <div class="icon-embed-tiny w-embed">
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="100%"
-                                            height="100%"
-                                            viewbox="0 0 32 32"
-                                            preserveaspectratio="xMidYMid meet"
-                                            aria-hidden="true"
-                                            role="img"
-                                          >
-                                            <title>bag-check</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 13V6C11 3.239 13.239 1 16 1C18.761 1 21 3.239 21 6V13" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M14.9999 29H6.77109C4.84184 29 3.41411 27.2053 3.84792 25.3254L5.99994 16V9H25.9999V16L26.4615 18" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M18 25L22 29L30 21" stroke="currentColor" stroke-width="2" fill="none"></path></g>
-                                          </svg>
-                                        </div>
-                                      </a>
-                                    </div>
-                                  {% endif %}
-                                </div>
-                              </div>
-                            </div>
-                            <a
-                              li-object:href="product.url"
-                              data-w-id="e94c5948-7aca-ba0e-9d64-fce0f0297d44"
-                              href="{{ product.url }}"
-                              class="upsell_view-button w-inline-block"
-                            >
-                              <div class="icon-embed-tiny w-embed">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="100%"
-                                  height="100%"
-                                  viewbox="0 0 24 24"
-                                  preserveaspectratio="xMidYMid meet"
-                                  aria-hidden="true"
-                                  role="img"
-                                >
-                                  <title>magnifier</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><line x1="20.5" y1="20.5" x2="15" y2="15" fill="none" stroke="currentColor" stroke-width="2"></line><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle></g>
-                                </svg>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    {% endfor %}
-                  </div>
-                  {% if product.images.size > 1 %}
-                    <div id="data-zoomable" li-if="product.images.size > 1" class="swiper_controls is-upsell">
-                      <div swiper="pagination" class="swiper_pagination is-upsell">
-                        <div swiper="bullet" class="swiper_bullet"></div>
-                      </div>
-                      <div class="swiper_button-wrap is-product-gallery is-fullheight hide">
-                        <button swiper="prev" class="hero-swiper_button">
-                          <div class="hero-swiper-icon w-embed">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20">
-                              <title>arrow-bold-left-from-line</title><g fill="currentcolor"><line x1="17" y1="12" x2="17" y2="8" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><path d="m9,7h2c.552,0,1,.448,1,1v5h-4v-5c0-.552.448-1,1-1Z" transform="translate(20 0) rotate(90)" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentcolor"></path><path d="m9,5.578v8.844c0,.426-.498.657-.823.382l-5.226-4.422c-.236-.2-.236-.564,0-.763l5.226-4.422c.325-.275.823-.044.823.382Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentcolor"></path></g>
-                            </svg>
-                          </div></button
-                        ><button swiper="next" class="hero-swiper_button">
-                          <div class="hero-swiper-icon w-embed">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20">
-                              <title>arrow-bold-right-from-line</title><g fill="currentcolor"><line x1="3" y1="8" x2="3" y2="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><path d="m9,7h2c.552,0,1,.448,1,1v5h-4v-5c0-.552.448-1,1-1Z" transform="translate(0 20) rotate(-90)" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentcolor"></path><path d="m11,14.422V5.578c0-.426.498-.657.823-.382l5.226,4.422c.236.2.236.564,0,.763l-5.226,4.422c-.325.275-.823.044-.823-.382Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentcolor"></path></g>
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
+{% endfor %}</div>{% if product.images.size > 1 %}    <div id="data-zoomable" li-if="product.images.size > 1" class="swiper_controls is-product-gallery is-fullheight">
+    <div swiper="pagination" class="swiper_pagination is-one-product"><div swiper="bullet" class="swiper_bullet"></div></div><div class="swiper_button-wrap is-product-gallery is-fullheight"><button swiper="prev" class="hero-swiper_button"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>arrow-left</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M29 16L3 16L4 16" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M13 26L3 16L13 6" stroke="currentColor" stroke-width="2" fill="none"></path></g></svg></div></button><button swiper="next" class="hero-swiper_button"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24"><title>arrow-right</title><g fill="currentcolor"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 13L21 13L21 11L2 11L2 13Z" fill="currentcolor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5857 5.00003L19.5857 12L12.5857 19L13.9999 20.4142L22.4141 12L13.9999 3.58582L12.5857 5.00003Z" fill="currentcolor"></path></g></svg></div></button></div>    </div>
+{% endif %}</div></div><div id="w-node-_39b0cc14-dde7-eabb-84a1-b18ad0b97f78-d0b97f68" class="product-header_content is-one-product is-sticky"><div class="max-width-large"><div class="flex-v"><div><div class="margin-bottom margin-xxsmall"><h1 li-object="product.title" class="heading-style-h3 text-weight-bold">{{ product.title }}</h1></div><div class="margin-bottom margin-large"><div class="flex-h is-gap-medium"><div li-js-price="selected_or_first_available_variant.price" class="text-size-large text-weight-bold" x-text="LiquifyHelper.moneyFormat(selected_or_first_available_variant.price, true, '{{ shop.money_with_currency_format }}')">$55</div><template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+            <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price" class="li-if">
+        <div li-object="product.compare_at_price | money" class="product-header_compare-at-price">{{ product.compare_at_price | money }}</div>        </div>
+    </template>
+<div class="text-size-small text-style-muted">
+{{ section.settings.text_price_byline }}
 </div>
-<div class="hide w-embed"></div>
-{% schema %} {"tag":"section","name":"product-v2","class":"section_one-product","settings":[{"id":"text_price_byline","type":"text","label":"Price byline","default":"excl. taxes"},{"id":"text_low_stock_notice","type":"text","label":"Low stock notice","default":"Low stock! Checkout before we run out."},{"id":"checkbox_display_payment_methods","type":"checkbox","label":"Display payment methods","default":true},{"id":"richtext_privacy_disclaimer","type":"richtext","label":"Privacy Disclaimer","default":"<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.<\/p>"},{"id":"textarea_form_success_message","type":"textarea","label":"Form Success Message","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. "},{"type":"color","id":"background-color","label":"Background Color","default":"#EDEDE9"}],"presets":[{"name":"product-v2","category":"Liquify","blocks":[]}]} {% endschema %}
+</div></div></div>{% if product.available == true %}    <div li-if="product.available == true" class="margin-bottom margin-medium">
+    <div class="add-to-cart_animation-trigger"><div class="flex-v"><div class="product-header_options-list"><div class="purchase-form_form-block w-form">{% form 'product', product, class: 'purchase-form_form' %}
+{% if product.has_only_default_variant != true %}    <div li-if="product.has_only_default_variant != true" class="li-if">
+    <template x-for="(option, optionKey) in product.options" :key="optionKey">
+    <div li-element="product-options-loop" class="product-header_option-group" data-ProductVariantsLoop="true"><div class="margin-bottom margin-xsmall"><div li-element="product-options-name" class="form_field-label text-weight-semibold" x-text="option">Size:</div></div><div class="variant-button-row"><template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
+    <label li-element="product-option-loop" class="variant-button w-radio"><div class="w-form-formradioinput w-form-formradioinput--inputType-custom form_radio w-radio-input"></div><input type="radio" li-element="product-option-input" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
+<span li-element="product-option-name" class="form_radio-label w-form-label" for="radio-5" x-text="variantName" :for="variantName">Radio</span></label></template>
+</div></div></template>
+    </div>
+{% endif %}<template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="product-header_button-group">
+        <div class="product-counter_wrapper"><div><input class="form_input is-checkout-quantity w-input" maxlength="256" name="quantity" li-element="add-to-cart-quantity" data-name="Quantity" placeholder="1" type="number" id="quantity" required="" x-model="quantity">
+</div><a li-element="add-to-cart" href="#" class="button is-purchase w-inline-block" @click="addToCart(event, true)" :disabled="!addToCartButton"><div>add to cart</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>bag-check</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 13V6C11 3.239 13.239 1 16 1C18.761 1 21 3.239 21 6V13" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M14.9999 29H6.77109C4.84184 29 3.41411 27.2053 3.84792 25.3254L5.99994 16V9H25.9999V16L26.4615 18" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M18 25L22 29L30 21" stroke="currentColor" stroke-width="2" fill="none"></path></g></svg></div></a></div><script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+<a li-element="checkout-add-to-cart" href="#" class="button is-purchase is-secondary w-inline-block" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" @click="addToCartAndCheckout(event, true)"><div>Checkout now</div></a>{% if product.selected_or_first_available_variant.available and product.selected_or_first_available_variant.inventory_quantity < 10 %}    <div li-if="product.selected_or_first_available_variant.available and product.selected_or_first_available_variant.inventory_quantity < 10" class="text-align-center">
+    <div class="low-stock-notice"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 48 48"><title>triangle-warning</title><g fill="currentcolor" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.5 0.5)"><path d="M20.1049 7.15552L3.60955 34.5335C1.87754 37.4075 4.04293 41 7.50544 41H40.4946C43.9571 41 46.1225 37.4075 44.3905 34.5335L27.8966 7.15552C26.1646 4.28149 21.8369 4.28149 20.1049 7.15552Z" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M24 15V27" stroke="currentcolor" stroke-width="3" fill="none"></path><path d="M24 34C24.5523 34 25 33.5523 25 33C25 32.4477 24.5523 32 24 32C23.4477 32 23 32.4477 23 33C23 33.5523 23.4477 34 24 34Z" fill="currentcolor" stroke="currentcolor" stroke-width="3"></path></g></svg></div><p class="no-margin">
+{{ section.settings.text_low_stock_notice }}
+</p>
+</div>    </div>
+{% endif %}        </div>
+    </template>
+<template x-if="!selected_or_first_available_variant.available">
+            <div li-js-if="!selected_or_first_available_variant.available" class="margin-top margin-xsmall">
+        <div class="button is-disabled"><div>Not in stock</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24"><title>bag-xmark</title><g fill="currentcolor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><path d="M9 9V4C9 2.34315 10.3431 1 12 1V1C13.6569 1 15 2.34315 15 4V9" stroke="currentcolor" stroke-width="2" fill="none"></path><path d="M19 11V6H12H5.00001V12L3.47843 19.6078C3.2309 20.8453 4.17749 22 5.43959 22H10.5" stroke="currentcolor" stroke-width="2" fill="none"></path><path d="M15 22L22 15" stroke="currentcolor" stroke-width="2" fill="none"></path><path d="M15 15L22 22" stroke="currentcolor" stroke-width="2" fill="none"></path></g></svg></div></div>        </div>
+    </template>
+{% endform %}
+<div class="hide w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="hide w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div>{% if section.settings.checkbox_display_payment_methods == true %}
+<div class="flex-v"><div class="text-size-tiny text-style-muted text-align-center">Secure checkout with:</div><ul role="list" class="_1footer_payment-list is-centered w-list-unstyled">{% for type in shop.enabled_payment_types %}    <li li-for="type in shop.enabled_payment_types" class="_1footer_payment-item">
+                                    
+                            <div li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'" class="_1footer_payment-svg">{{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}</div>
+                            
+                        </li>
+{% endfor %}</ul></div>{% endif %}
+</div></div>    </div>
+{% endif %}{% if product.available == false %}    <div li-if="product.available == false" class="margin-bottom margin-medium">
+    <div class="out-of-stock-state"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 18 18"><title>grid-empty-obj-bottom-right</title><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentcolor"><rect x="2.25" y="2.25" width="5" height="5" rx="1" ry="1"></rect><rect x="2.25" y="10.75" width="5" height="5" rx="1" ry="1"></rect><rect x="10.75" y="2.25" width="5" height="5" rx="1" ry="1"></rect><path d="M10.75,12v-.25c0-.552,.448-1,1-1h.25"></path><path d="M12,15.75h-.25c-.552,0-1-.448-1-1v-.25"></path><path d="M15.75,14.5v.25c0,.552-.448,1-1,1h-.25"></path><path d="M14.5,10.75h.25c.552,0,1,.448,1,1v.25"></path></g></svg></div><div class="text-weight-semibold">Out of stock</div><div class="margin-bottom margin-small"><div class="text-align-center">Get notified when this product is back in stock.</div></div><div class="w-form">{% form 'customer' %}
+<div class="signup-form-wrapper is-vertical"><input placeholder="Enter your email" type="email" maximum-scale="1" class="form_input" name="contact[email]">
+<input type="submit" data-wait="Please wait..." class="button w-button" value="Notify me">
+</div><div id="w-node-_47b7480b-ac0e-b884-7b46-dfb3365897a1-36589794" class="margin-top margin-small"><label id="w-node-_47b7480b-ac0e-b884-7b46-dfb3365897a2-36589794" class="w-checkbox form_checkbox-wrapper" name="contact[accepts_marketing]"><input type="checkbox" name="Accepts-Marketing-2" id="Accepts-Marketing-2" data-name="Accepts Marketing 2" required="" class="w-checkbox-input form_checkbox-icon">
+<div class="form_checkbox-label text-size-tiny w-form-label" for="Accepts-Marketing-2"> {{ section.settings.richtext_privacy_disclaimer }} </div>
+</label></div><div li-object="form.errors | default_errors" class="text-size-small text-align-center">{{ form.errors | default_errors }}</div>{% if form.posted_successfully? %}    <div li-if="form.posted_successfully?" class="form_succes-state">
+    <div class="flex-h is-gap-small"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>check</title><g fill="currentColor"><path d="M10.293,1.293,4,7.586,1.707,5.293A1,1,0,0,0,.293,6.707l3,3a1,1,0,0,0,1.414,0l7-7a1,1,0,0,0-1.414-1.414Z" fill="currentColor"></path></g></svg></div><div class="text-font-headings text-weight-semibold">Success!</div></div><p> {{ section.settings.textarea_form_success_message }} </p>
+    </div>
+{% endif %}{% endform %}
+<div class="hide w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="hide w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div>    </div>
+{% endif %}<div class="margin-bottom margin-medium"><div data-current="Product description" data-easing="ease" data-duration-in="300" data-duration-out="100" class="product_tabs-component w-tabs"><div class="products_tabs-menu w-tab-menu"><a data-w-tab="Product description" class="product_tabs-link w-inline-block w-tab-link w--current"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 48 48" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>float-right</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.5 0.5)"><path d="M24 18H5" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M43 6H5" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M24 30H5" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M43 42H5" stroke="currentColor" stroke-width="3" fill="none"></path><rect width="12" height="12" rx="2.5" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 31 30)" stroke="currentColor" stroke-width="3" fill="none"></rect></g></svg></div><div>Product description</div></a><a data-w-tab="More details" class="product_tabs-link w-inline-block w-tab-link"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 48 48" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>circle-info</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.5 0.5)"><path d="M24 45C35.598 45 45 35.598 45 24C45 12.402 35.598 3 24 3C12.402 3 3 12.402 3 24C3 35.598 12.402 45 24 45Z" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M24 35V22.5C24 21.1193 22.8807 20 21.5 20H19" stroke="currentColor" stroke-width="3" fill="none"></path><path d="M24 15C24.5523 15 25 14.5523 25 14C25 13.4477 24.5523 13 24 13C23.4477 13 23 13.4477 23 14C23 14.5523 23.4477 15 24 15Z" fill="currentColor" stroke="currentColor" stroke-width="3"></path></g></svg></div><div>More details</div></a></div><div class="w-tab-content"><div data-w-tab="Product description" class="product_tabs-pane is-padded w-tab-pane w--tab-active"><div li-object="product.description" class="text-rich-text w-richtext">{{ product.description }}</div></div><div data-w-tab="More details" class="product_tabs-pane w-tab-pane"><div class="product-header_accordion-wrapper">{% for item in product.metafields.custom.product_highlights.value %}    <div li-for="item in product.metafields.custom.product_highlights.value" class="product-header_accordion">
+                                    
+                            <div class="product-header_heading"><div li-object="item.title" class="text-font-headings text-weight-medium">{{ item.title }}</div><div class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12"><title>chevron-expand-y</title><g fill="currentcolor"><path d="m6,11.75c-.192,0-.384-.073-.53-.22l-2.75-2.75c-.293-.293-.293-.768,0-1.061s.768-.293,1.061,0l2.22,2.22,2.22-2.22c.293-.293.768-.293,1.061,0s.293.768,0,1.061l-2.75,2.75c-.146.146-.338.22-.53.22Z" stroke-width="0"></path><path d="m8.75,4.5c-.192,0-.384-.073-.53-.22l-2.22-2.22-2.22,2.22c-.293.293-.768.293-1.061,0s-.293-.768,0-1.061L5.47.47c.293-.293.768-.293,1.061,0l2.75,2.75c.293.293.293.768,0,1.061-.146.146-.338.22-.53.22Z" stroke-width="0"></path></g></svg></div></div>
+                            
+                            <div class="product-header_details"><div class="margin-vertical margin-small"><div li-object="item.description" class="text-rich-text w-richtext">{{ item.description }}</div></div></div>
+                            
+                        </div>
+{% endfor %}{% if shop.shipping_policy.body != blank %}    <div li-if="shop.shipping_policy.body != blank" class="product-header_accordion">
+    <div class="product-header_heading"><div class="text-font-headings text-weight-medium">Shipping & Returns</div><div class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12"><title>chevron-expand-y</title><g fill="currentcolor"><path d="m6,11.75c-.192,0-.384-.073-.53-.22l-2.75-2.75c-.293-.293-.293-.768,0-1.061s.768-.293,1.061,0l2.22,2.22,2.22-2.22c.293-.293.768-.293,1.061,0s.293.768,0,1.061l-2.75,2.75c-.146.146-.338.22-.53.22Z" stroke-width="0"></path><path d="m8.75,4.5c-.192,0-.384-.073-.53-.22l-2.22-2.22-2.22,2.22c-.293.293-.768.293-1.061,0s-.293-.768,0-1.061L5.47.47c.293-.293.768-.293,1.061,0l2.75,2.75c.293.293.293.768,0,1.061-.146.146-.338.22-.53.22Z" stroke-width="0"></path></g></svg></div></div><div class="product-header_details"><div class="margin-vertical margin-small"><div li-object="shop.shipping_policy.body" class="text-rich-text w-richtext">{{ shop.shipping_policy.body }}</div></div></div>    </div>
+{% endif %}{% if shop.refund_policy.body != blank %}    <div li-if="shop.refund_policy.body != blank" class="product-header_accordion">
+    <div class="product-header_heading"><div class="text-font-headings text-weight-medium">Refund policy</div><div class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12"><title>chevron-expand-y</title><g fill="currentcolor"><path d="m6,11.75c-.192,0-.384-.073-.53-.22l-2.75-2.75c-.293-.293-.293-.768,0-1.061s.768-.293,1.061,0l2.22,2.22,2.22-2.22c.293-.293.768-.293,1.061,0s.293.768,0,1.061l-2.75,2.75c-.146.146-.338.22-.53.22Z" stroke-width="0"></path><path d="m8.75,4.5c-.192,0-.384-.073-.53-.22l-2.22-2.22-2.22,2.22c-.293.293-.768.293-1.061,0s-.293-.768,0-1.061L5.47.47c.293-.293.768-.293,1.061,0l2.75,2.75c.293.293.293.768,0,1.061-.146.146-.338.22-.53.22Z" stroke-width="0"></path></g></svg></div></div><div class="product-header_details"><div class="margin-vertical margin-small"><div li-object="shop.refund_policy.body" class="text-rich-text w-richtext">{{ shop.refund_policy.body }}</div></div></div>    </div>
+{% endif %}</div></div></div></div></div>{% if product.metafields.theme.upsell_list.value %}    <div li-if="product.metafields.theme.upsell_list.value" class="li-if">
+    <div class="upsell_component"><div class="upsell_title-wrapper"><div class="text-size-small text-style-muted">Often paired with</div><div class="icon-embed-xxsmall text-style-muted w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>chevron-expand-x</title><g fill="currentColor"><polyline points="13 13 16 10 13 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline><polyline points="7 13 4 10 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline></g></svg></div></div><div swiper="instance" class="swiper is-upsell"><div class="swiper_wrapper is-upsell">{% for product in product.metafields.theme.upsell_list.value %}    <div li-for="product in product.metafields.theme.upsell_list.value" class="swiper_slide is-upsell">
+                                    
+                            <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+<div li-element="product-variant-container" class="li-element" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)"><div class="upsell_item"><div class="upsell_image-wrapper"><img src="{{ product.featured_image | image_url: height: 400 }}" loading="lazy" li-object:src="product.featured_image | image_url: height: 400" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" class="upsell_image">
+</div><div class="upsell_content"><div class="products_title-wrapper"><div><div class="product6_left"><div li-object="product.title" class="product-title is-small">{{ product.title }}</div><div class="product_meta-wrapper is-small"><div li-object="product.selected_or_first_available_variant.title" class="text-style-capitalize text-style-muted">{{ product.selected_or_first_available_variant.title }}</div></div></div><div class="flex-h is-gap-tiny"><div li-object="product.price | money" class="product-price is-small">{{ product.price | money }}</div>{% if product.compare_at_price_max > product.price %}    <div li-if="product.compare_at_price_max > product.price" class="li-if">
+    <div li-object="product.compare_at_price | money" class="products_compare-at-price is-small">{{ product.compare_at_price | money }}</div>    </div>
+{% endif %}</div></div><div>{% if product.selected_or_first_available_variant.available == false %}    <div li-if="product.selected_or_first_available_variant.available == false" class="li-if">
+    <div class="button is-underscored-link is-out-of-stock"><div>Out of stock</div><div class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>bag-xmark</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><path d="M9 9V4C9 2.34315 10.3431 1 12 1V1C13.6569 1 15 2.34315 15 4V9" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M19 11V6H12H5.00001V12L3.47843 19.6078C3.2309 20.8453 4.17749 22 5.43959 22H10.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M15 22L22 15" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M15 15L22 22" stroke="currentColor" stroke-width="2" fill="none"></path></g></svg></div></div>    </div>
+{% endif %}{% if product.selected_or_first_available_variant.available == true %}    <div li-if="product.selected_or_first_available_variant.available == true" class="li-if">
+    <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+<a li-element="direct-add-to-cart" href="#" class="button is-underscored-link is-alternate is-small w-inline-block" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" @click="addToCart(event, true)"><div>Add to cart</div><div class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>bag-check</title><g fill="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 13V6C11 3.239 13.239 1 16 1C18.761 1 21 3.239 21 6V13" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M14.9999 29H6.77109C4.84184 29 3.41411 27.2053 3.84792 25.3254L5.99994 16V9H25.9999V16L26.4615 18" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M18 25L22 29L30 21" stroke="currentColor" stroke-width="2" fill="none"></path></g></svg></div></a>    </div>
+{% endif %}</div></div></div><a li-object:href="product.url" data-w-id="e94c5948-7aca-ba0e-9d64-fce0f0297d44" href="{{ product.url }}" class="upsell_view-button w-inline-block"><div class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>magnifier</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><line x1="20.5" y1="20.5" x2="15" y2="15" fill="none" stroke="currentColor" stroke-width="2"></line><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle></g></svg></div></a></div></div>
+                            
+                        </div>
+{% endfor %}</div>{% if product.images.size > 1 %}    <div id="data-zoomable" li-if="product.images.size > 1" class="swiper_controls is-upsell">
+    <div swiper="pagination" class="swiper_pagination is-upsell"><div swiper="bullet" class="swiper_bullet"></div></div><div class="swiper_button-wrap is-product-gallery is-fullheight hide"><button swiper="prev" class="hero-swiper_button"><div class="hero-swiper-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20"><title>arrow-bold-left-from-line</title><g fill="currentcolor"><line x1="17" y1="12" x2="17" y2="8" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><path d="m9,7h2c.552,0,1,.448,1,1v5h-4v-5c0-.552.448-1,1-1Z" transform="translate(20 0) rotate(90)" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentcolor"></path><path d="m9,5.578v8.844c0,.426-.498.657-.823.382l-5.226-4.422c-.236-.2-.236-.564,0-.763l5.226-4.422c.325-.275.823-.044.823.382Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentcolor"></path></g></svg></div></button><button swiper="next" class="hero-swiper_button"><div class="hero-swiper-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20"><title>arrow-bold-right-from-line</title><g fill="currentcolor"><line x1="3" y1="8" x2="3" y2="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><path d="m9,7h2c.552,0,1,.448,1,1v5h-4v-5c0-.552.448-1,1-1Z" transform="translate(0 20) rotate(-90)" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentcolor"></path><path d="m11,14.422V5.578c0-.426.498-.657.823-.382l5.226,4.422c.236.2.236.564,0,.763l-5.226,4.422c-.325.275-.823.044-.823-.382Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentcolor"></path></g></svg></div></button></div>    </div>
+{% endif %}</div></div>    </div>
+{% endif %}</div></div></div></div></div><div class="hide w-embed"></div>
+ {% schema %} {"tag":"section","name":"product-v2","class":"section_one-product","settings":[{"id":"text_price_byline","type":"text","label":"Price byline","default":"excl. taxes"},{"id":"text_low_stock_notice","type":"text","label":"Low stock notice","default":"Low stock! Checkout before we run out."},{"id":"checkbox_display_payment_methods","type":"checkbox","label":"Display payment methods","default":true},{"id":"richtext_privacy_disclaimer","type":"richtext","label":"Privacy Disclaimer","default":"<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.<\/p>"},{"id":"textarea_form_success_message","type":"textarea","label":"Form Success Message","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. "},{"type":"color","id":"background-color","label":"Background Color","default":"#EDEDE9"}],"presets":[{"name":"product-v2","category":"Liquify","blocks":[]}]} {% endschema %}

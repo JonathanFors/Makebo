@@ -126,16 +126,6 @@
     "collections_list_4_eVVteN": {
       "type": "collections_list_4",
       "settings": {}
-    },
-    "product_slider_d9fz8d": {
-      "type": "product_slider",
-      "settings": {
-        "text_heading": "Popular picks",
-        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "url_button_link": "",
-        "text_button_label": "View all",
-        "background-color": "#edede9"
-      }
     }
   },
   "layout": "theme",
@@ -148,7 +138,6 @@
     "one_product_zXAKKC",
     "cta_image_large_qrU9y8",
     "feature_cards_two_YtyJ8B",
-    "collections_list_4_eVVteN",
-    "product_slider_d9fz8d"
+    "collections_list_4_eVVteN"
   ]
 }

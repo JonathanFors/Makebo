@@ -91,7 +91,7 @@
     "one_product_zXAKKC": {
       "type": "one_product",
       "settings": {
-        "product_product": "blue-soft-touch-case-copy",
+        "product_product": "beautiful-authentic-leather-case",
         "text_price_byline": "incl. taxes",
         "text_low_stock_notice": "Low stock! Checkout before we run out.",
         "checkbox_display_payment_methods": true,
@@ -134,7 +134,7 @@
         "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "url_button_link": "",
         "text_button_label": "View all",
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     }
   },

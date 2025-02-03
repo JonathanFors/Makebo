@@ -37,13 +37,22 @@
         "logo_gCKFAB"
       ],
       "settings": {
-        "text_tagline": "Tagline",
         "text_title": "Medium length section heading goes here",
         "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
         "url_primary_button_link": "",
         "text_primary_button_label": "Shop now",
         "url_secondary_button_link": "",
         "text_secondary_button_label": "view collections",
+        "background-color": "#edede9"
+      }
+    },
+    "product_slider_qC9Xnn": {
+      "type": "product_slider",
+      "settings": {
+        "text_heading": "Popular picks",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "url_button_link": "",
+        "text_button_label": "View all",
         "background-color": "#EDEDE9"
       }
     }
@@ -51,6 +60,7 @@
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "feature_center_logos_GGRGhg"
+    "feature_center_logos_GGRGhg",
+    "product_slider_qC9Xnn"
   ]
 }

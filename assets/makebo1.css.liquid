@@ -6969,14 +6969,14 @@ figcaption {
   box-shadow: 0 5px 35px 0 var(--black10-15);
   flex-direction: column;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.25fr 1fr;
   grid-auto-columns: 1fr;
   justify-content: center;
   width: 100%;
-  max-width: 40rem;
+  max-width: 64rem;
   height: auto;
   max-height: 80vh;
-  display: flex;
+  display: grid;
   position: relative;
   overflow: auto;
 }
@@ -8930,6 +8930,10 @@ figcaption {
     grid-template-columns: 1fr;
     max-height: 85svh;
     display: flex;
+  }
+
+  .newsletter-modal_image-wrapper {
+    aspect-ratio: 3 / 2;
   }
 
   .newsletter-modal_content-right {

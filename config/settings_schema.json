@@ -30,10 +30,17 @@
       },
       {
         "type": "number",
-        "id": "newsletter-cookie-expiration",
+        "id": "newsletter_cookie_expiration",
         "label": "Newsletter interval",
         "info": "How often, specified in number of days, the newsletter modal will appear.",
         "default": 14
+      },
+      {
+        "type": "checkbox",
+        "id": "show_newsletter",
+        "label": "Show newsletter modal",
+        "info": "Enable to display a newsletter modal.",
+        "default": true
       }
     ]
   },

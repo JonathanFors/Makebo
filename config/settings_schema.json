@@ -36,7 +36,7 @@
       {
         "type": "checkbox",
         "id": "show_newsletter",
-        "label": "Show newsletter modal",
+        "label": "Toggle newsletter modal",
         "info": "Enable to display a newsletter modal.",
         "default": true
       },

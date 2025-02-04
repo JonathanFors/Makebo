@@ -1,4 +1,4 @@
-{% if {{settings.show_newsletter}} == true %}    <div li-if="{{settings.show_newsletter}} == true" class="li-if">
+{% if {{page.metafields.theme.newsletter_toggle.value}} == true %}    <div li-if="{{page.metafields.theme.newsletter_toggle.value}} == true" class="li-if">
     <div fb-cookie-duration="{{settings.newsletter_cookie_expiration}}" fb-cookie="true" class="newsletter-modal_component"><div class="newsletter-modal_content-wrapper"><div class="newsletter-modal_content-right"><div class="margin-bottom margin-medium"><div class="text-align-center"><div class="max-width-large align-center"><div class="margin-bottom margin-xsmall"><div class="w-embed"><h2 class="heading-style-h4">{{settings.newsletter_heading}} </h2></div></div><div class="w-embed"><p>{{settings.newsletter_description}} </p></div></div></div></div><div class="w-form">{% form 'customer' %}
 <div class="signup-form-wrapper is-vertical is-gap-small"><input placeholder="Enter your email" type="email" maximum-scale="1" class="form_input" name="contact[email]">
 <input type="submit" data-wait="Please wait..." class="button w-button" value="Subscribe">

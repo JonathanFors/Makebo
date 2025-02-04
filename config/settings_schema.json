@@ -27,6 +27,13 @@
         "id": "code--analytics",
         "label": "Third-party code",
         "info": "Use with caution, faulty code may break theme functions."
+      },
+      {
+        "type": "number",
+        "id": "newsletter-cookie-expiration",
+        "label": "Newsletter interval",
+        "info": "How often, specified in number of days, the newsletter modal will appear.",
+        "default": 14
       }
     ]
   },

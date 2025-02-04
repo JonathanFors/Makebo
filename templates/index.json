@@ -126,27 +126,6 @@
     "collections_list_4_eVVteN": {
       "type": "collections_list_4",
       "settings": {}
-    },
-    "product_slider_67tGHG": {
-      "type": "product_slider",
-      "settings": {
-        "text_heading": "Popular picks",
-        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "url_button_link": "",
-        "text_button_label": "View all",
-        "background-color": "#edede9"
-      }
-    },
-    "cta_countdown_v2_Ggt7RG": {
-      "type": "cta_countdown_v2",
-      "settings": {
-        "text_heading": "Medium length heading goes here",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
-        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "countdown_target": "2025-06-25T09:37:00.000Z",
-        "background-color": "#ededed"
-      }
     }
   },
   "layout": "theme",
@@ -159,8 +138,6 @@
     "one_product_zXAKKC",
     "cta_image_large_qrU9y8",
     "feature_cards_two_YtyJ8B",
-    "collections_list_4_eVVteN",
-    "product_slider_67tGHG",
-    "cta_countdown_v2_Ggt7RG"
+    "collections_list_4_eVVteN"
   ]
 }

@@ -351,7 +351,10 @@ figcaption {
 
 .form_checkbox-icon.w--redirected-checked {
   border-radius: var(--border-radius--small);
-  background-image: none;
+  background-color: var(--colors--primary100);
+  background-image: url({{ 'check.svg' | asset_url }});
+  background-position: 0 0;
+  background-size: auto;
   width: .875rem;
   height: .875rem;
   margin: 0 .5rem 0 0;
@@ -4968,7 +4971,7 @@ figcaption {
   background-color: var(--colors--gray300);
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 1.5rem;
+  padding: .5rem 1rem;
   display: flex;
 }
 
@@ -7026,6 +7029,8 @@ figcaption {
 
 .newsletter-modal_content-right {
   flex-flow: column;
+  justify-content: center;
+  align-items: stretch;
   padding: 4rem;
   display: flex;
 }

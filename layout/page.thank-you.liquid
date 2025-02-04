@@ -45,7 +45,10 @@
 <body>
 
 <div class="page-wrapper">{% render 'global_styles' %}
+<div class="hide">{% render 'cookie_script' %}
 {% render 'swiper_js' %}
+{% render 'countdown_script' %}
+</div>{% render 'email_modal' %}
 <script>
     document.addEventListener('alpine:init', () => {
 

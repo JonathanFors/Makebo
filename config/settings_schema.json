@@ -27,7 +27,12 @@
         "id": "code--analytics",
         "label": "Third-party code",
         "info": "Use with caution, faulty code may break theme functions."
-      },
+      }
+    ]
+  },
+  {
+    "name": "Newsletter modal",
+    "settings": [
       {
         "type": "number",
         "id": "newsletter_cookie_expiration",
@@ -41,6 +46,18 @@
         "label": "Show newsletter modal",
         "info": "Enable to display a newsletter modal.",
         "default": true
+      },
+      {
+        "type": "text",
+        "id": "newsletter_heading",
+        "label": "Newsletter heading",
+        "default": "Subscribe to our newsletter!"
+      },
+      {
+        "type": "textarea",
+        "id": "newsletter_description",
+        "label": "Newsletter description",
+        "default": "Tempor ex aute veniam pariatur aliquip irure tempor reprehenderit pariatur labore non dolore eu."
       }
     ]
   },

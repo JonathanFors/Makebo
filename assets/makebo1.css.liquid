@@ -1,8 +1,8 @@
 :root {
-  --fonts--regular: "Open Sans (local)", Arial, sans-serif;
+  --fonts--regular: {{ settings.fonts--body_font.family }}, {{ settings.fonts--body-font.family.fallback_families }};
   --colors--black10: #0a0a0a;
   --text--regular: 1rem;
-  --fonts--headings: "Poppins (local)", Arial, sans-serif;
+  --fonts--headings: {{ settings.fonts--heading_font.family }}, {{settings.fonts--heading_font.fallback_families}};
   --headings--h1: 5rem;
   --headings--h2: 3.5rem;
   --headings--h3: 3rem;
@@ -142,7 +142,7 @@ h1 {
   font-size: var(--headings--h1);
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 700;
+  font-weight: {settings.fonts--heading_font.weight}};
   line-height: 1.1;
 }
 
@@ -151,7 +151,7 @@ h2 {
   font-size: var(--headings--h2);
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 700;
+  font-weight: {settings.fonts--heading_font.weight}};
   line-height: 1;
 }
 
@@ -160,7 +160,7 @@ h3 {
   font-size: var(--headings--h3);
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 700;
+  font-weight: {settings.fonts--heading_font.weight}};
   line-height: 1.2;
 }
 
@@ -169,7 +169,7 @@ h4 {
   font-size: var(--headings--h4);
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 700;
+  font-weight: {settings.fonts--heading_font.weight}};
   line-height: 1.4;
 }
 
@@ -10230,98 +10230,98 @@ figcaption {
 
 
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-ExtraBold.ttf' | asset_url }}) format('truetype'), url({{ 'Poppins-Bold.ttf' | asset_url }}) format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-SemiBold.ttf' | asset_url }}) format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-BlackItalic.ttf' | asset_url }}) format('truetype');
   font-weight: 900;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-ExtraBoldItalic.ttf' | asset_url }}) format('truetype'), url({{ 'Poppins-BoldItalic.ttf' | asset_url }}) format('truetype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-LightItalic.ttf' | asset_url }}) format('truetype');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-Italic.ttf' | asset_url }}) format('truetype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-Black.ttf' | asset_url }}) format('truetype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-Medium.ttf' | asset_url }}) format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-Light.ttf' | asset_url }}) format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-SemiBoldItalic.ttf' | asset_url }}) format('truetype');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-MediumItalic.ttf' | asset_url }}) format('truetype');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Poppins (local)';
+  font-family: 'Poppins';
   src: url({{ 'Poppins-Regular.ttf' | asset_url }}) format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Open Sans (local)';
+  font-family: 'Open Sans';
   src: url({{ 'images' | asset_url }}) format('truetype');
   font-weight: 300 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Open Sans (local)';
+  font-family: 'Open Sans';
   src: url({{ 'images' | asset_url }}) format('truetype');
   font-weight: 300 800;
   font-style: italic;

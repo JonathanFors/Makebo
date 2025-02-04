@@ -1,16 +1,111 @@
-<div style="background-color: {{section.settings.background-color}}" class="background-color"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="text-align-center"><div class="max-width-large align-center"><div class="margin-bottom margin-small"><h2>
-{{ section.settings.text_heading }}
-</h2>
-</div><div class="margin-bottom margin-medium"><p class="text-size-medium"> {{ section.settings.textarea_description }} </p>
-</div><div class="margin-bottom margin-large"><div class="max-width-medium align-center"><div class="w-form">{% form 'customer' %}
-<div class="signup-form-wrapper"><input placeholder="Enter your email" type="email" maximum-scale="1" class="form_input" name="contact[email]">
-<input type="submit" data-wait="Please wait..." class="button w-button" value="Subscribe">
-</div><div id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb605-d3bcb5f1" class="margin-top margin-small"><label id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb606-d3bcb5f1" class="w-checkbox form_checkbox-wrapper" name="contact[accepts_marketing]"><input type="checkbox" name="Accepts-Marketing-2" id="Accepts-Marketing-2" data-name="Accepts Marketing 2" required="" class="w-checkbox-input form_checkbox-icon">
-<div class="form_checkbox-label text-size-tiny w-form-label" for="Accepts-Marketing-2"> {{ section.settings.richtext_privacy_disclaimer }} </div>
-</label></div><div li-object="form.errors | default_errors" class="text-size-small">{{ form.errors | default_errors }}</div>{% if form.posted_successfully? %}    <div li-if="form.posted_successfully?" class="form_succes-state">
-    <div class="flex-h is-gap-small"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>check</title><g fill="currentColor"><path d="M10.293,1.293,4,7.586,1.707,5.293A1,1,0,0,0,.293,6.707l3,3a1,1,0,0,0,1.414,0l7-7a1,1,0,0,0-1.414-1.414Z" fill="currentColor"></path></g></svg></div><div class="text-font-headings text-weight-semibold">Success!</div></div><p> {{ section.settings.textarea_form_success_message }} </p>
+<div style="background-color: {{section.settings.background-color}}" class="background-color">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <div class="text-align-center">
+          <div class="max-width-large align-center">
+            <div class="margin-bottom margin-small">
+              <h2>
+                {{ section.settings.text_heading }}
+              </h2>
+            </div>
+            <div class="margin-bottom margin-medium">
+              <p class="text-size-medium">{{ section.settings.textarea_description }}</p>
+            </div>
+            <div class="margin-bottom margin-large">
+              <div class="max-width-medium align-center">
+                <div class="w-form">
+                  {% form 'customer' %}
+                    <div class="signup-form-wrapper">
+                      <input
+                        placeholder="Enter your email"
+                        type="email"
+                        maximum-scale="1"
+                        class="form_input"
+                        name="contact[email]"
+                      >
+                      <input type="submit" data-wait="Please wait..." class="button w-button" value="Subscribe">
+                    </div>
+                    <div id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb605-d3bcb5f1" class="margin-top margin-small">
+                      <label
+                        id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb606-d3bcb5f1"
+                        class="w-checkbox form_checkbox-wrapper"
+                        name="contact[accepts_marketing]"
+                        ><input
+                          type="checkbox"
+                          name="Accepts-Marketing-2"
+                          id="Accepts-Marketing-2"
+                          data-name="Accepts Marketing 2"
+                          required=""
+                          class="w-checkbox-input form_checkbox-icon"
+                        >
+                        <div class="form_checkbox-label text-size-tiny w-form-label" for="Accepts-Marketing-2">
+                          {{ section.settings.richtext_privacy_disclaimer }}
+                        </div>
+                      </label>
+                    </div>
+                    <div li-object="form.errors | default_errors" class="text-size-small">
+                      {{ form.errors | default_errors }}
+                    </div>
+                    {% if form.posted_successfully? %}
+                      <div li-if="form.posted_successfully?" class="form_succes-state">
+                        <div class="flex-h is-gap-small">
+                          <div class="icon-embed-xxsmall w-embed">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="100%"
+                              height="100%"
+                              viewbox="0 0 12 12"
+                              preserveaspectratio="xMidYMid meet"
+                              aria-hidden="true"
+                              role="img"
+                            >
+                              <title>check</title><g fill="currentColor"><path d="M10.293,1.293,4,7.586,1.707,5.293A1,1,0,0,0,.293,6.707l3,3a1,1,0,0,0,1.414,0l7-7a1,1,0,0,0-1.414-1.414Z" fill="currentColor"></path></g>
+                            </svg>
+                          </div>
+                          <div class="text-font-headings text-weight-semibold">Success!</div>
+                        </div>
+                        <p>{{ section.settings.textarea_form_success_message }}</p>
+                      </div>
+                    {% endif %}
+                  {% endform %}
+                  <div class="hide w-form-done"><div>Thank you! Your submission has been received!</div></div>
+                  <div class="hide w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>
+                </div>
+              </div>
+            </div>
+            <div
+              fb-countdown-target="{{section.settings.countdown_target}}"
+              fb-countdown="true"
+              class="countdown_component"
+            >
+              <div id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb618-d3bcb5f1" class="countdown_item">
+                <div fb-countdown-type="days" class="countdown_number is-large">00</div>
+                <div class="text-size-small text-style-muted">Days</div>
+              </div>
+              <div class="countdown_tiime-icons">
+                <div class="countdown_dot"></div>
+                <div class="countdown_dot"></div>
+              </div>
+              <div id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb620-d3bcb5f1" class="countdown_item">
+                <div fb-countdown-type="hours" class="countdown_number is-large">00</div>
+                <div class="text-size-small text-style-muted">Hours</div>
+              </div>
+              <div class="countdown_tiime-icons">
+                <div class="countdown_dot"></div>
+                <div class="countdown_dot"></div>
+              </div>
+              <div id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb628-d3bcb5f1" class="countdown_item">
+                <div fb-countdown-type="minutes" class="countdown_number is-large">00</div>
+                <div class="text-size-small text-style-muted">Minutes</div>
+              </div>
+              <div class="hide w-embed"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-{% endif %}{% endform %}
-<div class="hide w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="hide w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div></div><div fb-countdown-target="{{section.settings.countdown_target}}" fb-countdown="true" class="countdown_component"><div id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb618-d3bcb5f1" class="countdown_item"><div fb-countdown-type="days" class="countdown_number is-large">00</div><div class="text-size-small text-style-muted">Days</div></div><div class="countdown_tiime-icons"><div class="countdown_dot"></div><div class="countdown_dot"></div></div><div id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb620-d3bcb5f1" class="countdown_item"><div fb-countdown-type="hours" class="countdown_number is-large">00</div><div class="text-size-small text-style-muted">Hours</div></div><div class="countdown_tiime-icons"><div class="countdown_dot"></div><div class="countdown_dot"></div></div><div id="w-node-d5493346-f048-1377-e9a5-4b53d3bcb628-d3bcb5f1" class="countdown_item"><div fb-countdown-type="minutes" class="countdown_number is-large">00</div><div class="text-size-small text-style-muted">Minutes</div></div><div class="hide w-embed"></div>
-</div></div></div></div></div></div></div><div class="hide w-embed"></div>
- {% schema %} {"tag":"section","name":"cta-countdown-v2","class":"section_countdown","settings":[{"id":"text_heading","type":"text","label":"Heading","default":"Medium length heading goes here"},{"id":"textarea_description","type":"textarea","label":"Description","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. "},{"id":"richtext_privacy_disclaimer","type":"richtext","label":"Privacy Disclaimer","default":"<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.<\/p>"},{"id":"textarea_form_success_message","type":"textarea","label":"Form Success Message","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. "},{"type":"text","id":"countdown_target","label":"Countdown target","info":"The target date to count down to. Enter in UTC format e.g. 2024-03-23T11:01:00.000Z","default":"2025-8-27T11:01:00.000Z"},{"type":"color","id":"background-color","label":"Background Color","default":"#EDEDE9"}],"presets":[{"name":"cta-countdown-v2","category":"Liquify","blocks":[]}]} {% endschema %}
+  </div>
+</div>
+<div class="hide w-embed"></div>
+{% schema %} {"tag":"section","name":"cta-countdown-v2","class":"section_countdown","settings":[{"id":"text_heading","type":"text","label":"Heading","default":"Medium length heading goes here"},{"id":"textarea_description","type":"textarea","label":"Description","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. "},{"id":"richtext_privacy_disclaimer","type":"richtext","label":"Privacy Disclaimer","default":"<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.<\/p>"},{"id":"textarea_form_success_message","type":"textarea","label":"Form Success Message","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. "},{"type":"text","id":"countdown_target","label":"Countdown target","info":"The target date to count down to. Enter in UTC format e.g. 2024-03-23T11:01:00.000Z","default":"2024-03-23T11:01:00.000Z"},{"type":"color","id":"background-color","label":"Background Color","default":"#EDEDE9"}],"presets":[{"name":"cta-countdown-v2","category":"Liquify","blocks":[]}]} {% endschema %}

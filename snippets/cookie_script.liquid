@@ -1,0 +1,138 @@
+<script>(function() {
+  "use strict";
+  class DataStore {
+    constructor() {
+      this.data = {};
+    }
+    set(key, value) {
+      this.data[key] = value;
+    }
+    get(key) {
+      return this.data[key];
+    }
+  }
+  const utils = {
+    Booster: class {
+      constructor(options) {
+        this.options = options;
+      }
+      log(message, details) {
+        const logStyle = [
+          `%c[${this.options.title}] ${message}. Link to documentation ${this.options.documentationLink}`,
+          `
+      display: inline-block;
+      padding: 4px 6px;
+      border-radius: 4px;
+      line-height: 1.5em;
+      color: #282735;
+      background: linear-gradient(45deg,
+        rgba(185, 205, 255, 0.4) 0%,
+        rgba(201, 182, 255, 0.4) 33%,
+        rgba(239, 184, 255, 0.4) 66%,
+        rgba(255, 210, 177, 0.4) 100%);
+        `
+        ];
+        if (details) {
+          console.group(...logStyle);
+          Array.isArray(details) ? console.log(...details) : console.log(details);
+          console.groupEnd();
+        } else {
+          console.log(...logStyle);
+        }
+      }
+      validate(attribute, attributeName, value) {
+        if (!attribute.validate) return true;
+        if (typeof attribute.validate === "function") {
+          if (!attribute.validate(value)) {
+            this.log(`Invalid value "${value}" for attribute "${attributeName}"`);
+            return false;
+          }
+        } else if (!attribute.validate.includes(value)) {
+          this.log(`Invalid value "${value}" for attribute "${attributeName}"`, [
+            "%cPossible values:%c\n" + attribute.validate.map((val) => `&bull; ${val}`).join("\n"),
+            "font-weight: 700;",
+            "font-weight: initial;"
+          ]);
+          return false;
+        }
+        return true;
+      }
+      parse(element) {
+        const data = new DataStore();
+        for (const attributeName in this.options.attributes) {
+          const attribute = this.options.attributes[attributeName];
+          const value = element.getAttribute(attributeName);
+          if (!value) {
+            data.set(attributeName, attribute.defaultValue);
+            continue;
+          }
+          if (!this.validate(attribute, attributeName, value)) continue;
+          let parsedValue = value;
+          if (attribute.parse) {
+            parsedValue = attribute.parse(value) ?? attribute.defaultValue;
+          }
+          data.set(attributeName, parsedValue);
+        }
+        this.options.apply.call(this, element, data);
+      }
+      getElements() {
+        return document.querySelectorAll(`[${this.options.name}]`);
+      }
+      init() {
+        this.getElements().forEach((element) => this.parse(element));
+      }
+    },
+    validation: {
+      isNumber: (value) => !isNaN(Number(value))
+    }
+  };
+  const cookieBooster = new utils.Booster({
+    name: "fb-cookie",
+    attributes: {
+      "fb-cookie-name": { defaultValue: "cookie_consent" },
+      "fb-cookie-value": { defaultValue: "accepted" },
+      "fb-cookie-duration": {
+        defaultValue: 182,
+        validate: utils.validation.isNumber,
+        parse: Number
+      }
+    },
+    apply(element, data) {
+      const consentElement = element;
+      consentElement.style.display = "none";
+      const hideElements = element.querySelectorAll("[fb-cookie-hide]");
+      if (!hideElements.length) return this.log("Required attribute is missing");
+      const cookieName = data.get("fb-cookie-name");
+      const cookieValue = data.get("fb-cookie-value");
+      const cookieDuration = data.get("fb-cookie-duration");
+      if (!cookieName || !cookieValue || !cookieDuration) return this.log("Required attribute is missing");
+      const setCookie = () => {
+        const maxAge = 24 * cookieDuration * 60 * 60;
+        document.cookie = `${cookieName}=${cookieValue}; max-age=${maxAge};`;
+      };
+      const acceptCookies = () => {
+        setCookie();
+        cleanup();
+      };
+      const cleanup = () => {
+        consentElement.remove();
+        hideElements.forEach((el) => el.removeEventListener("click", acceptCookies));
+      };
+      if (document.cookie?.includes(`${cookieName}=${cookieValue}`)) {
+        cleanup();
+      } else {
+        consentElement.style.display = "flex";
+        hideElements.forEach((el) => el.addEventListener("click", acceptCookies));
+      }
+    },
+    title: "Cookies Booster",
+    documentationLink: "https://www.flowbase.co/booster/cookies"
+  });
+  const initBooster = () => cookieBooster.init();
+  if (document.readyState === "complete") {
+    initBooster();
+  } else {
+    window.addEventListener("load", initBooster);
+  }
+})();
+</script>

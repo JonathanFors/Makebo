@@ -45,8 +45,11 @@
 <body li-page="page">
 
 <div class="page-wrapper">{% render 'global_styles' %}
+{% render 'email_modal' %}
+<div class="hide">{% render 'cookie_script' %}
 {% render 'swiper_js' %}
-<script>
+{% render 'countdown_script' %}
+</div><script>
     document.addEventListener('alpine:init', () => {
 
     Alpine.data('handleMinicart', () => ({

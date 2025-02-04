@@ -13,6 +13,7 @@
     "apple_touch_icon": "shopify://shop_images/apple-touch-icon.png",
     "show_newsletter": false,
     "newsletter_heading": "Subscribe to our newsletter!",
+    "newsletter_image": "shopify://shop_images/PhoneCasePicture.jpg",
     "fonts--heading_font": "poppins_n7",
     "fonts--body_font": "open_sans_n4",
     "color-primary100": "#3b27b9",

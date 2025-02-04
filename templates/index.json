@@ -137,17 +137,6 @@
         "background-color": "#edede9"
       }
     },
-    "cta_countdown_v1_TyprJk": {
-      "type": "cta_countdown_v1",
-      "settings": {
-        "text_heading": "Medium length heading goes here",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "url_primary_button_link": "",
-        "text_primary_button_label": "Shop now",
-        "countdown_target": "2025-06-25T09:37:00.000Z",
-        "background-color": "#EDEDE9"
-      }
-    },
     "cta_countdown_v2_Ggt7RG": {
       "type": "cta_countdown_v2",
       "settings": {
@@ -156,7 +145,7 @@
         "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
         "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "countdown_target": "2025-06-25T09:37:00.000Z",
-        "background-color": "#EDEDE9"
+        "background-color": "#ededed"
       }
     }
   },
@@ -172,7 +161,6 @@
     "feature_cards_two_YtyJ8B",
     "collections_list_4_eVVteN",
     "product_slider_67tGHG",
-    "cta_countdown_v1_TyprJk",
     "cta_countdown_v2_Ggt7RG"
   ]
 }

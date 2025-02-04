@@ -34,13 +34,6 @@
     "name": "Newsletter modal",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "show_newsletter",
-        "label": "Toggle modal",
-        "info": "Enable to display a newsletter modal.",
-        "default": true
-      },
-      {
         "type": "number",
         "id": "newsletter_cookie_expiration",
         "label": "Interval",

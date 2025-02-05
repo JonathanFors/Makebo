@@ -1123,8 +1123,8 @@ figcaption {
 .button.is-upsell {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
-  border-color: var(--colors--white10);
-  background-color: var(--colors--off-white100);
+  border-color: var(--colors--gray300);
+  background-color: var(--colors--white10);
   color: var(--colors--black10);
   font-size: var(--text--small);
   justify-content: center;
@@ -1158,8 +1158,8 @@ figcaption {
 }
 
 .button.is-upsell.is-out-of-stock {
-  border-color: var(--colors--off-white100);
-  background-color: var(--colors--white10);
+  border-color: var(--colors--gray300);
+  background-color: var(--colors--gray300);
   color: var(--colors--red100);
   cursor: not-allowed;
 }
@@ -7575,7 +7575,7 @@ figcaption {
 
 .upsell_meta-tag {
   border-radius: var(--border-radius--small);
-  background-color: var(--colors--white10);
+  background-color: var(--white-75);
   font-size: var(--text--tiny);
   padding: .05rem .5rem;
   position: absolute;
@@ -9491,11 +9491,12 @@ figcaption {
   }
 
   .upsell_item {
+    border-radius: var(--border-radius--large);
     max-width: 12rem;
   }
 
   .upsell_content {
-    padding: .5rem;
+    padding: .5rem 1rem;
   }
 
   .contact7_content {
@@ -9581,6 +9582,11 @@ figcaption {
 
   .product-header2_modal-content-wrapper {
     padding-bottom: 7rem;
+  }
+
+  .upsell_meta-tag {
+    bottom: .25rem;
+    left: .25rem;
   }
 }
 

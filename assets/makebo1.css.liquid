@@ -34,7 +34,6 @@
   --colors--off-white100: #f0f0f2;
   --colors--primary500: #6857db;
   --colors--red100: #d51d20;
-  --white-50: #ffffff80;
   --base-color-neutral--neutral-lightest\<deleted\|variable-46cf9033\>: #eee;
   --border-radius--xlarge: 1rem;
   --base-color-neutral--white\<deleted\|variable-1aff3ce7\>: white;
@@ -48,6 +47,7 @@
   --text--xlarge: 1.75rem;
   --colors--primary200: #402bca;
   --colors--primary400: #5946d8;
+  --white-50: #ffffff80;
   --colors--gray100: #adadad;
   --border-radius--xxlarge: 1.25rem;
   --colors--green100: #19a525;
@@ -1120,6 +1120,25 @@ figcaption {
   display: flex;
 }
 
+.button.is-upsell {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  border-color: var(--colors--white10);
+  background-color: var(--colors--off-white100);
+  color: var(--colors--black10);
+  font-size: var(--text--small);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: border-color .2s, color .2s;
+  display: flex;
+}
+
+.button.is-upsell:hover {
+  border-color: var(--colors--primary100);
+  color: var(--colors--primary100);
+}
+
 .button.is-add-to-cart-button {
   width: 100%;
   margin-top: .5rem;
@@ -1136,6 +1155,13 @@ figcaption {
 .button.is-view-gallery:hover {
   border-color: var(--colors--primary100);
   color: var(--colors--primary100);
+}
+
+.button.is-upsell.is-out-of-stock {
+  border-color: var(--colors--off-white100);
+  background-color: var(--colors--white10);
+  color: var(--colors--red100);
+  cursor: not-allowed;
 }
 
 .li-styleguide_classes {
@@ -6674,6 +6700,7 @@ figcaption {
   border-radius: var(--border-radius--regular);
   width: 100%;
   height: 100%;
+  position: relative;
   overflow: hidden;
 }
 
@@ -7544,19 +7571,42 @@ figcaption {
   height: 100%;
 }
 
-.upsell_link {
+.upsell_title-link {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
   flex-flow: wrap;
   justify-content: flex-start;
   align-items: center;
   font-weight: 500;
+  line-height: 1.25;
   transition: border-color .2s, color .2s;
   display: flex;
 }
 
-.upsell_link:hover {
+.upsell_title-link:hover {
   color: var(--colors--primary100);
+}
+
+.upsell_meta-tag {
+  border-radius: var(--border-radius--small);
+  background-color: var(--colors--white10);
+  font-size: var(--text--tiny);
+  padding: .05rem .5rem;
+  position: absolute;
+  inset: auto auto .5rem .5rem;
+}
+
+.upsell_title-content {
+  grid-column-gap: .25rem;
+  grid-row-gap: .25rem;
+  flex-flow: column;
+  display: flex;
+}
+
+.upsell_button-group {
+  flex-flow: column;
+  width: 100%;
+  display: flex;
 }
 
 @media screen and (max-width: 991px) {
@@ -9377,6 +9427,10 @@ figcaption {
     max-width: 12rem;
   }
 
+  .upsell_content {
+    padding: .5rem;
+  }
+
   .contact7_content {
     grid-row-gap: 3rem;
     grid-template-columns: 1fr;
@@ -9549,9 +9603,11 @@ figcaption {
     font-weight: 500;
   }
 
+  .button.is-upsell {
+    padding: .3rem 1rem;
+  }
+
   .button.is-view-gallery {
-    border-radius: var(--border-radius--regular);
-    background-color: var(--white-50);
     font-size: var(--text--small);
   }
 

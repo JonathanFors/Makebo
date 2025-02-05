@@ -1,0 +1,31 @@
+<div style="background-color: {{section.settings.background-color}}" class="background-color"><div class="padding-global"><div class="container-large"><div class="padding-section-medium"><div class="feature-list_component"><div class="w-layout-grid feature-list_content"><div class="feature-list_content-left"><div class="margin-bottom margin-small"><h2 class="heading-style-h3">
+{{ section.settings.text_primary_heading }}
+</h2>
+</div>{% if section.settings.checkbox_toggle_buttons == true %}
+<div class="button-group"><a data-wf--module-button-primary--variant="base" href="{{ section.settings.url_primary_button_link }}" class="button is-icon w-inline-block"> <div>{{ section.settings.text_primary_button_label }}</div><div data-w-id="64fe5f88-e72c-dffb-a813-38578064b7ca" class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 8" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M1 4L16 4L15.261 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 6.39998V1.59998L19.2 3.99998L16 6.39998Z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div> </a>
+<a href="{{ section.settings.url_secondary_button_link }}" class="button is-alternate w-inline-block"> <div>{{ section.settings.text_secondary_button_label }}</div> </a>
+</div>{% endif %}
+</div><div class="feature-list_content-right"><div li-content-for-blocks="" class="w-layout-grid feature-list_item-list is-secondary">
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when '@app' %}
+            {% render block %}
+    {% when 'feature-item' %}
+            <div li-block="Feature item" class="feature-list_item">
+                    
+                    <div class="margin-bottom margin-xsmall"><h3 class="heading-style-h6">
+{{ block.settings.text_card_heading_1 }}
+</h3>
+</div>
+                    
+                    <p> {{ block.settings.textarea_card_description_1 }} </p>
+
+                    
+                </div>
+        {% endcase %}
+{% endfor %}
+
+</div>
+
+</div></div></div></div></div></div></div><div class="hide w-embed"></div>
+ {% schema %} {"tag":"section","name":"feature-list-v2","class":"section_feature-list","blocks":[{"name":"Feature item","type":"feature-item","settings":[{"id":"text_card_heading_1","type":"text","label":"Card heading 1","default":"Subheading one"},{"id":"textarea_card_description_1","type":"textarea","label":"Card description 1","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."}]}],"settings":[{"id":"text_primary_heading","type":"text","label":"Primary heading","default":"Short heading"},{"id":"checkbox_toggle_buttons","type":"checkbox","label":"Toggle buttons","default":true},{"id":"url_primary_button_link","type":"url","label":"Primary Button -> Link"},{"id":"text_primary_button_label","type":"text","label":"Primary Button -> Label","default":"Shop now"},{"id":"url_secondary_button_link","type":"url","label":"Secondary Button -> Link"},{"id":"text_secondary_button_label","type":"text","label":"Secondary Button -> Label","default":"view collections"},{"type":"color","id":"background-color","label":"Background Color","default":"#f0f0f2"}],"presets":[{"name":"feature-list-v2","category":"Liquify","blocks":[{"type":"feature-item"}]}]} {% endschema %}

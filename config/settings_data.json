@@ -23,9 +23,9 @@
         "type": "header",
         "settings": {
           "checkbox_display_announcement": true,
-          "text_announcement": "This is an announcement title",
-          "url_announcement_link": "",
-          "text_announcement_link_label": "Learn more",
+          "text_announcement": "This is a demo store for the Makebo Shopify template",
+          "url_announcement_link": "https://szop.com/makebo",
+          "text_announcement_link_label": "Discover theme",
           "image_logo": "shopify://shop_images/logo.svg"
         }
       },

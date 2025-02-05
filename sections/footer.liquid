@@ -41,16 +41,34 @@
             {% endif %}
 {% endfor %}
 </div></div>{% endif %}
-</div></div><div class="padding-top padding-medium"><div class="margin-bottom margin-small"><div class="footer_bottom-wrapper">{% if localization.available_countries.size > 1 %}    <div li-if="localization.available_countries.size > 1">
-    {% form 'localization' %}
-<div data-hover="false" data-delay="0" title="Select country" aria-label="Select country" data-wf--item-language-dropdown--variant="list-on-top" class="language_dropdown w-dropdown"><div class="language_toggle w-variant-1681427f-92c5-ef31-116a-de9c86f88827 w-dropdown-toggle"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 18 18" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M9 17C11.8364 15.6182 13.3636 12.5636 13.3636 9C13.3636 5.43636 11.8364 2.38182 9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.99987 17C6.1635 15.6182 4.63623 12.5636 4.63623 9C4.63623 5.43636 6.1635 2.38182 8.99987 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 17V16.2727V1.72727V1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 9H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div><nav class="language_dropdown-list w-variant-1681427f-92c5-ef31-116a-de9c86f88827 w-dropdown-list"><div li-for:inside="country in localization.available_countries" class="language_dropdown-content">
-        {% for country in localization.available_countries %}                            
-                            <div class="language_item-wrapper"><a href="#" class="language_dropdown-item w-inline-block"><div class="language_item-content"><div li-object="country.name">{{ country.name }}</div></div><div li-object="country.currency.iso_code" class="text-style-muted text-size-small">{{ country.currency.iso_code }}</div></a></div>
+</div></div><div class="padding-top padding-medium"><div class="margin-bottom margin-small"><div class="footer_bottom-wrapper">{% if localization.available_languages.size > 1 %}    <localization-form data-wf--module-language-picker--variant="footer" li-if="localization.available_languages.size > 1" class="li-lang_wrapper">
+    {% form 'localization', class: 'li-lang_form' %}
+<div data-delay="500" data-hover="true" class="li-lang_dropdown w-dropdown"><div lang="{{ language.iso_code }}" class="li-lang_dd-toggle w-dropdown-toggle"><div class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 18 18" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M9 17C11.8364 15.6182 13.3636 12.5636 13.3636 9C13.3636 5.43636 11.8364 2.38182 9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.99987 17C6.1635 15.6182 4.63623 12.5636 4.63623 9C4.63623 5.43636 6.1635 2.38182 8.99987 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 17V16.2727V1.72727V1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 9H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div li-object="localization.language.endonym_name | capitalize">{{ localization.language.endonym_name | capitalize }}</div></div><nav li-for:inside="language in localization.available_languages" class="li-lang_dd-list w-variant-f5764dd2-8c48-42b2-34bb-cb67d8f29e88 w-dropdown-list">
+        {% for language in localization.available_languages %}                            
+                            {% unless localization.language.iso_code == language.iso_code %}    <div li-unless="localization.language.iso_code == language.iso_code" class="li-lang_dd-list-item">
+    <a href="#" li-object="language.endonym_name | capitalize" lang="{{ language.iso_code }}" hreflang="{{ language.iso_code }}" data-value="{{ language.iso_code }}" class="li-lang_dd-link w-dropdown-link">{{ language.endonym_name | capitalize }}</a>    </div>
+{% endunless %}
                             
-                    {% endfor %}    </div>
-<input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
-</nav></div>{% endform %}
-    </div>
+                    {% endfor %}    </nav>
+</div><input type="hidden" name="language_code" class="li-lang_hidden-input" value="{{ localization.language.iso_code }}">
+{% endform %}
+<div class="li-lang_script w-embed w-script"><script>class LocalizationForm extends HTMLElement {
+  constructor() {
+    super();
+    this.input = this.querySelector('input[name="language_code"], input[name="country_code"]');
+    this.querySelectorAll('a').forEach(item =>
+      item.addEventListener('click', this.onItemClick.bind(this))
+    );
+  }
+  onItemClick(event) {
+    event.preventDefault();
+    const form = this.querySelector('form');
+    this.input.value = event.currentTarget.dataset.value;
+    if (form) form.submit();
+  }
+}
+customElements.define('localization-form', LocalizationForm);
+</script></div>    </localization-form>
 {% endif %}<div class="_1footer_icon-row">{% for block in section.blocks %}
     {% if block.type == "shipping-icon" %}
                     <div li-block="Shipping Icon" class="footer_icon-item">

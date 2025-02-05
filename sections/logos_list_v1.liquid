@@ -1,0 +1,20 @@
+<div style="background-color: {{section.settings.background-color}}" class="background-color"><div class="padding-global"><div class="container-large"><div class="padding-section-medium"><div class="logos_component"><div class="logos_content"><div class="logos_content-left"><h2 class="heading-style-h4">
+{{ section.settings.text_title }}
+</h2>
+</div><div li-content-for-blocks="" class="logos_logo-list">
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when '@app' %}
+            {% render block %}
+    {% when 'logo' %}
+            <div li-block="Logo" id="w-node-_699834cd-d553-c74c-f3b1-67b5ad0ada5a-ad0ada4f" class="logos_wrapper">
+                    <img loading="lazy" alt="{{ block.settings.image_logo.alt }}" src="{{ block.settings.image_logo | img_url: 'master' }}" class="logos_logo">
+
+                </div>
+        {% endcase %}
+{% endfor %}
+
+</div>
+
+</div></div></div></div></div></div><div class="hide w-embed"></div>
+ {% schema %} {"tag":"section","name":"logos-list-v1","class":"section_logo","blocks":[{"name":"Logo","type":"logo","settings":[{"id":"image_logo","type":"image_picker","label":"Logo"}]}],"settings":[{"id":"text_title","type":"text","label":"Title","default":"Used by the world's leading companies"},{"type":"color","id":"background-color","label":"Background Color","default":"#f0f0f2"}],"presets":[{"name":"logos-list-v1","category":"Liquify","blocks":[{"type":"logo"}]}]} {% endschema %}

@@ -30,7 +30,7 @@
         "checkbox_display_button": true,
         "url_primary_button_link": "",
         "text_primary_button_label": "Shop now",
-        "image_image": "shopify://shop_images/Woman_near_Yellow_Wall.jpg",
+        "image_image": "shopify://shop_images/HighFashionImage_2.jpg",
         "background-color": "#f9f9f9"
       }
     },
@@ -79,7 +79,7 @@
     "cta_image_large_tiwL8L": {
       "type": "cta_image_large",
       "settings": {
-        "image_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
+        "image_image": "shopify://shop_images/Clothes_Model_Unsplash.jpg",
         "url_primary_button_link": "",
         "text_primary_button_label": "Shop now",
         "overlay-color": "#ffffff"

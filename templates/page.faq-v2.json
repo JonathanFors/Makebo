@@ -1,0 +1,75 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "faq_centered_6w3Q8y": {
+      "type": "faq_centered",
+      "blocks": {
+        "accordion_J3QnCp": {
+          "type": "accordion",
+          "settings": {
+            "text_question": "Question text goes here",
+            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        },
+        "accordion_z8dcDM": {
+          "type": "accordion",
+          "settings": {
+            "text_question": "Question text goes here",
+            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        },
+        "accordion_tepkVf": {
+          "type": "accordion",
+          "settings": {
+            "text_question": "Question text goes here",
+            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        },
+        "accordion_EjGwfX": {
+          "type": "accordion",
+          "settings": {
+            "text_question": "Question text goes here",
+            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        }
+      },
+      "block_order": [
+        "accordion_J3QnCp",
+        "accordion_z8dcDM",
+        "accordion_tepkVf",
+        "accordion_EjGwfX"
+      ],
+      "settings": {
+        "text_title": "Your questions, answered.",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "checkbox_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "background-color": "#f9f9f9"
+      }
+    },
+    "cta_image_large_BCTjD3": {
+      "type": "cta_image_large",
+      "settings": {
+        "image_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "overlay-color": "#ffffff"
+      }
+    }
+  },
+  "layout": "page",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "faq_centered_6w3Q8y",
+    "cta_image_large_BCTjD3"
+  ]
+}

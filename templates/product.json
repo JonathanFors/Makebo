@@ -9,15 +9,62 @@
  */
 {
   "sections": {
-    "product_v3_hVH9JY": {
+    "product_v3_jrcC86": {
       "type": "product_v3",
+      "blocks": {
+        "breadcrumbs_iN4LVg": {
+          "type": "breadcrumbs",
+          "settings": {
+            "text_source_title": "Collections"
+          }
+        },
+        "title_JEtzQ4": {
+          "type": "title",
+          "settings": {
+            "text_price_byline": "excl. taxes"
+          }
+        },
+        "description_UHKMqV": {
+          "type": "description",
+          "settings": {
+            "checkbox_toggle_separator": true
+          }
+        },
+        "extra_details_jBFCja": {
+          "type": "extra-details",
+          "settings": {
+            "checkbox_toggle_shipping_policy": true,
+            "checkbox_toggle_refund_policy": true
+          }
+        },
+        "upsell_list_WNJHyD": {
+          "type": "upsell-list",
+          "settings": {
+            "text_upsell_title": "Often paired with"
+          }
+        },
+        "add_to_cart_form_ikT7yk": {
+          "type": "add-to-cart-form",
+          "settings": {
+            "text_stock_notice": "Low stock! Checkout before we run out.",
+            "checkbox_toggle_pm": true,
+            "text_oos_title": "Out of stock",
+            "textarea_oos_description": "Get notified when this product is back in stock.",
+            "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
+            "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumbs_iN4LVg",
+        "title_JEtzQ4",
+        "description_UHKMqV",
+        "extra_details_jBFCja",
+        "upsell_list_WNJHyD",
+        "add_to_cart_form_ikT7yk"
+      ],
       "settings": {
-        "text_price_byline": "excl. taxes",
-        "text_low_stock_notice": "Low stock! Checkout before we run out.",
-        "checkbox_display_payment_methods": true,
-        "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
-        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "background-color": "#f3f3f3"
+        "background-color": "#f9f9f9"
       }
     },
     "bar_info_items_FWnBn3": {
@@ -67,7 +114,7 @@
   "layout": "product",
   "wrapper": "main#top.main-wrapper",
   "order": [
-    "product_v3_hVH9JY",
+    "product_v3_jrcC86",
     "bar_info_items_FWnBn3",
     "recommended_products"
   ]

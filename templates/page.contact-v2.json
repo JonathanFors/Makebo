@@ -14,30 +14,16 @@
       "settings": {
         "text_heading": "Contact us",
         "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "text_checkbox_label": "I accept the Terms",
         "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "image_image": "shopify://shop_images/Woman_near_Yellow_Wall.jpg",
+        "image_image": "shopify://shop_images/HighFashionImage.jpg",
         "background-color": "#f6f6f6"
-      }
-    },
-    "feature_cards_two_KWxLbi": {
-      "type": "feature_cards_two",
-      "settings": {
-        "url_card_1_button_link": "",
-        "text_card_1_heading": "Heading",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
-        "text_card_1_button_label": "Shop Collection",
-        "image_card_1_background_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
-        "url_card_2_button_link": "",
-        "text_card_2_heading": "Heading",
-        "text_card_2_button_label": "Shop Collection",
-        "image_card_2_background_image": "shopify://shop_images/lars-kaizer-ztwwffTUaEg-unsplash.jpg"
       }
     }
   },
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "contact_v2_nHr7wc",
-    "feature_cards_two_KWxLbi"
+    "contact_v2_nHr7wc"
   ]
 }

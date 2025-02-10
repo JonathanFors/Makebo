@@ -9,40 +9,22 @@
  */
 {
   "sections": {
-    "product_v3_hCi4VM": {
-      "type": "product_v3",
+    "product_v2_CUniKp": {
+      "type": "product_v2",
       "blocks": {
-        "breadcrumbs_TEWemw": {
+        "breadcrumbs_UiCWpA": {
           "type": "breadcrumbs",
           "settings": {
             "text_source_title": "Collections"
           }
         },
-        "title_8Frbnd": {
+        "title_JDzhPX": {
           "type": "title",
           "settings": {
             "text_price_byline": "excl. taxes"
           }
         },
-        "description_pwKWiX": {
-          "type": "description",
-          "settings": {
-            "checkbox_toggle_separator": true
-          }
-        },
-        "extra_details_3q8B4b": {
-          "type": "extra-details",
-          "settings": {
-            "text_description_title": "Product details:"
-          }
-        },
-        "upsell_list_BVjCjQ": {
-          "type": "upsell-list",
-          "settings": {
-            "text_upsell_title": "Often paired with"
-          }
-        },
-        "add_to_cart_form_Wk8LP6": {
+        "add_to_cart_form_FMHH7T": {
           "type": "add-to-cart-form",
           "settings": {
             "text_stock_notice": "Low stock! Checkout before we run out.",
@@ -52,18 +34,29 @@
             "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
             "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
           }
+        },
+        "product_details_zYA8fr": {
+          "type": "product-details",
+          "settings": {
+            "checkbox_toggle_more_details": true
+          }
+        },
+        "upsell_list_9jMWaf": {
+          "type": "upsell-list",
+          "settings": {
+            "text_upsell_title": "Often paired with"
+          }
         }
       },
       "block_order": [
-        "breadcrumbs_TEWemw",
-        "title_8Frbnd",
-        "description_pwKWiX",
-        "extra_details_3q8B4b",
-        "upsell_list_BVjCjQ",
-        "add_to_cart_form_Wk8LP6"
+        "breadcrumbs_UiCWpA",
+        "title_JDzhPX",
+        "add_to_cart_form_FMHH7T",
+        "product_details_zYA8fr",
+        "upsell_list_9jMWaf"
       ],
       "settings": {
-        "background-color": "#ffffff"
+        "background-color": "#f0f0f2"
       }
     },
     "bar_info_items_hgkwrL": {
@@ -113,7 +106,7 @@
   "layout": "product",
   "wrapper": "main#top.main-wrapper",
   "order": [
-    "product_v3_hCi4VM",
+    "product_v2_CUniKp",
     "bar_info_items_hgkwrL",
     "recommended_products"
   ]

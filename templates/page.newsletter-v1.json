@@ -20,6 +20,8 @@
         "text_feature_1": "Feature here",
         "text_feature_2": "Feature here",
         "text_feature_3": "Feature here",
+        "checkbox_display_background_image": true,
+        "image_background_image": "shopify://shop_images/Smiling_Woman_in_Gray_Hoodie_1.jpg",
         "overlay-color": "#ffffff",
         "background-color": "#f5f5f5"
       }

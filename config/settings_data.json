@@ -15,7 +15,10 @@
     "newsletter_image": "shopify://shop_images/PhoneCasePicture.jpg",
     "fonts--heading_font": "poppins_n7",
     "fonts--body_font": "open_sans_n4",
-    "color-primary100": "#3b27b9",
+    "color-primary50": "#8c9cb4",
+    "color-primary100": "#6688b9",
+    "color-primary200": "#335d99",
+    "color-primary300": "#406cab",
     "show_newsletter": false,
     "heading_font": "mono",
     "sections": {

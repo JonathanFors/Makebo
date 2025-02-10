@@ -18,21 +18,21 @@
         "text_primary_button_label": "Shop now",
         "url_secondary_button_link": "",
         "text_secondary_button_label": "view collections",
-        "image_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
+        "image_image": "shopify://shop_images/HighFashionImage.jpg",
         "background-color": "#edede9"
       }
     },
     "testimonial_grid_DdmxQG": {
       "type": "testimonial_grid",
       "settings": {
-        "image_row_1_image": "shopify://shop_images/Woman_near_Yellow_Wall.jpg",
+        "image_row_1_image": "shopify://shop_images/HighFashionImage_5.jpg",
         "textarea_row_1_testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\"",
         "text_row_1_full_name": "Name Surname",
         "text_row_1_byline": "Position, Company name",
         "text_row_2_testimonial": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\"",
         "text_row_2_full_name": "Name Surname",
         "text_row_2_byline": "Position, Company name",
-        "image_row_2_image": "shopify://shop_images/Smiling_Woman_Gray_Hoodie.jpg",
+        "image_row_2_image": "shopify://shop_images/HighFashionImage_6.jpg",
         "background-color": "#fefefe"
       }
     },
@@ -65,6 +65,7 @@
       "settings": {
         "text_heading": "Contact us",
         "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "text_checkbox_label": "I accept the Terms",
         "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "background-color": "#f6f6f6"
       }

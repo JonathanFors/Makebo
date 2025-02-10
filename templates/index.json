@@ -12,9 +12,9 @@
     "hero_image_KdQ3kL": {
       "type": "hero_image",
       "settings": {
-        "image_background_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
-        "text_title": "Phone cases. But quality.",
-        "text_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "image_background_image": "shopify://shop_images/HighFashionImage_6.jpg",
+        "text_title": "High fashion – made accessible.",
+        "text_description": "This is a preview store intended to showcase the functionality of the Makebo Shopify theme. Products are actually for sale. Reprehenderit adipisicing eu consectetur anim aliqua et ullamco qui.",
         "url_primary_button_link": "",
         "text_primary_button_label": "Shop now",
         "overlay-color": "#ffffff"
@@ -24,15 +24,15 @@
       "type": "feature_cards_two",
       "settings": {
         "url_card_1_button_link": "",
-        "text_card_1_heading": "Leather cases",
+        "text_card_1_heading": "Coats",
         "textarea_card_1_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
         "text_card_1_button_label": "Shop Collection",
-        "image_card_1_background_image": "shopify://shop_images/i-m-zion-fHFGxhB7kiA-unsplash.jpg",
+        "image_card_1_background_image": "shopify://shop_images/HighFashionImage_3.jpg",
         "url_card_2_button_link": "",
-        "text_card_2_heading": "Carbon fiber cases",
+        "text_card_2_heading": "Puffer jackets",
         "textarea_card_2_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
         "text_card_2_button_label": "Shop Collection",
-        "image_card_2_background_image": "shopify://shop_images/cristina-ong-77uO4Tvf1aM-unsplash.jpg"
+        "image_card_2_background_image": "shopify://shop_images/HighFashionImage_5.jpg"
       }
     },
     "4_products_LbFfCt": {
@@ -41,25 +41,25 @@
         "product_wmikUV": {
           "type": "product",
           "settings": {
-            "product_product": "beautiful-authentic-leather-case"
+            "product_product": "brown-t-shirt"
           }
         },
         "product_qRfT7r": {
           "type": "product",
           "settings": {
-            "product_product": "comic-book-inspired-set-copy"
+            "product_product": "cozy-winter-jacket"
           }
         },
         "product_wUUgLt": {
           "type": "product",
           "settings": {
-            "product_product": "set-of-6-hard-cases-copy"
+            "product_product": "cool-jeans"
           }
         },
         "product_fqrPeb": {
           "type": "product",
           "settings": {
-            "product_product": "turqouise-sleeve-case-copy"
+            "product_product": "black-jeans"
           }
         }
       },
@@ -80,12 +80,12 @@
         "text_tab_1_title": "On sale!",
         "text_tab_2_title": "Popular",
         "text_tab_3_title": "Last chance",
-        "collection_tab_1_collection": "phone-case-template",
-        "collection_tab_1_collection_limit": 6,
-        "collection_tab_2_collection": "phone-case-template",
-        "collection_tab_2_collection_limit": 6,
-        "collection_tab_3_collection": "phone-case-template",
-        "collection_tab_3_collection_limit": 6,
+        "collection_tab_1_collection": "all-products",
+        "collection_tab_1_collection_limit": 8,
+        "collection_tab_2_collection": "all-products",
+        "collection_tab_2_collection_limit": 8,
+        "collection_tab_3_collection": "all-products",
+        "collection_tab_3_collection_limit": 8,
         "background-color": "#f9f9f9"
       }
     },
@@ -129,14 +129,14 @@
         "upsell_list_kHnMfA"
       ],
       "settings": {
-        "product_product": "beautiful-authentic-leather-case",
+        "product_product": "fluffys-fluffy-fluff",
         "background-color": "#f0f0f2"
       }
     },
     "cta_image_large_qrU9y8": {
       "type": "cta_image_large",
       "settings": {
-        "image_image": "shopify://shop_images/grysell-alvarez-FQXbLmlmvWY-unsplash.jpg",
+        "image_image": "shopify://shop_images/HighFashionImage_2.jpg",
         "url_primary_button_link": "",
         "text_primary_button_label": "Shop now",
         "overlay-color": "#ffffff"
@@ -146,15 +146,15 @@
       "type": "feature_cards_two",
       "settings": {
         "url_card_1_button_link": "",
-        "text_card_1_heading": "Learn how to take care of your new case",
+        "text_card_1_heading": "Quality fashion makes for happy smiles.",
         "textarea_card_1_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
-        "text_card_1_button_label": "View video",
-        "image_card_1_background_image": "shopify://shop_images/daniel-romero-xpKhFTbkmTM-unsplash.jpg",
-        "url_card_2_button_link": "",
-        "text_card_2_heading": "Watch the product review by Marques Brownley",
+        "text_card_1_button_label": "Join our newsletter",
+        "image_card_1_background_image": "shopify://shop_images/Smiling_Woman_Gray_Hoodie.jpg",
+        "url_card_2_button_link": "shopify://pages/newsletter",
+        "text_card_2_heading": "Discover our beautiful collections",
         "textarea_card_2_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
         "text_card_2_button_label": "Shop Collection",
-        "image_card_2_background_image": "shopify://shop_images/daniel-romero--ze3rUAaAZ0-unsplash.jpg"
+        "image_card_2_background_image": "shopify://shop_images/HighFashionImage_4.jpg"
       }
     },
     "collections_list_4_eVVteN": {

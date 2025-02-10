@@ -25,11 +25,12 @@
       "settings": {
         "url_card_1_button_link": "",
         "text_card_1_heading": "Leather cases",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "textarea_card_1_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
         "text_card_1_button_label": "Shop Collection",
         "image_card_1_background_image": "shopify://shop_images/i-m-zion-fHFGxhB7kiA-unsplash.jpg",
         "url_card_2_button_link": "",
         "text_card_2_heading": "Carbon fiber cases",
+        "textarea_card_2_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
         "text_card_2_button_label": "Shop Collection",
         "image_card_2_background_image": "shopify://shop_images/cristina-ong-77uO4Tvf1aM-unsplash.jpg"
       }
@@ -88,16 +89,48 @@
         "background-color": "#f9f9f9"
       }
     },
-    "one_product_zXAKKC": {
+    "one_product_DBEh4Q": {
       "type": "one_product",
+      "blocks": {
+        "title_CLzPAa": {
+          "type": "title",
+          "settings": {
+            "text_price_byline": "excl. taxes"
+          }
+        },
+        "add_to_cart_form_JqmxpQ": {
+          "type": "add-to-cart-form",
+          "settings": {
+            "text_stock_notice": "Low stock! Checkout before we run out.",
+            "checkbox_toggle_pm": true,
+            "text_oos_title": "Out of stock",
+            "textarea_oos_description": "Get notified when this product is back in stock.",
+            "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
+            "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+          }
+        },
+        "product_details_7hckTQ": {
+          "type": "product-details",
+          "settings": {
+            "checkbox_toggle_more_details": true
+          }
+        },
+        "upsell_list_kHnMfA": {
+          "type": "upsell-list",
+          "settings": {
+            "text_upsell_title": "Often paired with"
+          }
+        }
+      },
+      "block_order": [
+        "title_CLzPAa",
+        "add_to_cart_form_JqmxpQ",
+        "product_details_7hckTQ",
+        "upsell_list_kHnMfA"
+      ],
       "settings": {
         "product_product": "beautiful-authentic-leather-case",
-        "text_price_byline": "incl. taxes",
-        "text_low_stock_notice": "Low stock! Checkout before we run out.",
-        "checkbox_display_payment_methods": true,
-        "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
-        "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "background-color": "#edede9"
+        "background-color": "#f0f0f2"
       }
     },
     "cta_image_large_qrU9y8": {
@@ -114,11 +147,12 @@
       "settings": {
         "url_card_1_button_link": "",
         "text_card_1_heading": "Learn how to take care of your new case",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "textarea_card_1_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
         "text_card_1_button_label": "View video",
         "image_card_1_background_image": "shopify://shop_images/daniel-romero-xpKhFTbkmTM-unsplash.jpg",
         "url_card_2_button_link": "",
         "text_card_2_heading": "Watch the product review by Marques Brownley",
+        "textarea_card_2_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
         "text_card_2_button_label": "Shop Collection",
         "image_card_2_background_image": "shopify://shop_images/daniel-romero--ze3rUAaAZ0-unsplash.jpg"
       }
@@ -135,7 +169,7 @@
     "feature_cards_two_6DgxHU",
     "4_products_LbFfCt",
     "products_list_tabs_7KNRtW",
-    "one_product_zXAKKC",
+    "one_product_DBEh4Q",
     "cta_image_large_qrU9y8",
     "feature_cards_two_YtyJ8B",
     "collections_list_4_eVVteN"

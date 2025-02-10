@@ -9,10 +9,61 @@
  */
 {
   "sections": {
-    "product_v1_3apQiD": {
-      "type": "product_v1",
+    "product_v3_hCi4VM": {
+      "type": "product_v3",
+      "blocks": {
+        "breadcrumbs_TEWemw": {
+          "type": "breadcrumbs",
+          "settings": {
+            "text_source_title": "Collections"
+          }
+        },
+        "title_8Frbnd": {
+          "type": "title",
+          "settings": {
+            "text_price_byline": "excl. taxes"
+          }
+        },
+        "description_pwKWiX": {
+          "type": "description",
+          "settings": {
+            "checkbox_toggle_separator": true
+          }
+        },
+        "extra_details_3q8B4b": {
+          "type": "extra-details",
+          "settings": {
+            "text_description_title": "Product details:"
+          }
+        },
+        "upsell_list_BVjCjQ": {
+          "type": "upsell-list",
+          "settings": {
+            "text_upsell_title": "Often paired with"
+          }
+        },
+        "add_to_cart_form_Wk8LP6": {
+          "type": "add-to-cart-form",
+          "settings": {
+            "text_stock_notice": "Low stock! Checkout before we run out.",
+            "checkbox_toggle_pm": true,
+            "text_oos_title": "Out of stock",
+            "textarea_oos_description": "Get notified when this product is back in stock.",
+            "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
+            "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumbs_TEWemw",
+        "title_8Frbnd",
+        "description_pwKWiX",
+        "extra_details_3q8B4b",
+        "upsell_list_BVjCjQ",
+        "add_to_cart_form_Wk8LP6"
+      ],
       "settings": {
-        "background-color": "#f2f2f2"
+        "background-color": "#f9f9f9"
       }
     },
     "bar_info_items_hgkwrL": {
@@ -45,7 +96,9 @@
         "info_item_F3bfkH",
         "info_item_98RkUz"
       ],
-      "settings": {}
+      "settings": {
+        "background-color": "#0a0a0a"
+      }
     },
     "recommended_products": {
       "type": "recommended_products",
@@ -55,53 +108,13 @@
         "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
         "background-color": "#f7f7f7"
       }
-    },
-    "faq_horizontal_NRnQXF": {
-      "type": "faq_horizontal",
-      "blocks": {
-        "accordion_nyKrVQ": {
-          "type": "accordion",
-          "settings": {
-            "text_question": "Question text goes here",
-            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
-          }
-        },
-        "accordion_Gabqef": {
-          "type": "accordion",
-          "settings": {
-            "text_question": "Question text goes here",
-            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
-          }
-        },
-        "accordion_mBd48e": {
-          "type": "accordion",
-          "settings": {
-            "text_question": "Question text goes here",
-            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
-          }
-        }
-      },
-      "block_order": [
-        "accordion_nyKrVQ",
-        "accordion_Gabqef",
-        "accordion_mBd48e"
-      ],
-      "settings": {
-        "text_title": "Title here",
-        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "checkbox_button": true,
-        "url_primary_button_link": "",
-        "text_primary_button_label": "Shop now",
-        "background-color": "#ffffff"
-      }
     }
   },
   "layout": "product",
   "wrapper": "main#top.main-wrapper",
   "order": [
-    "product_v1_3apQiD",
+    "product_v3_hCi4VM",
     "bar_info_items_hgkwrL",
-    "recommended_products",
-    "faq_horizontal_NRnQXF"
+    "recommended_products"
   ]
 }

@@ -33,8 +33,7 @@
         "extra_details_jBFCja": {
           "type": "extra-details",
           "settings": {
-            "checkbox_toggle_shipping_policy": true,
-            "checkbox_toggle_refund_policy": true
+            "text_description_title": "Product details:"
           }
         },
         "upsell_list_WNJHyD": {
@@ -64,7 +63,7 @@
         "add_to_cart_form_ikT7yk"
       ],
       "settings": {
-        "background-color": "#f9f9f9"
+        "background-color": "#ffffff"
       }
     },
     "bar_info_items_FWnBn3": {
@@ -115,7 +114,9 @@
       "blocks": {
         "breadcrumbs_H6mTiF": {
           "type": "breadcrumbs",
-          "settings": {}
+          "settings": {
+            "text_source_title": "Collections"
+          }
         },
         "title_3ryprd": {
           "type": "title",
@@ -126,17 +127,25 @@
         "add_to_cart_form_B97JWU": {
           "type": "add-to-cart-form",
           "settings": {
+            "text_stock_notice": "Low stock! Checkout before we run out.",
+            "checkbox_toggle_pm": true,
+            "text_oos_title": "Out of stock",
+            "textarea_oos_description": "Get notified when this product is back in stock.",
             "richtext_privacy_disclaimer": "<p>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>",
             "textarea_form_success_message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
           }
         },
         "product_details_3fEimq": {
           "type": "product-details",
-          "settings": {}
+          "settings": {
+            "checkbox_toggle_more_details": true
+          }
         },
         "upsell_list_BNLxb4": {
           "type": "upsell-list",
-          "settings": {}
+          "settings": {
+            "text_upsell_title": "Often paired with"
+          }
         }
       },
       "block_order": [

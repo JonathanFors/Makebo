@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_v1_3apQiD": {
+      "type": "product_v1",
+      "settings": {
+        "background-color": "#f2f2f2"
+      }
+    },
+    "bar_info_items_hgkwrL": {
+      "type": "bar_info_items",
+      "blocks": {
+        "info_item_jwyKTm": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_F3bfkH": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        },
+        "info_item_98RkUz": {
+          "type": "info-item",
+          "settings": {
+            "image_icon": "shopify://shop_images/check-2.svg",
+            "text_label": "free 5-day shipping"
+          }
+        }
+      },
+      "block_order": [
+        "info_item_jwyKTm",
+        "info_item_F3bfkH",
+        "info_item_98RkUz"
+      ],
+      "settings": {}
+    },
+    "recommended_products": {
+      "type": "recommended_products",
+      "settings": {
+        "checkbox_display_title_paragraph": true,
+        "text_heading": "Recommended products",
+        "text_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
+        "background-color": "#f7f7f7"
+      }
+    },
+    "faq_horizontal_NRnQXF": {
+      "type": "faq_horizontal",
+      "blocks": {
+        "accordion_nyKrVQ": {
+          "type": "accordion",
+          "settings": {
+            "text_question": "Question text goes here",
+            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        },
+        "accordion_Gabqef": {
+          "type": "accordion",
+          "settings": {
+            "text_question": "Question text goes here",
+            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        },
+        "accordion_mBd48e": {
+          "type": "accordion",
+          "settings": {
+            "text_question": "Question text goes here",
+            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        }
+      },
+      "block_order": [
+        "accordion_nyKrVQ",
+        "accordion_Gabqef",
+        "accordion_mBd48e"
+      ],
+      "settings": {
+        "text_title": "Title here",
+        "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "checkbox_button": true,
+        "url_primary_button_link": "",
+        "text_primary_button_label": "Shop now",
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "layout": "product",
+  "wrapper": "main#top.main-wrapper",
+  "order": [
+    "product_v1_3apQiD",
+    "bar_info_items_hgkwrL",
+    "recommended_products",
+    "faq_horizontal_NRnQXF"
+  ]
+}

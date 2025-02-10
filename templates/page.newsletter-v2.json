@@ -50,7 +50,7 @@
       "settings": {
         "text_heading": "Customer testimonials",
         "text_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "background-color": "#EDEDE9"
+        "background-color": "#edede9"
       }
     },
     "feature_right_TgYBVh": {
@@ -84,7 +84,7 @@
         "checkbox_display_button": true,
         "url_primary_button_link": "",
         "text_primary_button_label": "Shop now",
-        "image_image": "shopify://shop_images/Woman_near_Yellow_Wall.jpg",
+        "image_image": "shopify://shop_images/HighFashionImage_2.jpg",
         "background-color": "#f9f9f9"
       }
     },

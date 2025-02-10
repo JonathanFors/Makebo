@@ -1,283 +1,48 @@
-<div class="padding-global">
-  <div class="container-small">
-    <div class="padding-section-medium">
-      <div class="headline-wrapper">
-        <h1 id="w-node-e70215e6-46ed-17af-2aa7-195241f33af3-07bb8fd2" class="heading-style-h4">
-          {{ section.settings.text_heading }}
-        </h1>
-        <a
-          href="{{ routes.root_url }}"
-          li-object:href="routes.root_url"
-          class="button is-underscored-link is-small is-alternate"
-          >Continue shopping</a
-        >
-      </div>
-      {% if cart.item_count > 0 %}
-        <div li-if="cart.item_count > 0" class="cart_form-block w-form">
-          {% form 'cart', cart, class: 'cart_component' %}
-            <div class="cart_table outline-solid-1">
-              <div class="cart_grid is-header w-hidden-tiny">
-                <div class="flex-h is-gap-medium">
-                  <p class="no-margin text-weight-semibold">Products</p>
-                  <div id="w-node-f7c72959-2870-a630-4469-fb36e46e2cdd-07bb8fd2" class="flex-h is-gap-tiny">
-                    <div
-                      li-object="cart.item_count"
-                      id="w-node-_384e5528-cb79-12f0-e6a5-ed16159c14c2-07bb8fd2"
-                      class="text-size-small"
-                    >
-                      {{ cart.item_count }}
-                    </div>
-                    <div id="w-node-_68f38a6a-8bb6-7b76-3895-c45c13b9bc3c-07bb8fd2" class="text-size-small">items</div>
-                  </div>
-                </div>
-              </div>
-              <div class="cart_line-item-list">
-                {% for line_item in cart.items %}
-                  <div li-for="line_item in cart.items" class="cart_line-item">
-                    <div class="cart_line-item-content-left">
-                      <div class="cart_line-item-image-wrapper">
-                        <img
-                          li-object:src="line_item.image | img_url: width: 600"
-                          loading="lazy"
-                          alt=""
-                          src="{{ line_item.image | img_url: width: 'large' }}"
-                          class="quick-cart_image"
-                        >
-                        <a
-                          li-object:href="line_item.url"
-                          href="{{ line_item.url }}"
-                          class="view-product-link w-inline-block"
-                        >
-                          <div class="icon-embed-tiny w-embed">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="100%"
-                              height="100%"
-                              viewbox="0 0 12 12"
-                              preserveaspectratio="xMidYMid meet"
-                              aria-hidden="true"
-                              role="img"
-                            >
-                              <title>zoom</title><g fill="currentColor"><line x1="10.5" y1="10.5" x2="7.5" y2="7.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></line><circle cx="5" cy="5" r="3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></circle></g>
-                            </svg>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="flex-v is-align-left">
-                        <div li-object:text="line_item.title" class="quick-cart_product-title">
-                          {{ line_item.title }}
+<div class="padding-global"><div class="container-small"><div class="padding-section-medium"><div class="headline-wrapper"><h1 id="w-node-e70215e6-46ed-17af-2aa7-195241f33af3-07bb8fd2" class="heading-style-h4">
+{{ section.settings.text_heading }}
+</h1>
+<a href="{{ routes.root_url }}" li-object:href="routes.root_url" class="button is-underscored-link is-small is-alternate">Continue shopping</a></div>{% if cart.item_count > 0 %}    <div li-if="cart.item_count > 0" class="cart_form-block w-form">
+    {% form 'cart', cart, class: 'cart_component' %}
+<div class="cart_table outline-solid-1"><div class="cart_grid is-header w-hidden-tiny"><div class="flex-h is-gap-medium"><p class="no-margin text-weight-semibold">Products</p><div id="w-node-f7c72959-2870-a630-4469-fb36e46e2cdd-07bb8fd2" class="flex-h is-gap-tiny"><div li-object="cart.item_count" id="w-node-_384e5528-cb79-12f0-e6a5-ed16159c14c2-07bb8fd2" class="text-size-small">{{ cart.item_count }}</div><div id="w-node-_68f38a6a-8bb6-7b76-3895-c45c13b9bc3c-07bb8fd2" class="text-size-small">items</div></div></div></div><div class="cart_line-item-list">{% for line_item in cart.items %}    <div li-for="line_item in cart.items" class="cart_line-item">
+                                    
+                            <div class="cart_line-item-content-left"><div class="cart_line-item-image-wrapper"><img li-object:src="line_item.image | img_url: width: 'large'" loading="lazy" alt="" src="{{ line_item.image | img_url: width: 'large' }}" class="quick-cart_image">
+<a li-object:href="line_item.url" href="{{ line_item.url }}" class="view-product-link w-inline-block"><div class="icon-embed-tiny w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 12 12" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>zoom</title><g fill="currentColor"><line x1="10.5" y1="10.5" x2="7.5" y2="7.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></line><circle cx="5" cy="5" r="3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></circle></g></svg></div></a></div><div class="flex-v is-align-left"><div li-object:text="line_item.title" class="quick-cart_product-title">
+{{ line_item.title }}
+</div><div class="margin-bottom margin-xsmall"><div class="flex-h is-gap-tiny"><div li-object:text="line_item.final_line_price | money" class="text-size-small text-style-muted">
+{{ line_item.final_line_price | money }}
+</div>{% if line_item.original_line_price > line_item.final_line_price %}    <div li-if="line_item.original_line_price > line_item.final_line_price" class="li-if">
+    <div li-object:text="line_item.original_line_price | money" class="text-style-strikethrough text-size-tiny text-style-muted text-color-red">
+{{ line_item.original_line_price | money }}
+</div>    </div>
+{% endif %}</div></div><div class="flex-h is-gap-small"><div class="text-size-tiny text-style-muted">Quantity:</div><input class="form_input is-cart w-input" li-object:value="line_item.quantity" maxlength="256" name="updates[]" data-name="updates[]" placeholder="1" type="number" id="updates[]-2" required="" value="{{ line_item.quantity }}">
+</div></div></div>
+                            
+                            <div class="cart_line-item-content-right"><a li-object:href="line_item.url_to_remove" title="Remove from cart" aria-label="Remove from cart" id="w-node-fba4896c-4317-6e42-78a0-3ebcc12d4395-07bb8fd2" href="{{ line_item.url_to_remove }}" class="quick-cart_delete-button w-inline-block"><div class="icon-embed-tiny w-embed"><svg width="100%" height="100%" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.8125 2.5625H1.1875" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.375 1.1875H4.625V2.5625H7.375V1.1875Z" fill="currentcolor" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.40313 4.625L9.15907 9.50625C9.12263 10.2378 8.51832 10.8125 7.78544 10.8125H4.21388C3.481 10.8125 2.87738 10.2378 2.84025 9.50625L2.59619 4.625" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></a></div>
+                            
                         </div>
-                        <div class="margin-bottom margin-xsmall">
-                          <div class="flex-h is-gap-tiny">
-                            <div
-                              li-object:text="line_item.final_line_price | money"
-                              class="text-size-small text-style-muted"
-                            >
-                              {{ line_item.final_line_price | money }}
-                            </div>
-                            {% if line_item.original_line_price > line_item.final_line_price %}
-                              <div li-if="line_item.original_line_price > line_item.final_line_price" class="li-if">
-                                <div
-                                  li-object:text="line_item.original_line_price | money"
-                                  class="text-style-strikethrough text-size-tiny text-style-muted text-color-red"
-                                >
-                                  {{ line_item.original_line_price | money }}
-                                </div>
-                              </div>
-                            {% endif %}
-                          </div>
+{% endfor %}</div></div><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0a-07bb8fd2" class="cart_wrapper-right"><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0b-07bb8fd2" class="cart_table is-full-width"><div class="cart_grid is-header w-hidden-tiny"><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0d-07bb8fd2" class="cart_table-header"><p class="no-margin text-weight-semibold">Summary</p></div></div><div class="cart_content"><div class="cart_wrapper"><div class="margin-bottom margin-xsmall"><div class="cart_details-wrapper"><div class="text-size-small text-weight-semibold">Total sum:</div><div class="cart_details-price"><div li-object="cart.total_price | money" class="text-size-medium text-weight-semibold">{{ cart.total_price | money }}</div>{% if cart.total_discounts > 0 %}    <div li-if="cart.total_discounts > 0">
+    <div li-object="cart.original_total_price | money" class="text-color-red text-style-strikethrough">{{ cart.original_total_price | money }}</div>    </div>
+{% endif %}</div></div></div>{% if cart.discount_applications %}    <div li-if="cart.discount_applications" class="cart_details-wrapper is-secondary">
+    <div class="cart_detail-row"><div class="text-size-small text-weight-semibold text-style-nowrap">All discounts:</div><div class="flex-v is-gap-small">{% for discount_application in cart.discount_applications %}    <div li-for="discount_application in cart.discount_applications" class="flex-v is-align-right">
+                                    
+                            <div li-object="discount_application.title" class="text-size-tiny text-style-muted">{{ discount_application.title }}</div>
+                            
+                            <div li-object="discount_application.total_allocated_amount | money">{{ discount_application.total_allocated_amount | money }}</div>
+                            
                         </div>
-                        <div class="flex-h is-gap-small">
-                          <div class="text-size-tiny text-style-muted">Quantity:</div>
-                          <input
-                            class="form_input is-cart w-input"
-                            li-object:value="line_item.quantity"
-                            maxlength="256"
-                            name="updates[]"
-                            data-name="updates[]"
-                            placeholder="1"
-                            type="number"
-                            id="updates[]-2"
-                            required=""
-                            value="{{ line_item.quantity }}"
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="cart_line-item-content-right">
-                      <a
-                        li-object:href="line_item.url_to_remove"
-                        title="Remove from cart"
-                        aria-label="Remove from cart"
-                        id="w-node-fba4896c-4317-6e42-78a0-3ebcc12d4395-07bb8fd2"
-                        href="{{ line_item.url_to_remove }}"
-                        class="quick-cart_delete-button w-inline-block"
-                      >
-                        <div class="icon-embed-tiny w-embed">
-                          <svg
-                            width="100%"
-                            height="100%"
-                            viewbox="0 0 12 12"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M10.8125 2.5625H1.1875" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.375 1.1875H4.625V2.5625H7.375V1.1875Z" fill="currentcolor" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.40313 4.625L9.15907 9.50625C9.12263 10.2378 8.51832 10.8125 7.78544 10.8125H4.21388C3.481 10.8125 2.87738 10.2378 2.84025 9.50625L2.59619 4.625" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
-            <div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0a-07bb8fd2" class="cart_wrapper-right">
-              <div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0b-07bb8fd2" class="cart_table is-full-width">
-                <div class="cart_grid is-header w-hidden-tiny">
-                  <div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0d-07bb8fd2" class="cart_table-header">
-                    <p class="no-margin text-weight-semibold">Summary</p>
-                  </div>
-                </div>
-                <div class="cart_content">
-                  <div class="cart_wrapper">
-                    <div class="margin-bottom margin-xsmall">
-                      <div class="cart_details-wrapper">
-                        <div class="text-size-small text-weight-semibold">Total sum:</div>
-                        <div class="cart_details-price">
-                          <div li-object="cart.total_price | money" class="text-size-medium text-weight-semibold">
-                            {{ cart.total_price | money }}
-                          </div>
-                          {% if cart.total_discounts > 0 %}
-                            <div li-if="cart.total_discounts > 0">
-                              <div
-                                li-object="cart.original_total_price | money"
-                                class="text-color-red text-style-strikethrough"
-                              >
-                                {{ cart.original_total_price | money }}
-                              </div>
-                            </div>
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                    {% if cart.discount_applications %}
-                      <div li-if="cart.discount_applications" class="cart_details-wrapper is-secondary">
-                        <div class="cart_detail-row">
-                          <div class="text-size-small text-weight-semibold text-style-nowrap">All discounts:</div>
-                          <div class="flex-v is-gap-small">
-                            {% for discount_application in cart.discount_applications %}
-                              <div
-                                li-for="discount_application in cart.discount_applications"
-                                class="flex-v is-align-right"
-                              >
-                                <div li-object="discount_application.title" class="text-size-tiny text-style-muted">
-                                  {{ discount_application.title }}
-                                </div>
-
-                                <div li-object="discount_application.total_allocated_amount | money">
-                                  {{ discount_application.total_allocated_amount | money }}
-                                </div>
-                              </div>
-                            {% endfor %}
-                          </div>
-                        </div>
-                      </div>
-                    {% endif %}
-                  </div>
-                  <div class="form_field-wrapper">
-                    <div class="text-style-line-wrap flex-v">
-                      <p class="no-margin text-weight-semibold">
-                        {{ section.settings.text_comment_title }}
-                      </p>
-                      <div class="text-size-tiny text-style-muted">
-                        {{ section.settings.text_cart_note_description }}
-                      </div>
-                    </div>
-                    <textarea
-                      class="form_input is-text-area w-input"
-                      maxlength="5000"
-                      name="note"
-                      data-name="field"
-                      placeholder="Comment"
-                      id="CartNote"
-                    ></textarea>
-                  </div>
-                  <div class="cart_action">
-                    <button class="button is-icon is-centered" name="checkout" value="Checkout">
-                      <div>Checkout now</div>
-                      <div class="icon-embed-xxsmall w-embed">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="100%"
-                          height="100%"
-                          viewbox="0 0 24 24"
-                          preserveaspectratio="xMidYMid meet"
-                          aria-hidden="true"
-                          role="img"
-                        >
-                          <title>basket-fast</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 21H17.7099C18.729 21 19.5851 20.2337 19.6977 19.2209L20.5 12H20.49" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M6 17L2 17" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M10 17L9.99 17" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M14 13L5 13" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M2 8H22" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M8.75 1.5L5 8H6" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M15.25 1.5L19 8H18" stroke="currentColor" stroke-width="2" fill="none"></path></g>
-                        </svg>
-                      </div></button
-                    ><button li-attribue:value="Update cart" class="button is-alternate is-icon is-centered">
-                      <div>Update</div>
-                      <div class="icon-embed-xxsmall w-embed">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="100%"
-                          height="100%"
-                          viewbox="0 0 24 24"
-                          preserveaspectratio="xMidYMid meet"
-                          aria-hidden="true"
-                          role="img"
-                        >
-                          <title>bag-refresh</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><path d="M9 9V4C9 2.34315 10.3431 1 12 1V1C13.6569 1 15 2.34315 15 4V9" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M19 9V6H12H5.00001V12L3.47843 19.6078C3.2309 20.8453 4.17749 22 5.43959 22H8.99997" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M23 13V16.5H19.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M13 22V18.5H16.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M21.854 16.5H22.242C21.788 14.496 19.996 13 17.854 13C16.5215 13 15.3241 13.5794 14.5001 14.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M14.146 18.5H13.758C14.212 20.504 16.004 22 18.146 22C19.4785 22 20.6759 21.4206 21.4999 20.5" stroke="currentColor" stroke-width="2" fill="none"></path></g>
-                        </svg>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          {% endform %}
-          <div class="w-form-done"><div>Thank you! Your submission has been received!</div></div>
-          <div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>
-        </div>
-      {% endif -%}
-      {%- if cart.item_count == 0 %}
-        <div li-if="cart.item_count == 0" class="cart_empty">
-          <div class="text-align-center">
-            <div class="max-width-small">
-              <div class="margin-bottom margin-small">
-                <div class="flex-h is-centered is-gap-small">
-                  <div class="icon-embed-xxsmall w-embed">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="100%"
-                      height="100%"
-                      viewbox="0 0 32 32"
-                      preserveaspectratio="xMidYMid meet"
-                      aria-hidden="true"
-                      role="img"
-                    >
-                      <title>grid-empty-obj-bottom-right</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><path d="M11.5 3H4.5C3.67157 3 3 3.67157 3 4.5V11.5C3 12.3284 3.67157 13 4.5 13H11.5C12.3284 13 13 12.3284 13 11.5V4.5C13 3.67157 12.3284 3 11.5 3Z" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M11.5 19H4.5C3.67157 19 3 19.6716 3 20.5V27.5C3 28.3284 3.67157 29 4.5 29H11.5C12.3284 29 13 28.3284 13 27.5V20.5C13 19.6716 12.3284 19 11.5 19Z" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M27.5 3H20.5C19.6716 3 19 3.67157 19 4.5V11.5C19 12.3284 19.6716 13 20.5 13H27.5C28.3284 13 29 12.3284 29 11.5V4.5C29 3.67157 28.3284 3 27.5 3Z" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M26.5 29H27.5C28.3284 29 29 28.3284 29 27.5V26.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M21.5 29H20.5C19.6716 29 19 28.3284 19 27.5V26.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M21.5 19H20.5C19.6716 19 19 19.6716 19 20.5L19 21.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M26.5 19H27.5C28.3284 19 29 19.6716 29 20.5V21.5" stroke="currentColor" stroke-width="2" fill="none"></path></g>
-                    </svg>
-                  </div>
-                  <div class="text-size-medium text-weight-semibold">
-                    {{ section.settings.text_empty_cart_title }}
-                  </div>
-                </div>
-              </div>
-              <div class="margin-bottom margin-medium">
-                <p>{{ section.settings.textarea_empty_cart_description }}</p>
-              </div>
-              <div class="button-group is-centered">
-                <a href="/search" class="button is-underscored-link is-alternate w-button">View products</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endif %}
-    </div>
-  </div>
+{% endfor %}</div></div>    </div>
+{% endif %}</div><div class="form_field-wrapper"><div class="text-style-line-wrap flex-v"><p class="no-margin text-weight-semibold">
+{{ section.settings.text_comment_title }}
+</p>
+<div class="text-size-tiny text-style-muted">
+{{ section.settings.text_cart_note_description }}
 </div>
-{% schema %} {"tag":"section","name":"Cart","class":"section_account","settings":[{"id":"text_heading","type":"text","label":"Heading","default":"Cart"},{"id":"text_comment_title","type":"text","label":"Comment Title","default":"Cart notes:"},{"id":"text_cart_note_description","type":"text","label":"Cart note description","default":"Add a note or special instructions for your order."},{"id":"text_empty_cart_title","type":"text","label":"Empty Cart Title","default":"No Products yet."},{"id":"textarea_empty_cart_description","type":"textarea","label":"Empty Cart Description","default":"Click shop now to discover some of our latest arrivals, popular releases, and more."}],"presets":[{"name":"Cart","category":"Liquify","blocks":[]}]} {% endschema %}
+</div><textarea class="form_input is-text-area w-input" maxlength="5000" name="note" data-name="field" placeholder="Comment" id="CartNote"></textarea></div><div class="cart_action"><button class="button is-icon is-centered" name="checkout" value="Checkout"><div>Checkout now</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>basket-fast</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 21H17.7099C18.729 21 19.5851 20.2337 19.6977 19.2209L20.5 12H20.49" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M6 17L2 17" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M10 17L9.99 17" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M14 13L5 13" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M2 8H22" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M8.75 1.5L5 8H6" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M15.25 1.5L19 8H18" stroke="currentColor" stroke-width="2" fill="none"></path></g></svg></div></button><button li-attribue:value="Update cart" class="button is-alternate is-icon is-centered"><div>Update</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>bag-refresh</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><path d="M9 9V4C9 2.34315 10.3431 1 12 1V1C13.6569 1 15 2.34315 15 4V9" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M19 9V6H12H5.00001V12L3.47843 19.6078C3.2309 20.8453 4.17749 22 5.43959 22H8.99997" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M23 13V16.5H19.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M13 22V18.5H16.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M21.854 16.5H22.242C21.788 14.496 19.996 13 17.854 13C16.5215 13 15.3241 13.5794 14.5001 14.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M14.146 18.5H13.758C14.212 20.504 16.004 22 18.146 22C19.4785 22 20.6759 21.4206 21.4999 20.5" stroke="currentColor" stroke-width="2" fill="none"></path></g></svg></div></button></div></div></div></div>{% endform %}
+<div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>    </div>
+{% endif %}{% if cart.item_count == 0 %}    <div li-if="cart.item_count == 0" class="cart_empty">
+    <div class="text-align-center"><div class="max-width-small"><div class="margin-bottom margin-small"><div class="flex-h is-centered is-gap-small"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>grid-empty-obj-bottom-right</title><g fill="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="10"><path d="M11.5 3H4.5C3.67157 3 3 3.67157 3 4.5V11.5C3 12.3284 3.67157 13 4.5 13H11.5C12.3284 13 13 12.3284 13 11.5V4.5C13 3.67157 12.3284 3 11.5 3Z" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M11.5 19H4.5C3.67157 19 3 19.6716 3 20.5V27.5C3 28.3284 3.67157 29 4.5 29H11.5C12.3284 29 13 28.3284 13 27.5V20.5C13 19.6716 12.3284 19 11.5 19Z" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M27.5 3H20.5C19.6716 3 19 3.67157 19 4.5V11.5C19 12.3284 19.6716 13 20.5 13H27.5C28.3284 13 29 12.3284 29 11.5V4.5C29 3.67157 28.3284 3 27.5 3Z" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M26.5 29H27.5C28.3284 29 29 28.3284 29 27.5V26.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M21.5 29H20.5C19.6716 29 19 28.3284 19 27.5V26.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M21.5 19H20.5C19.6716 19 19 19.6716 19 20.5L19 21.5" stroke="currentColor" stroke-width="2" fill="none"></path><path d="M26.5 19H27.5C28.3284 19 29 19.6716 29 20.5V21.5" stroke="currentColor" stroke-width="2" fill="none"></path></g></svg></div><div class="text-size-medium text-weight-semibold">
+{{ section.settings.text_empty_cart_title }}
+</div>
+</div></div><div class="margin-bottom margin-medium"><p> {{ section.settings.textarea_empty_cart_description }} </p>
+</div><div class="button-group is-centered"><a href="/search" class="button is-underscored-link is-alternate w-button">View products</a></div></div></div>    </div>
+{% endif %}</div></div></div> {% schema %} {"tag":"section","name":"Cart","class":"section_account","settings":[{"id":"text_heading","type":"text","label":"Heading","default":"Cart"},{"id":"text_comment_title","type":"text","label":"Comment Title","default":"Cart notes:"},{"id":"text_cart_note_description","type":"text","label":"Cart note description","default":"Add a note or special instructions for your order."},{"id":"text_empty_cart_title","type":"text","label":"Empty Cart Title","default":"No Products yet."},{"id":"textarea_empty_cart_description","type":"textarea","label":"Empty Cart Description","default":"Click shop now to discover some of our latest arrivals, popular releases, and more."}],"presets":[{"name":"Cart","category":"Liquify","blocks":[]}]} {% endschema %}

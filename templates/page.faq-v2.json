@@ -9,31 +9,38 @@
  */
 {
   "sections": {
-    "faq_centered_6w3Q8y": {
-      "type": "faq_centered",
+    "faq_horizontal_xdDTeQ": {
+      "type": "faq_horizontal",
       "blocks": {
-        "accordion_J3QnCp": {
+        "accordion_qRJh9E": {
           "type": "accordion",
           "settings": {
             "text_question": "Question text goes here",
             "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
           }
         },
-        "accordion_z8dcDM": {
+        "accordion_ztnKdk": {
           "type": "accordion",
           "settings": {
             "text_question": "Question text goes here",
             "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
           }
         },
-        "accordion_tepkVf": {
+        "accordion_dcWEYU": {
           "type": "accordion",
           "settings": {
             "text_question": "Question text goes here",
             "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
           }
         },
-        "accordion_EjGwfX": {
+        "accordion_JNrLbT": {
+          "type": "accordion",
+          "settings": {
+            "text_question": "Question text goes here",
+            "textarea_answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        },
+        "accordion_WDJBdj": {
           "type": "accordion",
           "settings": {
             "text_question": "Question text goes here",
@@ -42,13 +49,14 @@
         }
       },
       "block_order": [
-        "accordion_J3QnCp",
-        "accordion_z8dcDM",
-        "accordion_tepkVf",
-        "accordion_EjGwfX"
+        "accordion_qRJh9E",
+        "accordion_ztnKdk",
+        "accordion_dcWEYU",
+        "accordion_JNrLbT",
+        "accordion_WDJBdj"
       ],
       "settings": {
-        "text_title": "Your questions, answered.",
+        "text_title": "Title here",
         "textarea_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "checkbox_button": true,
         "url_primary_button_link": "",
@@ -69,7 +77,7 @@
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "faq_centered_6w3Q8y",
+    "faq_horizontal_xdDTeQ",
     "cta_image_large_BCTjD3"
   ]
 }
